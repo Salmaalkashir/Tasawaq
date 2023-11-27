@@ -1,0 +1,823 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3890763A2B14C55A00204768 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389076392B14C55A00204768 /* AppDelegate.swift */; };
+		3890763C2B14C55A00204768 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890763B2B14C55A00204768 /* SceneDelegate.swift */; };
+		389076432B14C56A00204768 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 389076422B14C56A00204768 /* Assets.xcassets */; };
+		389076462B14C56A00204768 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 389076442B14C56A00204768 /* LaunchScreen.storyboard */; };
+		389076512B14C56C00204768 /* TasawaqTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389076502B14C56C00204768 /* TasawaqTests.swift */; };
+		3890765B2B14C56D00204768 /* TasawaqUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890765A2B14C56D00204768 /* TasawaqUITests.swift */; };
+		3890765D2B14C56D00204768 /* TasawaqUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890765C2B14C56D00204768 /* TasawaqUITestsLaunchTests.swift */; };
+		389076712B14C75E00204768 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890766F2B14C75E00204768 /* SignInViewController.swift */; };
+		389076722B14C75E00204768 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 389076702B14C75E00204768 /* SignInViewController.xib */; };
+		7743D996347BC440528B147E /* Pods_TasawaqTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28F06FD4A8252153B21962A /* Pods_TasawaqTests.framework */; };
+		E4806826FE4B0A8609D1063F /* Pods_Tasawaq.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92DEECFD6F2E9B6EBCBA0ABD /* Pods_Tasawaq.framework */; };
+		F673273F0F4CDA1F8BFF5BB4 /* Pods_Tasawaq_TasawaqUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0805E1C05E8F32854D5D2749 /* Pods_Tasawaq_TasawaqUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3890764D2B14C56C00204768 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3890762E2B14C55900204768 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 389076352B14C55A00204768;
+			remoteInfo = Tasawaq;
+		};
+		389076572B14C56D00204768 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3890762E2B14C55900204768 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 389076352B14C55A00204768;
+			remoteInfo = Tasawaq;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0805E1C05E8F32854D5D2749 /* Pods_Tasawaq_TasawaqUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tasawaq_TasawaqUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1736ACCCC87FDDDDFE0B4B52 /* Pods-TasawaqTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TasawaqTests.debug.xcconfig"; path = "Target Support Files/Pods-TasawaqTests/Pods-TasawaqTests.debug.xcconfig"; sourceTree = "<group>"; };
+		389076362B14C55A00204768 /* Tasawaq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tasawaq.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		389076392B14C55A00204768 /* AppDelegate.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
+		3890763B2B14C55A00204768 /* SceneDelegate.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
+		389076422B14C56A00204768 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		389076452B14C56A00204768 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		389076472B14C56A00204768 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3890764C2B14C56C00204768 /* TasawaqTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TasawaqTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		389076502B14C56C00204768 /* TasawaqTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasawaqTests.swift; sourceTree = "<group>"; };
+		389076562B14C56D00204768 /* TasawaqUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TasawaqUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3890765A2B14C56D00204768 /* TasawaqUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasawaqUITests.swift; sourceTree = "<group>"; };
+		3890765C2B14C56D00204768 /* TasawaqUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasawaqUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3890766F2B14C75E00204768 /* SignInViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
+		389076702B14C75E00204768 /* SignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
+		412A9EBA5965B86D1566F2A4 /* Pods-Tasawaq-TasawaqUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tasawaq-TasawaqUITests.release.xcconfig"; path = "Target Support Files/Pods-Tasawaq-TasawaqUITests/Pods-Tasawaq-TasawaqUITests.release.xcconfig"; sourceTree = "<group>"; };
+		500BCC1E38E1C9BC8C20CBC7 /* Pods-TasawaqTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TasawaqTests.release.xcconfig"; path = "Target Support Files/Pods-TasawaqTests/Pods-TasawaqTests.release.xcconfig"; sourceTree = "<group>"; };
+		92DEECFD6F2E9B6EBCBA0ABD /* Pods_Tasawaq.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tasawaq.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B965FA336B7FC4510BC7FD2 /* Pods-Tasawaq-TasawaqUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tasawaq-TasawaqUITests.debug.xcconfig"; path = "Target Support Files/Pods-Tasawaq-TasawaqUITests/Pods-Tasawaq-TasawaqUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B14EF973D48CE89784850CBF /* Pods-Tasawaq.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tasawaq.debug.xcconfig"; path = "Target Support Files/Pods-Tasawaq/Pods-Tasawaq.debug.xcconfig"; sourceTree = "<group>"; };
+		B28F06FD4A8252153B21962A /* Pods_TasawaqTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TasawaqTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E265564B6A69D35A4D66CC9B /* Pods-Tasawaq.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tasawaq.release.xcconfig"; path = "Target Support Files/Pods-Tasawaq/Pods-Tasawaq.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		389076332B14C55A00204768 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4806826FE4B0A8609D1063F /* Pods_Tasawaq.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		389076492B14C56C00204768 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7743D996347BC440528B147E /* Pods_TasawaqTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		389076532B14C56D00204768 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F673273F0F4CDA1F8BFF5BB4 /* Pods_Tasawaq_TasawaqUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3890762D2B14C55900204768 = {
+			isa = PBXGroup;
+			children = (
+				389076382B14C55A00204768 /* Tasawaq */,
+				3890764F2B14C56C00204768 /* TasawaqTests */,
+				389076592B14C56D00204768 /* TasawaqUITests */,
+				389076372B14C55A00204768 /* Products */,
+				DB3F55647E1D0CFA7F2C0717 /* Pods */,
+				44F97BD6959F1E29DE6C1326 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		389076372B14C55A00204768 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				389076362B14C55A00204768 /* Tasawaq.app */,
+				3890764C2B14C56C00204768 /* TasawaqTests.xctest */,
+				389076562B14C56D00204768 /* TasawaqUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		389076382B14C55A00204768 /* Tasawaq */ = {
+			isa = PBXGroup;
+			children = (
+				3890766E2B14C63B00204768 /* Resources */,
+				389076692B14C5AD00204768 /* Data */,
+				3890766B2B14C5D800204768 /* Domain */,
+				3890766D2B14C5F800204768 /* Presentation */,
+				389076392B14C55A00204768 /* AppDelegate.swift */,
+				3890763B2B14C55A00204768 /* SceneDelegate.swift */,
+			);
+			path = Tasawaq;
+			sourceTree = "<group>";
+		};
+		3890764F2B14C56C00204768 /* TasawaqTests */ = {
+			isa = PBXGroup;
+			children = (
+				389076502B14C56C00204768 /* TasawaqTests.swift */,
+			);
+			path = TasawaqTests;
+			sourceTree = "<group>";
+		};
+		389076592B14C56D00204768 /* TasawaqUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3890765A2B14C56D00204768 /* TasawaqUITests.swift */,
+				3890765C2B14C56D00204768 /* TasawaqUITestsLaunchTests.swift */,
+			);
+			path = TasawaqUITests;
+			sourceTree = "<group>";
+		};
+		389076692B14C5AD00204768 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3890766A2B14C5BD00204768 /* Repository */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		3890766A2B14C5BD00204768 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		3890766B2B14C5D800204768 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				3890766C2B14C5EB00204768 /* Models */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		3890766C2B14C5EB00204768 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3890766D2B14C5F800204768 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				389076732B14C8BF00204768 /* SignIn */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		3890766E2B14C63B00204768 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				389076422B14C56A00204768 /* Assets.xcassets */,
+				389076442B14C56A00204768 /* LaunchScreen.storyboard */,
+				389076472B14C56A00204768 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		389076732B14C8BF00204768 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				389076742B14C8CE00204768 /* SignInViewModel */,
+				389076752B14C8DA00204768 /* SignInView */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		389076742B14C8CE00204768 /* SignInViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SignInViewModel;
+			sourceTree = "<group>";
+		};
+		389076752B14C8DA00204768 /* SignInView */ = {
+			isa = PBXGroup;
+			children = (
+				3890766F2B14C75E00204768 /* SignInViewController.swift */,
+				389076702B14C75E00204768 /* SignInViewController.xib */,
+			);
+			path = SignInView;
+			sourceTree = "<group>";
+		};
+		44F97BD6959F1E29DE6C1326 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92DEECFD6F2E9B6EBCBA0ABD /* Pods_Tasawaq.framework */,
+				0805E1C05E8F32854D5D2749 /* Pods_Tasawaq_TasawaqUITests.framework */,
+				B28F06FD4A8252153B21962A /* Pods_TasawaqTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB3F55647E1D0CFA7F2C0717 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B14EF973D48CE89784850CBF /* Pods-Tasawaq.debug.xcconfig */,
+				E265564B6A69D35A4D66CC9B /* Pods-Tasawaq.release.xcconfig */,
+				9B965FA336B7FC4510BC7FD2 /* Pods-Tasawaq-TasawaqUITests.debug.xcconfig */,
+				412A9EBA5965B86D1566F2A4 /* Pods-Tasawaq-TasawaqUITests.release.xcconfig */,
+				1736ACCCC87FDDDDFE0B4B52 /* Pods-TasawaqTests.debug.xcconfig */,
+				500BCC1E38E1C9BC8C20CBC7 /* Pods-TasawaqTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		389076352B14C55A00204768 /* Tasawaq */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 389076602B14C56D00204768 /* Build configuration list for PBXNativeTarget "Tasawaq" */;
+			buildPhases = (
+				D43284B2574DF5C64E7A2441 /* [CP] Check Pods Manifest.lock */,
+				389076322B14C55A00204768 /* Sources */,
+				389076332B14C55A00204768 /* Frameworks */,
+				389076342B14C55A00204768 /* Resources */,
+				258ECE093003889E0CB15E7C /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tasawaq;
+			productName = Tasawaq;
+			productReference = 389076362B14C55A00204768 /* Tasawaq.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3890764B2B14C56C00204768 /* TasawaqTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 389076632B14C56D00204768 /* Build configuration list for PBXNativeTarget "TasawaqTests" */;
+			buildPhases = (
+				3ECE79341386E0446F7E8638 /* [CP] Check Pods Manifest.lock */,
+				389076482B14C56C00204768 /* Sources */,
+				389076492B14C56C00204768 /* Frameworks */,
+				3890764A2B14C56C00204768 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3890764E2B14C56C00204768 /* PBXTargetDependency */,
+			);
+			name = TasawaqTests;
+			productName = TasawaqTests;
+			productReference = 3890764C2B14C56C00204768 /* TasawaqTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		389076552B14C56D00204768 /* TasawaqUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 389076662B14C56D00204768 /* Build configuration list for PBXNativeTarget "TasawaqUITests" */;
+			buildPhases = (
+				C9F08A83EE1A017BF37554A9 /* [CP] Check Pods Manifest.lock */,
+				389076522B14C56D00204768 /* Sources */,
+				389076532B14C56D00204768 /* Frameworks */,
+				389076542B14C56D00204768 /* Resources */,
+				7DA81D0CE9E7B79B4D6C796B /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				389076582B14C56D00204768 /* PBXTargetDependency */,
+			);
+			name = TasawaqUITests;
+			productName = TasawaqUITests;
+			productReference = 389076562B14C56D00204768 /* TasawaqUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3890762E2B14C55900204768 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					389076352B14C55A00204768 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					3890764B2B14C56C00204768 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 389076352B14C55A00204768;
+					};
+					389076552B14C56D00204768 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 389076352B14C55A00204768;
+					};
+				};
+			};
+			buildConfigurationList = 389076312B14C55900204768 /* Build configuration list for PBXProject "Tasawaq" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3890762D2B14C55900204768;
+			productRefGroup = 389076372B14C55A00204768 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				389076352B14C55A00204768 /* Tasawaq */,
+				3890764B2B14C56C00204768 /* TasawaqTests */,
+				389076552B14C56D00204768 /* TasawaqUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		389076342B14C55A00204768 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				389076722B14C75E00204768 /* SignInViewController.xib in Resources */,
+				389076462B14C56A00204768 /* LaunchScreen.storyboard in Resources */,
+				389076432B14C56A00204768 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3890764A2B14C56C00204768 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		389076542B14C56D00204768 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		258ECE093003889E0CB15E7C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tasawaq/Pods-Tasawaq-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tasawaq/Pods-Tasawaq-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tasawaq/Pods-Tasawaq-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3ECE79341386E0446F7E8638 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TasawaqTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7DA81D0CE9E7B79B4D6C796B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tasawaq-TasawaqUITests/Pods-Tasawaq-TasawaqUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tasawaq-TasawaqUITests/Pods-Tasawaq-TasawaqUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tasawaq-TasawaqUITests/Pods-Tasawaq-TasawaqUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9F08A83EE1A017BF37554A9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tasawaq-TasawaqUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D43284B2574DF5C64E7A2441 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tasawaq-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		389076322B14C55A00204768 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				389076712B14C75E00204768 /* SignInViewController.swift in Sources */,
+				3890763A2B14C55A00204768 /* AppDelegate.swift in Sources */,
+				3890763C2B14C55A00204768 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		389076482B14C56C00204768 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				389076512B14C56C00204768 /* TasawaqTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		389076522B14C56D00204768 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3890765B2B14C56D00204768 /* TasawaqUITests.swift in Sources */,
+				3890765D2B14C56D00204768 /* TasawaqUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3890764E2B14C56C00204768 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 389076352B14C55A00204768 /* Tasawaq */;
+			targetProxy = 3890764D2B14C56C00204768 /* PBXContainerItemProxy */;
+		};
+		389076582B14C56D00204768 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 389076352B14C55A00204768 /* Tasawaq */;
+			targetProxy = 389076572B14C56D00204768 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		389076442B14C56A00204768 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				389076452B14C56A00204768 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3890765E2B14C56D00204768 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3890765F2B14C56D00204768 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		389076612B14C56D00204768 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B14EF973D48CE89784850CBF /* Pods-Tasawaq.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 99TN99P4UG;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Tasawaq/Resources/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Salma.Tasawaq;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		389076622B14C56D00204768 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E265564B6A69D35A4D66CC9B /* Pods-Tasawaq.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 99TN99P4UG;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Tasawaq/Resources/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Salma.Tasawaq;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		389076642B14C56D00204768 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1736ACCCC87FDDDDFE0B4B52 /* Pods-TasawaqTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 99TN99P4UG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Salma.TasawaqTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tasawaq.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Tasawaq";
+			};
+			name = Debug;
+		};
+		389076652B14C56D00204768 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 500BCC1E38E1C9BC8C20CBC7 /* Pods-TasawaqTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 99TN99P4UG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Salma.TasawaqTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tasawaq.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Tasawaq";
+			};
+			name = Release;
+		};
+		389076672B14C56D00204768 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B965FA336B7FC4510BC7FD2 /* Pods-Tasawaq-TasawaqUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 99TN99P4UG;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Salma.TasawaqUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Tasawaq;
+			};
+			name = Debug;
+		};
+		389076682B14C56D00204768 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 412A9EBA5965B86D1566F2A4 /* Pods-Tasawaq-TasawaqUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 99TN99P4UG;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Salma.TasawaqUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Tasawaq;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		389076312B14C55900204768 /* Build configuration list for PBXProject "Tasawaq" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3890765E2B14C56D00204768 /* Debug */,
+				3890765F2B14C56D00204768 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		389076602B14C56D00204768 /* Build configuration list for PBXNativeTarget "Tasawaq" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				389076612B14C56D00204768 /* Debug */,
+				389076622B14C56D00204768 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		389076632B14C56D00204768 /* Build configuration list for PBXNativeTarget "TasawaqTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				389076642B14C56D00204768 /* Debug */,
+				389076652B14C56D00204768 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		389076662B14C56D00204768 /* Build configuration list for PBXNativeTarget "TasawaqUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				389076672B14C56D00204768 /* Debug */,
+				389076682B14C56D00204768 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3890762E2B14C55900204768 /* Project object */;
+}

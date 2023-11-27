@@ -16,6 +16,9 @@
 		3890765D2B14C56D00204768 /* TasawaqUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890765C2B14C56D00204768 /* TasawaqUITestsLaunchTests.swift */; };
 		389076712B14C75E00204768 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890766F2B14C75E00204768 /* SignInViewController.swift */; };
 		389076722B14C75E00204768 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 389076702B14C75E00204768 /* SignInViewController.xib */; };
+		38C64BA82B1540B300873D8E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C64BA62B1540B300873D8E /* SignUpViewController.swift */; };
+		38C64BA92B1540B300873D8E /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38C64BA72B1540B300873D8E /* SignUpViewController.xib */; };
+		38C64BAC2B1543C400873D8E /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C64BAB2B1543C400873D8E /* UITextField.swift */; };
 		7743D996347BC440528B147E /* Pods_TasawaqTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28F06FD4A8252153B21962A /* Pods_TasawaqTests.framework */; };
 		E4806826FE4B0A8609D1063F /* Pods_Tasawaq.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92DEECFD6F2E9B6EBCBA0ABD /* Pods_Tasawaq.framework */; };
 		F673273F0F4CDA1F8BFF5BB4 /* Pods_Tasawaq_TasawaqUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0805E1C05E8F32854D5D2749 /* Pods_Tasawaq_TasawaqUITests.framework */; };
@@ -54,6 +57,9 @@
 		3890765C2B14C56D00204768 /* TasawaqUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasawaqUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3890766F2B14C75E00204768 /* SignInViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		389076702B14C75E00204768 /* SignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
+		38C64BA62B1540B300873D8E /* SignUpViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
+		38C64BA72B1540B300873D8E /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		38C64BAB2B1543C400873D8E /* UITextField.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; tabWidth = 2; };
 		412A9EBA5965B86D1566F2A4 /* Pods-Tasawaq-TasawaqUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tasawaq-TasawaqUITests.release.xcconfig"; path = "Target Support Files/Pods-Tasawaq-TasawaqUITests/Pods-Tasawaq-TasawaqUITests.release.xcconfig"; sourceTree = "<group>"; };
 		500BCC1E38E1C9BC8C20CBC7 /* Pods-TasawaqTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TasawaqTests.release.xcconfig"; path = "Target Support Files/Pods-TasawaqTests/Pods-TasawaqTests.release.xcconfig"; sourceTree = "<group>"; };
 		92DEECFD6F2E9B6EBCBA0ABD /* Pods_Tasawaq.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tasawaq.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +126,7 @@
 				389076692B14C5AD00204768 /* Data */,
 				3890766B2B14C5D800204768 /* Domain */,
 				3890766D2B14C5F800204768 /* Presentation */,
+				38C64BAA2B1543A000873D8E /* Extension */,
 				389076392B14C55A00204768 /* AppDelegate.swift */,
 				3890763B2B14C55A00204768 /* SceneDelegate.swift */,
 			);
@@ -176,6 +183,7 @@
 		3890766D2B14C5F800204768 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				38C64BA32B15404E00873D8E /* SignUp */,
 				389076732B14C8BF00204768 /* SignIn */,
 			);
 			path = Presentation;
@@ -214,6 +222,39 @@
 				389076702B14C75E00204768 /* SignInViewController.xib */,
 			);
 			path = SignInView;
+			sourceTree = "<group>";
+		};
+		38C64BA32B15404E00873D8E /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				38C64BA42B15405900873D8E /* SignUpViewModel */,
+				38C64BA52B15406100873D8E /* SignUpView */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		38C64BA42B15405900873D8E /* SignUpViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SignUpViewModel;
+			sourceTree = "<group>";
+		};
+		38C64BA52B15406100873D8E /* SignUpView */ = {
+			isa = PBXGroup;
+			children = (
+				38C64BA62B1540B300873D8E /* SignUpViewController.swift */,
+				38C64BA72B1540B300873D8E /* SignUpViewController.xib */,
+			);
+			path = SignUpView;
+			sourceTree = "<group>";
+		};
+		38C64BAA2B1543A000873D8E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				38C64BAB2B1543C400873D8E /* UITextField.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		44F97BD6959F1E29DE6C1326 /* Frameworks */ = {
@@ -350,6 +391,7 @@
 			files = (
 				389076722B14C75E00204768 /* SignInViewController.xib in Resources */,
 				389076462B14C56A00204768 /* LaunchScreen.storyboard in Resources */,
+				38C64BA92B1540B300873D8E /* SignUpViewController.xib in Resources */,
 				389076432B14C56A00204768 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,7 +521,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				389076712B14C75E00204768 /* SignInViewController.swift in Sources */,
+				38C64BAC2B1543C400873D8E /* UITextField.swift in Sources */,
 				3890763A2B14C55A00204768 /* AppDelegate.swift in Sources */,
+				38C64BA82B1540B300873D8E /* SignUpViewController.swift in Sources */,
 				3890763C2B14C55A00204768 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

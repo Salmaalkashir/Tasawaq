@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		388FBA0B2B16808700247DCB /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388FBA092B16808700247DCB /* CategoriesViewController.swift */; };
+		388FBA0C2B16808700247DCB /* CategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 388FBA0A2B16808700247DCB /* CategoriesViewController.xib */; };
 		3890763A2B14C55A00204768 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389076392B14C55A00204768 /* AppDelegate.swift */; };
 		3890763C2B14C55A00204768 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890763B2B14C55A00204768 /* SceneDelegate.swift */; };
 		389076432B14C56A00204768 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 389076422B14C56A00204768 /* Assets.xcassets */; };
@@ -16,6 +18,8 @@
 		3890765D2B14C56D00204768 /* TasawaqUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890765C2B14C56D00204768 /* TasawaqUITestsLaunchTests.swift */; };
 		389076712B14C75E00204768 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890766F2B14C75E00204768 /* SignInViewController.swift */; };
 		389076722B14C75E00204768 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 389076702B14C75E00204768 /* SignInViewController.xib */; };
+		38A49E052B16C35E0003709E /* CategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A49E032B16C35E0003709E /* CategoriesCollectionViewCell.swift */; };
+		38A49E062B16C35E0003709E /* CategoriesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A49E042B16C35E0003709E /* CategoriesCollectionViewCell.xib */; };
 		38C64BA82B1540B300873D8E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C64BA62B1540B300873D8E /* SignUpViewController.swift */; };
 		38C64BA92B1540B300873D8E /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38C64BA72B1540B300873D8E /* SignUpViewController.xib */; };
 		38C64BAC2B1543C400873D8E /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C64BAB2B1543C400873D8E /* UITextField.swift */; };
@@ -44,6 +48,8 @@
 /* Begin PBXFileReference section */
 		0805E1C05E8F32854D5D2749 /* Pods_Tasawaq_TasawaqUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tasawaq_TasawaqUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1736ACCCC87FDDDDFE0B4B52 /* Pods-TasawaqTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TasawaqTests.debug.xcconfig"; path = "Target Support Files/Pods-TasawaqTests/Pods-TasawaqTests.debug.xcconfig"; sourceTree = "<group>"; };
+		388FBA092B16808700247DCB /* CategoriesViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
+		388FBA0A2B16808700247DCB /* CategoriesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesViewController.xib; sourceTree = "<group>"; };
 		389076362B14C55A00204768 /* Tasawaq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tasawaq.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		389076392B14C55A00204768 /* AppDelegate.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
 		3890763B2B14C55A00204768 /* SceneDelegate.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -57,6 +63,8 @@
 		3890765C2B14C56D00204768 /* TasawaqUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasawaqUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3890766F2B14C75E00204768 /* SignInViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		389076702B14C75E00204768 /* SignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
+		38A49E032B16C35E0003709E /* CategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionViewCell.swift; sourceTree = "<group>"; tabWidth = 2; };
+		38A49E042B16C35E0003709E /* CategoriesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesCollectionViewCell.xib; sourceTree = "<group>"; };
 		38C64BA62B1540B300873D8E /* SignUpViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		38C64BA72B1540B300873D8E /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		38C64BAB2B1543C400873D8E /* UITextField.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -97,6 +105,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		388FBA052B167FD000247DCB /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				388FBA062B167FD900247DCB /* CategoriesViewModel */,
+				388FBA072B167FE200247DCB /* CategoriesView */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		388FBA062B167FD900247DCB /* CategoriesViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CategoriesViewModel;
+			sourceTree = "<group>";
+		};
+		388FBA072B167FE200247DCB /* CategoriesView */ = {
+			isa = PBXGroup;
+			children = (
+				388FBA092B16808700247DCB /* CategoriesViewController.swift */,
+				388FBA0A2B16808700247DCB /* CategoriesViewController.xib */,
+				38A49E022B16C30D0003709E /* CategoriesCell */,
+			);
+			path = CategoriesView;
+			sourceTree = "<group>";
+		};
 		3890762D2B14C55900204768 = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +217,7 @@
 		3890766D2B14C5F800204768 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				388FBA052B167FD000247DCB /* Categories */,
 				38C64BA32B15404E00873D8E /* SignUp */,
 				389076732B14C8BF00204768 /* SignIn */,
 			);
@@ -222,6 +257,15 @@
 				389076702B14C75E00204768 /* SignInViewController.xib */,
 			);
 			path = SignInView;
+			sourceTree = "<group>";
+		};
+		38A49E022B16C30D0003709E /* CategoriesCell */ = {
+			isa = PBXGroup;
+			children = (
+				38A49E032B16C35E0003709E /* CategoriesCollectionViewCell.swift */,
+				38A49E042B16C35E0003709E /* CategoriesCollectionViewCell.xib */,
+			);
+			path = CategoriesCell;
 			sourceTree = "<group>";
 		};
 		38C64BA32B15404E00873D8E /* SignUp */ = {
@@ -391,6 +435,8 @@
 			files = (
 				389076722B14C75E00204768 /* SignInViewController.xib in Resources */,
 				389076462B14C56A00204768 /* LaunchScreen.storyboard in Resources */,
+				38A49E062B16C35E0003709E /* CategoriesCollectionViewCell.xib in Resources */,
+				388FBA0C2B16808700247DCB /* CategoriesViewController.xib in Resources */,
 				38C64BA92B1540B300873D8E /* SignUpViewController.xib in Resources */,
 				389076432B14C56A00204768 /* Assets.xcassets in Resources */,
 			);
@@ -521,7 +567,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				389076712B14C75E00204768 /* SignInViewController.swift in Sources */,
+				38A49E052B16C35E0003709E /* CategoriesCollectionViewCell.swift in Sources */,
 				38C64BAC2B1543C400873D8E /* UITextField.swift in Sources */,
+				388FBA0B2B16808700247DCB /* CategoriesViewController.swift in Sources */,
 				3890763A2B14C55A00204768 /* AppDelegate.swift in Sources */,
 				38C64BA82B1540B300873D8E /* SignUpViewController.swift in Sources */,
 				3890763C2B14C55A00204768 /* SceneDelegate.swift in Sources */,

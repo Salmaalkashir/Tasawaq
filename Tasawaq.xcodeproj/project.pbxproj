@@ -18,6 +18,10 @@
 		3890765D2B14C56D00204768 /* TasawaqUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890765C2B14C56D00204768 /* TasawaqUITestsLaunchTests.swift */; };
 		389076712B14C75E00204768 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890766F2B14C75E00204768 /* SignInViewController.swift */; };
 		389076722B14C75E00204768 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 389076702B14C75E00204768 /* SignInViewController.xib */; };
+		389EB8BD2B1D15870044450B /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389EB8BB2B1D15870044450B /* CartViewController.swift */; };
+		389EB8BE2B1D15870044450B /* CartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 389EB8BC2B1D15870044450B /* CartViewController.xib */; };
+		389EB8C22B1D16040044450B /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389EB8C02B1D16040044450B /* CartTableViewCell.swift */; };
+		389EB8C32B1D16040044450B /* CartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 389EB8C12B1D16040044450B /* CartTableViewCell.xib */; };
 		38A49E052B16C35E0003709E /* CategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A49E032B16C35E0003709E /* CategoriesCollectionViewCell.swift */; };
 		38A49E062B16C35E0003709E /* CategoriesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A49E042B16C35E0003709E /* CategoriesCollectionViewCell.xib */; };
 		38C64BA82B1540B300873D8E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C64BA62B1540B300873D8E /* SignUpViewController.swift */; };
@@ -63,6 +67,10 @@
 		3890765C2B14C56D00204768 /* TasawaqUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasawaqUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3890766F2B14C75E00204768 /* SignInViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		389076702B14C75E00204768 /* SignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
+		389EB8BB2B1D15870044450B /* CartViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
+		389EB8BC2B1D15870044450B /* CartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartViewController.xib; sourceTree = "<group>"; };
+		389EB8C02B1D16040044450B /* CartTableViewCell.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; tabWidth = 2; };
+		389EB8C12B1D16040044450B /* CartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartTableViewCell.xib; sourceTree = "<group>"; };
 		38A49E032B16C35E0003709E /* CategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionViewCell.swift; sourceTree = "<group>"; tabWidth = 2; };
 		38A49E042B16C35E0003709E /* CategoriesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesCollectionViewCell.xib; sourceTree = "<group>"; };
 		38C64BA62B1540B300873D8E /* SignUpViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -217,6 +225,7 @@
 		3890766D2B14C5F800204768 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				389EB8B82B1D15530044450B /* Cart */,
 				388FBA052B167FD000247DCB /* Categories */,
 				38C64BA32B15404E00873D8E /* SignUp */,
 				389076732B14C8BF00204768 /* SignIn */,
@@ -257,6 +266,41 @@
 				389076702B14C75E00204768 /* SignInViewController.xib */,
 			);
 			path = SignInView;
+			sourceTree = "<group>";
+		};
+		389EB8B82B1D15530044450B /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				389EB8B92B1D155A0044450B /* CartViewModel */,
+				389EB8BA2B1D15620044450B /* CartView */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		389EB8B92B1D155A0044450B /* CartViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CartViewModel;
+			sourceTree = "<group>";
+		};
+		389EB8BA2B1D15620044450B /* CartView */ = {
+			isa = PBXGroup;
+			children = (
+				389EB8BB2B1D15870044450B /* CartViewController.swift */,
+				389EB8BC2B1D15870044450B /* CartViewController.xib */,
+				389EB8BF2B1D158C0044450B /* CartTableViewCell */,
+			);
+			path = CartView;
+			sourceTree = "<group>";
+		};
+		389EB8BF2B1D158C0044450B /* CartTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				389EB8C02B1D16040044450B /* CartTableViewCell.swift */,
+				389EB8C12B1D16040044450B /* CartTableViewCell.xib */,
+			);
+			path = CartTableViewCell;
 			sourceTree = "<group>";
 		};
 		38A49E022B16C30D0003709E /* CategoriesCell */ = {
@@ -436,8 +480,10 @@
 				389076722B14C75E00204768 /* SignInViewController.xib in Resources */,
 				389076462B14C56A00204768 /* LaunchScreen.storyboard in Resources */,
 				38A49E062B16C35E0003709E /* CategoriesCollectionViewCell.xib in Resources */,
+				389EB8C32B1D16040044450B /* CartTableViewCell.xib in Resources */,
 				388FBA0C2B16808700247DCB /* CategoriesViewController.xib in Resources */,
 				38C64BA92B1540B300873D8E /* SignUpViewController.xib in Resources */,
+				389EB8BE2B1D15870044450B /* CartViewController.xib in Resources */,
 				389076432B14C56A00204768 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -569,7 +615,9 @@
 				389076712B14C75E00204768 /* SignInViewController.swift in Sources */,
 				38A49E052B16C35E0003709E /* CategoriesCollectionViewCell.swift in Sources */,
 				38C64BAC2B1543C400873D8E /* UITextField.swift in Sources */,
+				389EB8C22B1D16040044450B /* CartTableViewCell.swift in Sources */,
 				388FBA0B2B16808700247DCB /* CategoriesViewController.swift in Sources */,
+				389EB8BD2B1D15870044450B /* CartViewController.swift in Sources */,
 				3890763A2B14C55A00204768 /* AppDelegate.swift in Sources */,
 				38C64BA82B1540B300873D8E /* SignUpViewController.swift in Sources */,
 				3890763C2B14C55A00204768 /* SceneDelegate.swift in Sources */,

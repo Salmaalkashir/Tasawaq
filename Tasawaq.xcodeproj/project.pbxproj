@@ -27,6 +27,10 @@
 		38C64BA82B1540B300873D8E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C64BA62B1540B300873D8E /* SignUpViewController.swift */; };
 		38C64BA92B1540B300873D8E /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38C64BA72B1540B300873D8E /* SignUpViewController.xib */; };
 		38C64BAC2B1543C400873D8E /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C64BAB2B1543C400873D8E /* UITextField.swift */; };
+		3D66D9A32B1E5CEA00F84AC5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D66D9A12B1E5CEA00F84AC5 /* HomeViewController.swift */; };
+		3D66D9A42B1E5CEA00F84AC5 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D66D9A22B1E5CEA00F84AC5 /* HomeViewController.xib */; };
+		3D66D9AA2B1E6C2500F84AC5 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D66D9A82B1E6C2500F84AC5 /* HomeCell.swift */; };
+		3D66D9AB2B1E6C2500F84AC5 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D66D9A92B1E6C2500F84AC5 /* HomeCell.xib */; };
 		7743D996347BC440528B147E /* Pods_TasawaqTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28F06FD4A8252153B21962A /* Pods_TasawaqTests.framework */; };
 		E4806826FE4B0A8609D1063F /* Pods_Tasawaq.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92DEECFD6F2E9B6EBCBA0ABD /* Pods_Tasawaq.framework */; };
 		F673273F0F4CDA1F8BFF5BB4 /* Pods_Tasawaq_TasawaqUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0805E1C05E8F32854D5D2749 /* Pods_Tasawaq_TasawaqUITests.framework */; };
@@ -76,6 +80,10 @@
 		38C64BA62B1540B300873D8E /* SignUpViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		38C64BA72B1540B300873D8E /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		38C64BAB2B1543C400873D8E /* UITextField.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; tabWidth = 2; };
+		3D66D9A12B1E5CEA00F84AC5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3D66D9A22B1E5CEA00F84AC5 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		3D66D9A82B1E6C2500F84AC5 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		3D66D9A92B1E6C2500F84AC5 /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		412A9EBA5965B86D1566F2A4 /* Pods-Tasawaq-TasawaqUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tasawaq-TasawaqUITests.release.xcconfig"; path = "Target Support Files/Pods-Tasawaq-TasawaqUITests/Pods-Tasawaq-TasawaqUITests.release.xcconfig"; sourceTree = "<group>"; };
 		500BCC1E38E1C9BC8C20CBC7 /* Pods-TasawaqTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TasawaqTests.release.xcconfig"; path = "Target Support Files/Pods-TasawaqTests/Pods-TasawaqTests.release.xcconfig"; sourceTree = "<group>"; };
 		92DEECFD6F2E9B6EBCBA0ABD /* Pods_Tasawaq.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tasawaq.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -225,6 +233,7 @@
 		3890766D2B14C5F800204768 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				3D66D99E2B1E5BC900F84AC5 /* Home */,
 				389EB8B82B1D15530044450B /* Cart */,
 				388FBA052B167FD000247DCB /* Categories */,
 				38C64BA32B15404E00873D8E /* SignUp */,
@@ -343,6 +352,41 @@
 				38C64BAB2B1543C400873D8E /* UITextField.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		3D66D99E2B1E5BC900F84AC5 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3D66D9A02B1E5C6500F84AC5 /* HomeView */,
+				3D66D99F2B1E5C5900F84AC5 /* HomeViewModel */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		3D66D99F2B1E5C5900F84AC5 /* HomeViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomeViewModel;
+			sourceTree = "<group>";
+		};
+		3D66D9A02B1E5C6500F84AC5 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				3D66D9A52B1E5D8300F84AC5 /* HomeCell */,
+				3D66D9A12B1E5CEA00F84AC5 /* HomeViewController.swift */,
+				3D66D9A22B1E5CEA00F84AC5 /* HomeViewController.xib */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		3D66D9A52B1E5D8300F84AC5 /* HomeCell */ = {
+			isa = PBXGroup;
+			children = (
+				3D66D9A82B1E6C2500F84AC5 /* HomeCell.swift */,
+				3D66D9A92B1E6C2500F84AC5 /* HomeCell.xib */,
+			);
+			path = HomeCell;
 			sourceTree = "<group>";
 		};
 		44F97BD6959F1E29DE6C1326 /* Frameworks */ = {
@@ -481,10 +525,12 @@
 				389076462B14C56A00204768 /* LaunchScreen.storyboard in Resources */,
 				38A49E062B16C35E0003709E /* CategoriesCollectionViewCell.xib in Resources */,
 				389EB8C32B1D16040044450B /* CartTableViewCell.xib in Resources */,
+				3D66D9AB2B1E6C2500F84AC5 /* HomeCell.xib in Resources */,
 				388FBA0C2B16808700247DCB /* CategoriesViewController.xib in Resources */,
 				38C64BA92B1540B300873D8E /* SignUpViewController.xib in Resources */,
 				389EB8BE2B1D15870044450B /* CartViewController.xib in Resources */,
 				389076432B14C56A00204768 /* Assets.xcassets in Resources */,
+				3D66D9A42B1E5CEA00F84AC5 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,8 +661,10 @@
 				389076712B14C75E00204768 /* SignInViewController.swift in Sources */,
 				38A49E052B16C35E0003709E /* CategoriesCollectionViewCell.swift in Sources */,
 				38C64BAC2B1543C400873D8E /* UITextField.swift in Sources */,
+				3D66D9AA2B1E6C2500F84AC5 /* HomeCell.swift in Sources */,
 				389EB8C22B1D16040044450B /* CartTableViewCell.swift in Sources */,
 				388FBA0B2B16808700247DCB /* CategoriesViewController.swift in Sources */,
+				3D66D9A32B1E5CEA00F84AC5 /* HomeViewController.swift in Sources */,
 				389EB8BD2B1D15870044450B /* CartViewController.swift in Sources */,
 				3890763A2B14C55A00204768 /* AppDelegate.swift in Sources */,
 				38C64BA82B1540B300873D8E /* SignUpViewController.swift in Sources */,

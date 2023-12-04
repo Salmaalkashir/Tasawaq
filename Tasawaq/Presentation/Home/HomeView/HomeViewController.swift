@@ -36,12 +36,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return 3
         case brandCollectionView:
             return 10
+        default:
+            break
         }
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoriesCell", for: indexPath) as! CategoriesCollectionViewCell
+      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoriesCell", for: indexPath) as! HomeCell
       cell.configureCell(image: UIImage(named: "adidas") ?? UIImage())
       return cell
     }

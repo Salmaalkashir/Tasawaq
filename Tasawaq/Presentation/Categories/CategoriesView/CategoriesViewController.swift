@@ -45,7 +45,7 @@ extension CategoriesViewController: UICollectionViewDataSource{
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoriesCell", for: indexPath) as! CategoriesCollectionViewCell
-    cell.configureCell(productImagee: UIImage(named: "adidas") ?? UIImage(), productNamee: "ADIDAS | CLASSIC BACKPACK ", productPricee: "USD 70.00")
+    cell.configureCell(image: UIImage(named: "adidas") ?? UIImage(), name: "ADIDAS | CLASSIC BACKPACK ", price: "USD 70.00")
     return cell
   }
 }

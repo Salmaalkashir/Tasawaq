@@ -10,7 +10,6 @@ import UIKit
 class SignInViewController: UIViewController {
   
   //MARK: -IBOutlets
-  @IBOutlet weak var welcome: UILabel!
   @IBOutlet weak var userName: UITextField!
   @IBOutlet weak var password: UITextField!
   @IBOutlet weak var stackView: UIStackView!
@@ -20,8 +19,6 @@ class SignInViewController: UIViewController {
     configureTextField()
   }
   //MARK: -IBActions
-  @IBAction func forgetPassword(_ sender: Any) {
-  }
   @IBAction func signIn(_ sender: Any) {
   }
   @IBAction func signUp(_ sender: Any) {
@@ -33,11 +30,11 @@ class SignInViewController: UIViewController {
 extension SignInViewController: UITextFieldDelegate{
   func configureTextField(){
     userName.delegate = self
-    //UserName.setLeftView(image: UIImage(systemName: "person")!)
-    //UserName.stylingTextField()
+    userName.setLeftView(image: UIImage(systemName: "person")!)
+    userName.stylingTextField()
     
     password.delegate = self
-    // Password.setLeftView(image: UIImage(systemName: "lock")!)
-    //Password.stylingTextField()
+    password.setLeftView(image: UIImage(systemName: "lock")!)
+    password.stylingTextField()
   }
 }

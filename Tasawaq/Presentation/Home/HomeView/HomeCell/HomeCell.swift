@@ -14,8 +14,8 @@ class HomeCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     //MARK: -Configurations
-    func configureCell(image: UIImage){
-      productImage.image = image
+    func configureCell(img: UIImage){
+      image.image = img
     }
 
 }

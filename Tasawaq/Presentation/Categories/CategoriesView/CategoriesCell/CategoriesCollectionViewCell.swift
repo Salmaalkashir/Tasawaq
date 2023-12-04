@@ -1,0 +1,35 @@
+//
+//  CategoriesCollectionViewCell.swift
+//  Tasawaq
+//
+//  Created by Salma on 29/11/2023.
+//
+
+import UIKit
+
+class CategoriesCollectionViewCell: UICollectionViewCell {
+  //MARK: -IBOutlets
+  @IBOutlet weak var cellView: UIView!
+  @IBOutlet weak var productImage: UIImageView!
+  @IBOutlet weak var productName: UILabel!
+  @IBOutlet weak var productPrice: UILabel!
+  @IBOutlet weak var isFavourite: UIButton!
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    configureCellView()
+  }
+  //MARK: -Configurations
+  func configureCell(image: UIImage, name: String, price: String){
+    productName.text = name
+    productPrice.text = price
+    productImage.image = image
+  }
+  func configureCellView(){
+    cellView.layer.cornerRadius = 20
+    cellView.backgroundColor = .white
+    cellView.layer.shadowOffset = CGSize(width: 5, height: 5)
+    cellView.layer.shadowRadius = 5
+    cellView.layer.shadowOpacity = 0.5
+
+  }
+}

@@ -22,6 +22,7 @@
 		389EB8BE2B1D15870044450B /* CartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 389EB8BC2B1D15870044450B /* CartViewController.xib */; };
 		389EB8C22B1D16040044450B /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389EB8C02B1D16040044450B /* CartTableViewCell.swift */; };
 		389EB8C32B1D16040044450B /* CartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 389EB8C12B1D16040044450B /* CartTableViewCell.xib */; };
+		389EB8CC2B1D54DE0044450B /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389EB8CB2B1D54DE0044450B /* CustomTabBarViewController.swift */; };
 		38A49E052B16C35E0003709E /* CategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A49E032B16C35E0003709E /* CategoriesCollectionViewCell.swift */; };
 		38A49E062B16C35E0003709E /* CategoriesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A49E042B16C35E0003709E /* CategoriesCollectionViewCell.xib */; };
 		38C64BA82B1540B300873D8E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C64BA62B1540B300873D8E /* SignUpViewController.swift */; };
@@ -75,6 +76,7 @@
 		389EB8BC2B1D15870044450B /* CartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartViewController.xib; sourceTree = "<group>"; };
 		389EB8C02B1D16040044450B /* CartTableViewCell.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; tabWidth = 2; };
 		389EB8C12B1D16040044450B /* CartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartTableViewCell.xib; sourceTree = "<group>"; };
+		389EB8CB2B1D54DE0044450B /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		38A49E032B16C35E0003709E /* CategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionViewCell.swift; sourceTree = "<group>"; tabWidth = 2; };
 		38A49E042B16C35E0003709E /* CategoriesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesCollectionViewCell.xib; sourceTree = "<group>"; };
 		38C64BA62B1540B300873D8E /* SignUpViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -233,6 +235,7 @@
 		3890766D2B14C5F800204768 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				389EB8C42B1D51200044450B /* CustomTabBar */,
 				3D66D99E2B1E5BC900F84AC5 /* Home */,
 				389EB8B82B1D15530044450B /* Cart */,
 				388FBA052B167FD000247DCB /* Categories */,
@@ -310,6 +313,14 @@
 				389EB8C12B1D16040044450B /* CartTableViewCell.xib */,
 			);
 			path = CartTableViewCell;
+			sourceTree = "<group>";
+		};
+		389EB8C42B1D51200044450B /* CustomTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				389EB8CB2B1D54DE0044450B /* CustomTabBarViewController.swift */,
+			);
+			path = CustomTabBar;
 			sourceTree = "<group>";
 		};
 		38A49E022B16C30D0003709E /* CategoriesCell */ = {
@@ -666,6 +677,7 @@
 				388FBA0B2B16808700247DCB /* CategoriesViewController.swift in Sources */,
 				3D66D9A32B1E5CEA00F84AC5 /* HomeViewController.swift in Sources */,
 				389EB8BD2B1D15870044450B /* CartViewController.swift in Sources */,
+				389EB8CC2B1D54DE0044450B /* CustomTabBarViewController.swift in Sources */,
 				3890763A2B14C55A00204768 /* AppDelegate.swift in Sources */,
 				38C64BA82B1540B300873D8E /* SignUpViewController.swift in Sources */,
 				3890763C2B14C55A00204768 /* SceneDelegate.swift in Sources */,

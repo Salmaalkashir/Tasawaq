@@ -16,7 +16,9 @@ class CategoriesViewController: UIViewController {
     super.viewDidLoad()
     configureCollectionView()
     configureSegmentControl()
-    
+  }
+  override func viewWillAppear(_ animated: Bool) {
+    navigationController?.setNavigationBarHidden(true, animated: animated)
   }
   
   func configureCollectionView(){
@@ -26,7 +28,6 @@ class CategoriesViewController: UIViewController {
     productsCollectionView.register(nib1, forCellWithReuseIdentifier: "categoriesCell")
     productsCollectionView.layer.masksToBounds = true
     productsCollectionView.layer.cornerRadius = 20
-    
   }
   
   func configureSegmentControl(){
@@ -58,12 +59,11 @@ extension CategoriesViewController: UICollectionViewDelegate{
 extension CategoriesViewController : UICollectionViewDelegateFlowLayout{
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
     let screenWidth = UIScreen.main.bounds.width
-            let screenHeight = UIScreen.main.bounds.height
-            let itemWidth = screenWidth / 2 - 20
+    let screenHeight = UIScreen.main.bounds.height
+    let itemWidth = screenWidth / 2 - 20
     let itemHeight = itemWidth * (1.4)
-            
-           return CGSize(width:itemWidth , height: itemHeight )
-   // return CGSize(width: ((self.view.frame.width)/2-30), height: ((self.view.frame.height)/4+60))
+    
+    return CGSize(width:itemWidth , height: itemHeight )
   }
 }
 

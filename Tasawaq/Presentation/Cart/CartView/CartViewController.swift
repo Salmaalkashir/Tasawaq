@@ -15,15 +15,18 @@ class CartViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     configureTableView()
-    
   }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    navigationController?.setNavigationBarHidden(true, animated: animated)
+  }
+  
   func configureTableView(){
     cartTableView.dataSource = self
     cartTableView.delegate = self
     let nib1 = UINib(nibName: "CartTableViewCell", bundle: nil)
     cartTableView.register(nib1, forCellReuseIdentifier: "cartCell")
   }
-  
 }
 //MARK: -IBActions
 private extension CartViewController{

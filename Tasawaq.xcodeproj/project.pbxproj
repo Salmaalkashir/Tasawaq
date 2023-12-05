@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3876E4CB2B1F53FD00E9A4D3 /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3876E4C92B1F53FD00E9A4D3 /* WishListViewController.swift */; };
+		3876E4CC2B1F53FD00E9A4D3 /* WishListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3876E4CA2B1F53FD00E9A4D3 /* WishListViewController.xib */; };
 		388FBA0B2B16808700247DCB /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388FBA092B16808700247DCB /* CategoriesViewController.swift */; };
 		388FBA0C2B16808700247DCB /* CategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 388FBA0A2B16808700247DCB /* CategoriesViewController.xib */; };
 		3890763A2B14C55A00204768 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389076392B14C55A00204768 /* AppDelegate.swift */; };
@@ -23,8 +25,8 @@
 		389EB8C22B1D16040044450B /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389EB8C02B1D16040044450B /* CartTableViewCell.swift */; };
 		389EB8C32B1D16040044450B /* CartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 389EB8C12B1D16040044450B /* CartTableViewCell.xib */; };
 		389EB8CC2B1D54DE0044450B /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389EB8CB2B1D54DE0044450B /* CustomTabBarViewController.swift */; };
-		38A49E052B16C35E0003709E /* CategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A49E032B16C35E0003709E /* CategoriesCollectionViewCell.swift */; };
-		38A49E062B16C35E0003709E /* CategoriesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A49E042B16C35E0003709E /* CategoriesCollectionViewCell.xib */; };
+		38A49E052B16C35E0003709E /* DetailedProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A49E032B16C35E0003709E /* DetailedProductCollectionViewCell.swift */; };
+		38A49E062B16C35E0003709E /* DetailedProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A49E042B16C35E0003709E /* DetailedProductCollectionViewCell.xib */; };
 		38C64BA82B1540B300873D8E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C64BA62B1540B300873D8E /* SignUpViewController.swift */; };
 		38C64BA92B1540B300873D8E /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38C64BA72B1540B300873D8E /* SignUpViewController.xib */; };
 		38C64BAC2B1543C400873D8E /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C64BAB2B1543C400873D8E /* UITextField.swift */; };
@@ -57,6 +59,8 @@
 /* Begin PBXFileReference section */
 		0805E1C05E8F32854D5D2749 /* Pods_Tasawaq_TasawaqUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tasawaq_TasawaqUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1736ACCCC87FDDDDFE0B4B52 /* Pods-TasawaqTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TasawaqTests.debug.xcconfig"; path = "Target Support Files/Pods-TasawaqTests/Pods-TasawaqTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3876E4C92B1F53FD00E9A4D3 /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
+		3876E4CA2B1F53FD00E9A4D3 /* WishListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishListViewController.xib; sourceTree = "<group>"; };
 		388FBA092B16808700247DCB /* CategoriesViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		388FBA0A2B16808700247DCB /* CategoriesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesViewController.xib; sourceTree = "<group>"; };
 		389076362B14C55A00204768 /* Tasawaq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tasawaq.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,8 +81,8 @@
 		389EB8C02B1D16040044450B /* CartTableViewCell.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; tabWidth = 2; };
 		389EB8C12B1D16040044450B /* CartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartTableViewCell.xib; sourceTree = "<group>"; };
 		389EB8CB2B1D54DE0044450B /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
-		38A49E032B16C35E0003709E /* CategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionViewCell.swift; sourceTree = "<group>"; tabWidth = 2; };
-		38A49E042B16C35E0003709E /* CategoriesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesCollectionViewCell.xib; sourceTree = "<group>"; };
+		38A49E032B16C35E0003709E /* DetailedProductCollectionViewCell.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = DetailedProductCollectionViewCell.swift; sourceTree = "<group>"; tabWidth = 2; };
+		38A49E042B16C35E0003709E /* DetailedProductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailedProductCollectionViewCell.xib; sourceTree = "<group>"; };
 		38C64BA62B1540B300873D8E /* SignUpViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		38C64BA72B1540B300873D8E /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		38C64BAB2B1543C400873D8E /* UITextField.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -123,6 +127,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3876E4BB2B1F4BC400E9A4D3 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				38A49E022B16C30D0003709E /* DetailedProductCell */,
+				389EB8BF2B1D158C0044450B /* CartTableViewCell */,
+				3D66D9A52B1E5D8300F84AC5 /* HomeCell */,
+			);
+			path = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		3876E4BC2B1F523D00E9A4D3 /* WishList */ = {
+			isa = PBXGroup;
+			children = (
+				3876E4C82B1F53E400E9A4D3 /* WishListView */,
+				3876E4C22B1F526F00E9A4D3 /* WishListViewModel */,
+			);
+			path = WishList;
+			sourceTree = "<group>";
+		};
+		3876E4C22B1F526F00E9A4D3 /* WishListViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WishListViewModel;
+			sourceTree = "<group>";
+		};
+		3876E4C82B1F53E400E9A4D3 /* WishListView */ = {
+			isa = PBXGroup;
+			children = (
+				3876E4C92B1F53FD00E9A4D3 /* WishListViewController.swift */,
+				3876E4CA2B1F53FD00E9A4D3 /* WishListViewController.xib */,
+			);
+			path = WishListView;
+			sourceTree = "<group>";
+		};
 		388FBA052B167FD000247DCB /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,7 +183,6 @@
 			children = (
 				388FBA092B16808700247DCB /* CategoriesViewController.swift */,
 				388FBA0A2B16808700247DCB /* CategoriesViewController.xib */,
-				38A49E022B16C30D0003709E /* CategoriesCell */,
 			);
 			path = CategoriesView;
 			sourceTree = "<group>";
@@ -235,6 +273,8 @@
 		3890766D2B14C5F800204768 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				3876E4BC2B1F523D00E9A4D3 /* WishList */,
+				3876E4BB2B1F4BC400E9A4D3 /* Custom Cells */,
 				389EB8C42B1D51200044450B /* CustomTabBar */,
 				3D66D99E2B1E5BC900F84AC5 /* Home */,
 				389EB8B82B1D15530044450B /* Cart */,
@@ -301,7 +341,6 @@
 			children = (
 				389EB8BB2B1D15870044450B /* CartViewController.swift */,
 				389EB8BC2B1D15870044450B /* CartViewController.xib */,
-				389EB8BF2B1D158C0044450B /* CartTableViewCell */,
 			);
 			path = CartView;
 			sourceTree = "<group>";
@@ -323,13 +362,13 @@
 			path = CustomTabBar;
 			sourceTree = "<group>";
 		};
-		38A49E022B16C30D0003709E /* CategoriesCell */ = {
+		38A49E022B16C30D0003709E /* DetailedProductCell */ = {
 			isa = PBXGroup;
 			children = (
-				38A49E032B16C35E0003709E /* CategoriesCollectionViewCell.swift */,
-				38A49E042B16C35E0003709E /* CategoriesCollectionViewCell.xib */,
+				38A49E032B16C35E0003709E /* DetailedProductCollectionViewCell.swift */,
+				38A49E042B16C35E0003709E /* DetailedProductCollectionViewCell.xib */,
 			);
-			path = CategoriesCell;
+			path = DetailedProductCell;
 			sourceTree = "<group>";
 		};
 		38C64BA32B15404E00873D8E /* SignUp */ = {
@@ -384,7 +423,6 @@
 		3D66D9A02B1E5C6500F84AC5 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
-				3D66D9A52B1E5D8300F84AC5 /* HomeCell */,
 				3D66D9A12B1E5CEA00F84AC5 /* HomeViewController.swift */,
 				3D66D9A22B1E5CEA00F84AC5 /* HomeViewController.xib */,
 			);
@@ -534,13 +572,14 @@
 			files = (
 				389076722B14C75E00204768 /* SignInViewController.xib in Resources */,
 				389076462B14C56A00204768 /* LaunchScreen.storyboard in Resources */,
-				38A49E062B16C35E0003709E /* CategoriesCollectionViewCell.xib in Resources */,
+				38A49E062B16C35E0003709E /* DetailedProductCollectionViewCell.xib in Resources */,
 				389EB8C32B1D16040044450B /* CartTableViewCell.xib in Resources */,
 				3D66D9AB2B1E6C2500F84AC5 /* HomeCell.xib in Resources */,
 				388FBA0C2B16808700247DCB /* CategoriesViewController.xib in Resources */,
 				38C64BA92B1540B300873D8E /* SignUpViewController.xib in Resources */,
 				389EB8BE2B1D15870044450B /* CartViewController.xib in Resources */,
 				389076432B14C56A00204768 /* Assets.xcassets in Resources */,
+				3876E4CC2B1F53FD00E9A4D3 /* WishListViewController.xib in Resources */,
 				3D66D9A42B1E5CEA00F84AC5 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -670,7 +709,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				389076712B14C75E00204768 /* SignInViewController.swift in Sources */,
-				38A49E052B16C35E0003709E /* CategoriesCollectionViewCell.swift in Sources */,
+				38A49E052B16C35E0003709E /* DetailedProductCollectionViewCell.swift in Sources */,
 				38C64BAC2B1543C400873D8E /* UITextField.swift in Sources */,
 				3D66D9AA2B1E6C2500F84AC5 /* HomeCell.swift in Sources */,
 				389EB8C22B1D16040044450B /* CartTableViewCell.swift in Sources */,
@@ -680,6 +719,7 @@
 				389EB8CC2B1D54DE0044450B /* CustomTabBarViewController.swift in Sources */,
 				3890763A2B14C55A00204768 /* AppDelegate.swift in Sources */,
 				38C64BA82B1540B300873D8E /* SignUpViewController.swift in Sources */,
+				3876E4CB2B1F53FD00E9A4D3 /* WishListViewController.swift in Sources */,
 				3890763C2B14C55A00204768 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

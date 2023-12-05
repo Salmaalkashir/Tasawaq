@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="categoriesCell" id="gTV-IL-0wX" customClass="CategoriesCollectionViewCell" customModule="Tasawaq" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="detailedProductCell" id="gTV-IL-0wX" customClass="DetailedProductCollectionViewCell" customModule="Tasawaq" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="220" height="230"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -80,11 +80,10 @@
             </constraints>
             <size key="customSize" width="219" height="201"/>
             <connections>
-                <outlet property="cellView" destination="neE-ef-WWs" id="Adq-Wh-CzF"/>
-                <outlet property="isFavourite" destination="Hv0-p6-ZyT" id="C4m-JS-pWC"/>
-                <outlet property="productImage" destination="Moa-qM-0BZ" id="ERB-tx-xuG"/>
-                <outlet property="productName" destination="zN4-h9-0YP" id="umU-ft-T8L"/>
-                <outlet property="productPrice" destination="Oyk-me-cjA" id="oJu-qR-m8P"/>
+                <outlet property="cellView" destination="neE-ef-WWs" id="ElN-Aw-J33"/>
+                <outlet property="productImage" destination="Moa-qM-0BZ" id="XN7-N5-8dc"/>
+                <outlet property="productName" destination="zN4-h9-0YP" id="wB5-q7-1eS"/>
+                <outlet property="productPrice" destination="Oyk-me-cjA" id="Qwh-da-DTn"/>
             </connections>
             <point key="canvasLocation" x="54.961832061068698" y="-45.070422535211272"/>
         </collectionViewCell>

@@ -24,8 +24,8 @@ class CategoriesViewController: UIViewController {
   func configureCollectionView(){
     productsCollectionView.dataSource = self
     productsCollectionView.delegate = self
-    let nib1 = UINib(nibName: "CategoriesCollectionViewCell", bundle: nil)
-    productsCollectionView.register(nib1, forCellWithReuseIdentifier: "categoriesCell")
+    let nib1 = UINib(nibName: "DetailedProductCollectionViewCell", bundle: nil)
+    productsCollectionView.register(nib1, forCellWithReuseIdentifier: "detailedProductCell")
     productsCollectionView.layer.masksToBounds = true
     productsCollectionView.layer.cornerRadius = 20
   }
@@ -45,7 +45,7 @@ extension CategoriesViewController: UICollectionViewDataSource{
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoriesCell", for: indexPath) as! CategoriesCollectionViewCell
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "detailedProductCell", for: indexPath) as! DetailedProductCollectionViewCell
     cell.configureCell(image: UIImage(named: "adidas") ?? UIImage(), name: "ADIDAS | CLASSIC BACKPACK ", price: "USD 70.00")
     return cell
   }

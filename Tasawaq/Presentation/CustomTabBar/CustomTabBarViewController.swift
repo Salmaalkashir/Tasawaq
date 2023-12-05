@@ -18,10 +18,10 @@ class CustomTabBarViewController: UITabBarController {
   func setupTabBar(){
     let categories = templateNavController(rootViewController: CategoriesViewController(), image: UIImage(systemName: "circle.grid.2x2") ?? UIImage())
     let cart = templateNavController(rootViewController: CartViewController(), image: UIImage(systemName: "cart") ?? UIImage())
-   /* let wishlist = templateNavController(rootViewController: WishListViewController(), image: UIImage(systemName: "heart") ?? UIImage())
-    let me = templateNavController(rootViewController: UserViewController(), image: UIImage(systemName: "person") ?? UIImage())
-    let home = templateNavController(rootViewController: HomeViewController(), image: UIImage(systemName: "home") ?? UIImage())*/
-    viewControllers = [categories,cart]
+   // let wishlist = templateNavController(rootViewController: WishListViewController(), image: UIImage(systemName: "heart") ?? UIImage())
+    //let me = templateNavController(rootViewController: UserViewController(), image: UIImage(systemName: "person") ?? UIImage())
+    let home = templateNavController(rootViewController: HomeViewController(), image: UIImage(systemName: "house") ?? UIImage())
+    viewControllers = [home,categories,cart]
     tabBar.tintColor = UIColor(named: "Custom Color")
     tabBar.barTintColor = .white
     tabBar.isTranslucent = true

@@ -30,6 +30,5 @@ class DetailedProductCollectionViewCell: UICollectionViewCell {
     cellView.layer.shadowOffset = CGSize(width: 5, height: 5)
     cellView.layer.shadowRadius = 5
     cellView.layer.shadowOpacity = 0.5
-
   }
 }

@@ -41,6 +41,14 @@ private extension OrderDetailsViewController{
   }
 
   @IBAction func continuePayment(_ sender: UIButton){
+    let paymentobj = PaymentMethodsViewController()
+    if let sheet = paymentobj.sheetPresentationController{
+      sheet.detents = [.medium()]
+      sheet.preferredCornerRadius = 25
+      sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+    }
+   // paymentobj.modalPresentationStyle = .pageSheet
+    self.present(paymentobj, animated: true)
   }
 }
 //MARK: - UITableViewDelegate, UITableViewDataSource

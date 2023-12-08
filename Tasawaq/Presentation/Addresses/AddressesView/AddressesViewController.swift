@@ -26,6 +26,7 @@ class AddressesViewController: UIViewController {
 //MARK: -IBActions
 private extension AddressesViewController{
   @IBAction func addNewAddress(_ sender: UIButton){
+    self.navigationController?.pushViewController(LocationViewController(), animated: true)
   }
 }
 //MARK: -UITableViewDelegate,UITableViewDataSource

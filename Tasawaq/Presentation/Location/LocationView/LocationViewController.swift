@@ -25,6 +25,9 @@ class LocationViewController: UIViewController {
     checkLocationService()
     
   }
+  override func viewWillAppear(_ animated: Bool) {
+    navigationController?.navigationBar.backgroundColor = .clear
+  }
   
   func configureView(){
     viewww.layer.cornerRadius = 20

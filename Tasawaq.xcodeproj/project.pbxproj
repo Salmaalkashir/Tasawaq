@@ -19,6 +19,8 @@
 		3889CD852B1FCCB60018CC48 /* OrderListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3889CD832B1FCCB60018CC48 /* OrderListTableViewCell.xib */; };
 		3889CD882B1FCCD20018CC48 /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3889CD862B1FCCD20018CC48 /* AddressTableViewCell.swift */; };
 		3889CD892B1FCCD20018CC48 /* AddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3889CD872B1FCCD20018CC48 /* AddressTableViewCell.xib */; };
+		388CCB3F2B212AC2001BDAE3 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388CCB3D2B212AC2001BDAE3 /* LocationViewController.swift */; };
+		388CCB402B212AC2001BDAE3 /* LocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 388CCB3E2B212AC2001BDAE3 /* LocationViewController.xib */; };
 		388FBA0B2B16808700247DCB /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388FBA092B16808700247DCB /* CategoriesViewController.swift */; };
 		388FBA0C2B16808700247DCB /* CategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 388FBA0A2B16808700247DCB /* CategoriesViewController.xib */; };
 		3890763A2B14C55A00204768 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389076392B14C55A00204768 /* AppDelegate.swift */; };
@@ -42,6 +44,7 @@
 		38C64BA82B1540B300873D8E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C64BA62B1540B300873D8E /* SignUpViewController.swift */; };
 		38C64BA92B1540B300873D8E /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38C64BA72B1540B300873D8E /* SignUpViewController.xib */; };
 		38C64BAC2B1543C400873D8E /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C64BAB2B1543C400873D8E /* UITextField.swift */; };
+		38EC006D2B22672F0076B730 /* AddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EC006C2B22672F0076B730 /* AddressViewModel.swift */; };
 		3D66D9A32B1E5CEA00F84AC5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D66D9A12B1E5CEA00F84AC5 /* HomeViewController.swift */; };
 		3D66D9A42B1E5CEA00F84AC5 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D66D9A22B1E5CEA00F84AC5 /* HomeViewController.xib */; };
 		3D66D9AA2B1E6C2500F84AC5 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D66D9A82B1E6C2500F84AC5 /* HomeCell.swift */; };
@@ -71,7 +74,7 @@
 /* Begin PBXFileReference section */
 		0805E1C05E8F32854D5D2749 /* Pods_Tasawaq_TasawaqUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tasawaq_TasawaqUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1736ACCCC87FDDDDFE0B4B52 /* Pods-TasawaqTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TasawaqTests.debug.xcconfig"; path = "Target Support Files/Pods-TasawaqTests/Pods-TasawaqTests.debug.xcconfig"; sourceTree = "<group>"; };
-		3876E4C92B1F53FD00E9A4D3 /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
+		3876E4C92B1F53FD00E9A4D3 /* WishListViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		3876E4CA2B1F53FD00E9A4D3 /* WishListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishListViewController.xib; sourceTree = "<group>"; };
 		3876E4D02B1F581900E9A4D3 /* UserViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		3876E4D12B1F581900E9A4D3 /* UserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserViewController.xib; sourceTree = "<group>"; };
@@ -83,6 +86,8 @@
 		3889CD832B1FCCB60018CC48 /* OrderListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderListTableViewCell.xib; sourceTree = "<group>"; };
 		3889CD862B1FCCD20018CC48 /* AddressTableViewCell.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; tabWidth = 2; };
 		3889CD872B1FCCD20018CC48 /* AddressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressTableViewCell.xib; sourceTree = "<group>"; };
+		388CCB3D2B212AC2001BDAE3 /* LocationViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
+		388CCB3E2B212AC2001BDAE3 /* LocationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationViewController.xib; sourceTree = "<group>"; };
 		388FBA092B16808700247DCB /* CategoriesViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		388FBA0A2B16808700247DCB /* CategoriesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesViewController.xib; sourceTree = "<group>"; };
 		389076362B14C55A00204768 /* Tasawaq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tasawaq.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +115,7 @@
 		38C64BA62B1540B300873D8E /* SignUpViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		38C64BA72B1540B300873D8E /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		38C64BAB2B1543C400873D8E /* UITextField.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; tabWidth = 2; };
+		38EC006C2B22672F0076B730 /* AddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewModel.swift; sourceTree = "<group>"; };
 		3D66D9A12B1E5CEA00F84AC5 /* HomeViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		3D66D9A22B1E5CEA00F84AC5 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		3D66D9A82B1E6C2500F84AC5 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
@@ -282,6 +288,32 @@
 			path = AddressTableViewCell;
 			sourceTree = "<group>";
 		};
+		388CCB3A2B212A81001BDAE3 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				388CCB3C2B212AA1001BDAE3 /* LocationView */,
+				388CCB3B2B212A93001BDAE3 /* LocationViewModel */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		388CCB3B2B212A93001BDAE3 /* LocationViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				38EC006C2B22672F0076B730 /* AddressViewModel.swift */,
+			);
+			path = LocationViewModel;
+			sourceTree = "<group>";
+		};
+		388CCB3C2B212AA1001BDAE3 /* LocationView */ = {
+			isa = PBXGroup;
+			children = (
+				388CCB3D2B212AC2001BDAE3 /* LocationViewController.swift */,
+				388CCB3E2B212AC2001BDAE3 /* LocationViewController.xib */,
+			);
+			path = LocationView;
+			sourceTree = "<group>";
+		};
 		388FBA052B167FD000247DCB /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,6 +425,7 @@
 		3890766D2B14C5F800204768 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				388CCB3A2B212A81001BDAE3 /* Location */,
 				3882E5F72B20B5820065DFF7 /* PaymentMethods */,
 				3876E4DF2B1F73CF00E9A4D3 /* OrderDetails */,
 				3876E4CD2B1F57DA00E9A4D3 /* User */,
@@ -715,6 +748,7 @@
 				3D66D9AB2B1E6C2500F84AC5 /* HomeCell.xib in Resources */,
 				388FBA0C2B16808700247DCB /* CategoriesViewController.xib in Resources */,
 				38C64BA92B1540B300873D8E /* SignUpViewController.xib in Resources */,
+				388CCB402B212AC2001BDAE3 /* LocationViewController.xib in Resources */,
 				389EB8BE2B1D15870044450B /* CartViewController.xib in Resources */,
 				389076432B14C56A00204768 /* Assets.xcassets in Resources */,
 				3876E4CC2B1F53FD00E9A4D3 /* WishListViewController.xib in Resources */,
@@ -849,6 +883,7 @@
 				389076712B14C75E00204768 /* SignInViewController.swift in Sources */,
 				38A49E052B16C35E0003709E /* DetailedProductCollectionViewCell.swift in Sources */,
 				3876E4DC2B1F6AB200E9A4D3 /* UserOrdersTableViewCell.swift in Sources */,
+				388CCB3F2B212AC2001BDAE3 /* LocationViewController.swift in Sources */,
 				38C64BAC2B1543C400873D8E /* UITextField.swift in Sources */,
 				3D66D9AA2B1E6C2500F84AC5 /* HomeCell.swift in Sources */,
 				389EB8C22B1D16040044450B /* CartTableViewCell.swift in Sources */,
@@ -859,6 +894,7 @@
 				3889CD842B1FCCB60018CC48 /* OrderListTableViewCell.swift in Sources */,
 				3876E4D22B1F581900E9A4D3 /* UserViewController.swift in Sources */,
 				389EB8BD2B1D15870044450B /* CartViewController.swift in Sources */,
+				38EC006D2B22672F0076B730 /* AddressViewModel.swift in Sources */,
 				389EB8CC2B1D54DE0044450B /* CustomTabBarViewController.swift in Sources */,
 				3882E5FC2B20B5CC0065DFF7 /* PaymentMethodsViewController.swift in Sources */,
 				3890763A2B14C55A00204768 /* AppDelegate.swift in Sources */,

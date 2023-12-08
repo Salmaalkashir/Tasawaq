@@ -81,10 +81,9 @@ extension UserViewController: UICollectionViewDelegate,UICollectionViewDataSourc
 extension UserViewController: UICollectionViewDelegateFlowLayout{
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
     let screenWidth = UIScreen.main.bounds.width
-    let screenHeight = UIScreen.main.bounds.height
     let itemWidth = screenWidth / 2 - 20
-    let itemHeight = itemWidth * (1.4)
+    let itemHeight = itemWidth * (1.3)
     
-    return CGSize(width:itemWidth , height: itemHeight )
+    return CGSize(width:itemWidth , height: itemHeight)
   }
 }

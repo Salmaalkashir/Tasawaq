@@ -17,10 +17,14 @@
 		3882E5FD2B20B5CC0065DFF7 /* PaymentMethodsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3882E5FB2B20B5CC0065DFF7 /* PaymentMethodsViewController.xib */; };
 		3889CD842B1FCCB60018CC48 /* OrderListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3889CD822B1FCCB60018CC48 /* OrderListTableViewCell.swift */; };
 		3889CD852B1FCCB60018CC48 /* OrderListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3889CD832B1FCCB60018CC48 /* OrderListTableViewCell.xib */; };
-		3889CD882B1FCCD20018CC48 /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3889CD862B1FCCD20018CC48 /* AddressTableViewCell.swift */; };
-		3889CD892B1FCCD20018CC48 /* AddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3889CD872B1FCCD20018CC48 /* AddressTableViewCell.xib */; };
+		3889CD882B1FCCD20018CC48 /* ShippingAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3889CD862B1FCCD20018CC48 /* ShippingAddressTableViewCell.swift */; };
+		3889CD892B1FCCD20018CC48 /* ShippingAddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3889CD872B1FCCD20018CC48 /* ShippingAddressTableViewCell.xib */; };
 		388CCB3F2B212AC2001BDAE3 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388CCB3D2B212AC2001BDAE3 /* LocationViewController.swift */; };
 		388CCB402B212AC2001BDAE3 /* LocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 388CCB3E2B212AC2001BDAE3 /* LocationViewController.xib */; };
+		388DC7832B237E9600C6FB8C /* AddressesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388DC7812B237E9600C6FB8C /* AddressesViewController.swift */; };
+		388DC7842B237E9600C6FB8C /* AddressesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 388DC7822B237E9600C6FB8C /* AddressesViewController.xib */; };
+		388DC7882B2381AF00C6FB8C /* AddressesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388DC7862B2381AF00C6FB8C /* AddressesTableViewCell.swift */; };
+		388DC7892B2381AF00C6FB8C /* AddressesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 388DC7872B2381AF00C6FB8C /* AddressesTableViewCell.xib */; };
 		388FBA0B2B16808700247DCB /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388FBA092B16808700247DCB /* CategoriesViewController.swift */; };
 		388FBA0C2B16808700247DCB /* CategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 388FBA0A2B16808700247DCB /* CategoriesViewController.xib */; };
 		3890763A2B14C55A00204768 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389076392B14C55A00204768 /* AppDelegate.swift */; };
@@ -44,7 +48,7 @@
 		38C64BA82B1540B300873D8E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C64BA62B1540B300873D8E /* SignUpViewController.swift */; };
 		38C64BA92B1540B300873D8E /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38C64BA72B1540B300873D8E /* SignUpViewController.xib */; };
 		38C64BAC2B1543C400873D8E /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C64BAB2B1543C400873D8E /* UITextField.swift */; };
-		38EC006D2B22672F0076B730 /* AddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EC006C2B22672F0076B730 /* AddressViewModel.swift */; };
+		38EC006D2B22672F0076B730 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EC006C2B22672F0076B730 /* LocationViewModel.swift */; };
 		3D66D9A32B1E5CEA00F84AC5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D66D9A12B1E5CEA00F84AC5 /* HomeViewController.swift */; };
 		3D66D9A42B1E5CEA00F84AC5 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D66D9A22B1E5CEA00F84AC5 /* HomeViewController.xib */; };
 		3D66D9AA2B1E6C2500F84AC5 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D66D9A82B1E6C2500F84AC5 /* HomeCell.swift */; };
@@ -80,14 +84,18 @@
 		3876E4D12B1F581900E9A4D3 /* UserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserViewController.xib; sourceTree = "<group>"; };
 		3876E4DA2B1F6AB200E9A4D3 /* UserOrdersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOrdersTableViewCell.swift; sourceTree = "<group>"; };
 		3876E4DB2B1F6AB200E9A4D3 /* UserOrdersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserOrdersTableViewCell.xib; sourceTree = "<group>"; };
-		3882E5FA2B20B5CC0065DFF7 /* PaymentMethodsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodsViewController.swift; sourceTree = "<group>"; };
+		3882E5FA2B20B5CC0065DFF7 /* PaymentMethodsViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = PaymentMethodsViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		3882E5FB2B20B5CC0065DFF7 /* PaymentMethodsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentMethodsViewController.xib; sourceTree = "<group>"; };
 		3889CD822B1FCCB60018CC48 /* OrderListTableViewCell.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = OrderListTableViewCell.swift; sourceTree = "<group>"; tabWidth = 2; };
 		3889CD832B1FCCB60018CC48 /* OrderListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderListTableViewCell.xib; sourceTree = "<group>"; };
-		3889CD862B1FCCD20018CC48 /* AddressTableViewCell.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; tabWidth = 2; };
-		3889CD872B1FCCD20018CC48 /* AddressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressTableViewCell.xib; sourceTree = "<group>"; };
+		3889CD862B1FCCD20018CC48 /* ShippingAddressTableViewCell.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ShippingAddressTableViewCell.swift; sourceTree = "<group>"; tabWidth = 2; };
+		3889CD872B1FCCD20018CC48 /* ShippingAddressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShippingAddressTableViewCell.xib; sourceTree = "<group>"; };
 		388CCB3D2B212AC2001BDAE3 /* LocationViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		388CCB3E2B212AC2001BDAE3 /* LocationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationViewController.xib; sourceTree = "<group>"; };
+		388DC7812B237E9600C6FB8C /* AddressesViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AddressesViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
+		388DC7822B237E9600C6FB8C /* AddressesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressesViewController.xib; sourceTree = "<group>"; };
+		388DC7862B2381AF00C6FB8C /* AddressesTableViewCell.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AddressesTableViewCell.swift; sourceTree = "<group>"; tabWidth = 2; };
+		388DC7872B2381AF00C6FB8C /* AddressesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressesTableViewCell.xib; sourceTree = "<group>"; };
 		388FBA092B16808700247DCB /* CategoriesViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		388FBA0A2B16808700247DCB /* CategoriesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesViewController.xib; sourceTree = "<group>"; };
 		389076362B14C55A00204768 /* Tasawaq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tasawaq.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,7 +123,7 @@
 		38C64BA62B1540B300873D8E /* SignUpViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		38C64BA72B1540B300873D8E /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		38C64BAB2B1543C400873D8E /* UITextField.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; tabWidth = 2; };
-		38EC006C2B22672F0076B730 /* AddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewModel.swift; sourceTree = "<group>"; };
+		38EC006C2B22672F0076B730 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		3D66D9A12B1E5CEA00F84AC5 /* HomeViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		3D66D9A22B1E5CEA00F84AC5 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		3D66D9A82B1E6C2500F84AC5 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
@@ -157,24 +165,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3876E4BB2B1F4BC400E9A4D3 /* CustomCells */ = {
-			isa = PBXGroup;
-			children = (
-				3889CD812B1FCC8C0018CC48 /* AddressTableViewCell */,
-				3889CD802B1FCC630018CC48 /* OrderListTableViewCell */,
-				3876E4DE2B1F6D0A00E9A4D3 /* UserOrdersCollectionViewCell */,
-				38A49E022B16C30D0003709E /* DetailedProductCollectionViewCell */,
-				389EB8BF2B1D158C0044450B /* CartTableViewCell */,
-				3D66D9A52B1E5D8300F84AC5 /* HomeCell */,
-			);
-			path = CustomCells;
-			sourceTree = "<group>";
-		};
 		3876E4BC2B1F523D00E9A4D3 /* WishList */ = {
 			isa = PBXGroup;
 			children = (
-				3876E4C82B1F53E400E9A4D3 /* WishListView */,
 				3876E4C22B1F526F00E9A4D3 /* WishListViewModel */,
+				3876E4C82B1F53E400E9A4D3 /* WishListView */,
 			);
 			path = WishList;
 			sourceTree = "<group>";
@@ -198,8 +193,8 @@
 		3876E4CD2B1F57DA00E9A4D3 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				3876E4CE2B1F57E300E9A4D3 /* UserView */,
 				3876E4CF2B1F57F700E9A4D3 /* UserViewModel */,
+				3876E4CE2B1F57E300E9A4D3 /* UserView */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -209,6 +204,7 @@
 			children = (
 				3876E4D02B1F581900E9A4D3 /* UserViewController.swift */,
 				3876E4D12B1F581900E9A4D3 /* UserViewController.xib */,
+				3876E4DE2B1F6D0A00E9A4D3 /* UserOrdersCollectionViewCell */,
 			);
 			path = UserView;
 			sourceTree = "<group>";
@@ -279,20 +275,20 @@
 			path = OrderListTableViewCell;
 			sourceTree = "<group>";
 		};
-		3889CD812B1FCC8C0018CC48 /* AddressTableViewCell */ = {
+		3889CD812B1FCC8C0018CC48 /* ShippingAddressTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				3889CD862B1FCCD20018CC48 /* AddressTableViewCell.swift */,
-				3889CD872B1FCCD20018CC48 /* AddressTableViewCell.xib */,
+				3889CD862B1FCCD20018CC48 /* ShippingAddressTableViewCell.swift */,
+				3889CD872B1FCCD20018CC48 /* ShippingAddressTableViewCell.xib */,
 			);
-			path = AddressTableViewCell;
+			path = ShippingAddressTableViewCell;
 			sourceTree = "<group>";
 		};
 		388CCB3A2B212A81001BDAE3 /* Location */ = {
 			isa = PBXGroup;
 			children = (
-				388CCB3C2B212AA1001BDAE3 /* LocationView */,
 				388CCB3B2B212A93001BDAE3 /* LocationViewModel */,
+				388CCB3C2B212AA1001BDAE3 /* LocationView */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -300,7 +296,7 @@
 		388CCB3B2B212A93001BDAE3 /* LocationViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				38EC006C2B22672F0076B730 /* AddressViewModel.swift */,
+				38EC006C2B22672F0076B730 /* LocationViewModel.swift */,
 			);
 			path = LocationViewModel;
 			sourceTree = "<group>";
@@ -312,6 +308,41 @@
 				388CCB3E2B212AC2001BDAE3 /* LocationViewController.xib */,
 			);
 			path = LocationView;
+			sourceTree = "<group>";
+		};
+		388DC77E2B237E3D00C6FB8C /* Addresses */ = {
+			isa = PBXGroup;
+			children = (
+				388DC7802B237E6700C6FB8C /* AddressesViewModel */,
+				388DC77F2B237E5E00C6FB8C /* AddressesView */,
+			);
+			path = Addresses;
+			sourceTree = "<group>";
+		};
+		388DC77F2B237E5E00C6FB8C /* AddressesView */ = {
+			isa = PBXGroup;
+			children = (
+				388DC7812B237E9600C6FB8C /* AddressesViewController.swift */,
+				388DC7822B237E9600C6FB8C /* AddressesViewController.xib */,
+				388DC7852B23818900C6FB8C /* AddressesTableViewCell */,
+			);
+			path = AddressesView;
+			sourceTree = "<group>";
+		};
+		388DC7802B237E6700C6FB8C /* AddressesViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AddressesViewModel;
+			sourceTree = "<group>";
+		};
+		388DC7852B23818900C6FB8C /* AddressesTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				388DC7862B2381AF00C6FB8C /* AddressesTableViewCell.swift */,
+				388DC7872B2381AF00C6FB8C /* AddressesTableViewCell.xib */,
+			);
+			path = AddressesTableViewCell;
 			sourceTree = "<group>";
 		};
 		388FBA052B167FD000247DCB /* Categories */ = {
@@ -335,6 +366,7 @@
 			children = (
 				388FBA092B16808700247DCB /* CategoriesViewController.swift */,
 				388FBA0A2B16808700247DCB /* CategoriesViewController.xib */,
+				38A49E022B16C30D0003709E /* DetailedProductCollectionViewCell */,
 			);
 			path = CategoriesView;
 			sourceTree = "<group>";
@@ -425,12 +457,12 @@
 		3890766D2B14C5F800204768 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				388DC77E2B237E3D00C6FB8C /* Addresses */,
 				388CCB3A2B212A81001BDAE3 /* Location */,
 				3882E5F72B20B5820065DFF7 /* PaymentMethods */,
 				3876E4DF2B1F73CF00E9A4D3 /* OrderDetails */,
 				3876E4CD2B1F57DA00E9A4D3 /* User */,
 				3876E4BC2B1F523D00E9A4D3 /* WishList */,
-				3876E4BB2B1F4BC400E9A4D3 /* CustomCells */,
 				389EB8C42B1D51200044450B /* CustomTabBar */,
 				3D66D99E2B1E5BC900F84AC5 /* Home */,
 				389EB8B82B1D15530044450B /* Cart */,
@@ -497,6 +529,7 @@
 			children = (
 				389EB8BB2B1D15870044450B /* CartViewController.swift */,
 				389EB8BC2B1D15870044450B /* CartViewController.xib */,
+				389EB8BF2B1D158C0044450B /* CartTableViewCell */,
 			);
 			path = CartView;
 			sourceTree = "<group>";
@@ -532,6 +565,8 @@
 			children = (
 				38BC22382B1F7B6B00461CA2 /* OrderDetailsViewController.swift */,
 				38BC22392B1F7B6B00461CA2 /* OrderDetailsViewController.xib */,
+				3889CD812B1FCC8C0018CC48 /* ShippingAddressTableViewCell */,
+				3889CD802B1FCC630018CC48 /* OrderListTableViewCell */,
 			);
 			path = OrderDetailsView;
 			sourceTree = "<group>";
@@ -572,8 +607,8 @@
 		3D66D99E2B1E5BC900F84AC5 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				3D66D9A02B1E5C6500F84AC5 /* HomeView */,
 				3D66D99F2B1E5C5900F84AC5 /* HomeViewModel */,
+				3D66D9A02B1E5C6500F84AC5 /* HomeView */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -590,6 +625,7 @@
 			children = (
 				3D66D9A12B1E5CEA00F84AC5 /* HomeViewController.swift */,
 				3D66D9A22B1E5CEA00F84AC5 /* HomeViewController.xib */,
+				3D66D9A52B1E5D8300F84AC5 /* HomeCell */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -735,9 +771,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				388DC7892B2381AF00C6FB8C /* AddressesTableViewCell.xib in Resources */,
 				389076722B14C75E00204768 /* SignInViewController.xib in Resources */,
 				3876E4DD2B1F6AB200E9A4D3 /* UserOrdersTableViewCell.xib in Resources */,
-				3889CD892B1FCCD20018CC48 /* AddressTableViewCell.xib in Resources */,
+				3889CD892B1FCCD20018CC48 /* ShippingAddressTableViewCell.xib in Resources */,
 				3876E4D32B1F581900E9A4D3 /* UserViewController.xib in Resources */,
 				3882E5FD2B20B5CC0065DFF7 /* PaymentMethodsViewController.xib in Resources */,
 				389076462B14C56A00204768 /* LaunchScreen.storyboard in Resources */,
@@ -746,6 +783,7 @@
 				389EB8C32B1D16040044450B /* CartTableViewCell.xib in Resources */,
 				38BC223B2B1F7B6B00461CA2 /* OrderDetailsViewController.xib in Resources */,
 				3D66D9AB2B1E6C2500F84AC5 /* HomeCell.xib in Resources */,
+				388DC7842B237E9600C6FB8C /* AddressesViewController.xib in Resources */,
 				388FBA0C2B16808700247DCB /* CategoriesViewController.xib in Resources */,
 				38C64BA92B1540B300873D8E /* SignUpViewController.xib in Resources */,
 				388CCB402B212AC2001BDAE3 /* LocationViewController.xib in Resources */,
@@ -885,16 +923,18 @@
 				3876E4DC2B1F6AB200E9A4D3 /* UserOrdersTableViewCell.swift in Sources */,
 				388CCB3F2B212AC2001BDAE3 /* LocationViewController.swift in Sources */,
 				38C64BAC2B1543C400873D8E /* UITextField.swift in Sources */,
+				388DC7882B2381AF00C6FB8C /* AddressesTableViewCell.swift in Sources */,
 				3D66D9AA2B1E6C2500F84AC5 /* HomeCell.swift in Sources */,
 				389EB8C22B1D16040044450B /* CartTableViewCell.swift in Sources */,
-				3889CD882B1FCCD20018CC48 /* AddressTableViewCell.swift in Sources */,
+				3889CD882B1FCCD20018CC48 /* ShippingAddressTableViewCell.swift in Sources */,
 				388FBA0B2B16808700247DCB /* CategoriesViewController.swift in Sources */,
+				388DC7832B237E9600C6FB8C /* AddressesViewController.swift in Sources */,
 				3D66D9A32B1E5CEA00F84AC5 /* HomeViewController.swift in Sources */,
 				38BC223A2B1F7B6B00461CA2 /* OrderDetailsViewController.swift in Sources */,
 				3889CD842B1FCCB60018CC48 /* OrderListTableViewCell.swift in Sources */,
 				3876E4D22B1F581900E9A4D3 /* UserViewController.swift in Sources */,
 				389EB8BD2B1D15870044450B /* CartViewController.swift in Sources */,
-				38EC006D2B22672F0076B730 /* AddressViewModel.swift in Sources */,
+				38EC006D2B22672F0076B730 /* LocationViewModel.swift in Sources */,
 				389EB8CC2B1D54DE0044450B /* CustomTabBarViewController.swift in Sources */,
 				3882E5FC2B20B5CC0065DFF7 /* PaymentMethodsViewController.swift in Sources */,
 				3890763A2B14C55A00204768 /* AppDelegate.swift in Sources */,

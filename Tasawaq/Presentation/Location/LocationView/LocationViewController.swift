@@ -15,7 +15,7 @@ class LocationViewController: UIViewController {
   @IBOutlet weak var viewww: UIView!
   @IBOutlet weak var userLocation: UILabel!
   
-  var addressViewModel = AddressViewModel()
+  var addressViewModel = LocationViewModel()
   override func viewDidLoad() {
     super.viewDidLoad()
     configureView()

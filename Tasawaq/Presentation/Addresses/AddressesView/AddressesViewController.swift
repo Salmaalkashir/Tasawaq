@@ -16,6 +16,9 @@ class AddressesViewController: UIViewController {
     configureTableView()
     
   }
+  override func viewWillAppear(_ animated: Bool) {
+    navigationController?.isNavigationBarHidden = false
+  }
   func configureTableView(){
     addressesTableView.dataSource = self
     addressesTableView.delegate = self
@@ -40,7 +43,7 @@ extension AddressesViewController: UITableViewDelegate,UITableViewDataSource{
     return cell
   }
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-      return 100
+      return 120
   }
   
 }

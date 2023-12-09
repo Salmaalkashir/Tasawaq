@@ -25,6 +25,8 @@
 		388DC7842B237E9600C6FB8C /* AddressesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 388DC7822B237E9600C6FB8C /* AddressesViewController.xib */; };
 		388DC7882B2381AF00C6FB8C /* AddressesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388DC7862B2381AF00C6FB8C /* AddressesTableViewCell.swift */; };
 		388DC7892B2381AF00C6FB8C /* AddressesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 388DC7872B2381AF00C6FB8C /* AddressesTableViewCell.xib */; };
+		388DC7A02B23CEAE00C6FB8C /* AddressConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388DC79E2B23CEAE00C6FB8C /* AddressConfirmationViewController.swift */; };
+		388DC7A12B23CEAE00C6FB8C /* AddressConfirmationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 388DC79F2B23CEAE00C6FB8C /* AddressConfirmationViewController.xib */; };
 		388FBA0B2B16808700247DCB /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388FBA092B16808700247DCB /* CategoriesViewController.swift */; };
 		388FBA0C2B16808700247DCB /* CategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 388FBA0A2B16808700247DCB /* CategoriesViewController.xib */; };
 		3890763A2B14C55A00204768 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389076392B14C55A00204768 /* AppDelegate.swift */; };
@@ -96,6 +98,8 @@
 		388DC7822B237E9600C6FB8C /* AddressesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressesViewController.xib; sourceTree = "<group>"; };
 		388DC7862B2381AF00C6FB8C /* AddressesTableViewCell.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AddressesTableViewCell.swift; sourceTree = "<group>"; tabWidth = 2; };
 		388DC7872B2381AF00C6FB8C /* AddressesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressesTableViewCell.xib; sourceTree = "<group>"; };
+		388DC79E2B23CEAE00C6FB8C /* AddressConfirmationViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AddressConfirmationViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
+		388DC79F2B23CEAE00C6FB8C /* AddressConfirmationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressConfirmationViewController.xib; sourceTree = "<group>"; };
 		388FBA092B16808700247DCB /* CategoriesViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		388FBA0A2B16808700247DCB /* CategoriesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesViewController.xib; sourceTree = "<group>"; };
 		389076362B14C55A00204768 /* Tasawaq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tasawaq.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -345,6 +349,31 @@
 			path = AddressesTableViewCell;
 			sourceTree = "<group>";
 		};
+		388DC7922B23B1B600C6FB8C /* AddressConfirmation */ = {
+			isa = PBXGroup;
+			children = (
+				388DC7942B23B1CB00C6FB8C /* AddressConfirmationViewModel */,
+				388DC7932B23B1C100C6FB8C /* AdressConfirmationView */,
+			);
+			path = AddressConfirmation;
+			sourceTree = "<group>";
+		};
+		388DC7932B23B1C100C6FB8C /* AdressConfirmationView */ = {
+			isa = PBXGroup;
+			children = (
+				388DC79E2B23CEAE00C6FB8C /* AddressConfirmationViewController.swift */,
+				388DC79F2B23CEAE00C6FB8C /* AddressConfirmationViewController.xib */,
+			);
+			path = AdressConfirmationView;
+			sourceTree = "<group>";
+		};
+		388DC7942B23B1CB00C6FB8C /* AddressConfirmationViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AddressConfirmationViewModel;
+			sourceTree = "<group>";
+		};
 		388FBA052B167FD000247DCB /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -457,6 +486,7 @@
 		3890766D2B14C5F800204768 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				388DC7922B23B1B600C6FB8C /* AddressConfirmation */,
 				388DC77E2B237E3D00C6FB8C /* Addresses */,
 				388CCB3A2B212A81001BDAE3 /* Location */,
 				3882E5F72B20B5820065DFF7 /* PaymentMethods */,
@@ -790,6 +820,7 @@
 				389EB8BE2B1D15870044450B /* CartViewController.xib in Resources */,
 				389076432B14C56A00204768 /* Assets.xcassets in Resources */,
 				3876E4CC2B1F53FD00E9A4D3 /* WishListViewController.xib in Resources */,
+				388DC7A12B23CEAE00C6FB8C /* AddressConfirmationViewController.xib in Resources */,
 				3D66D9A42B1E5CEA00F84AC5 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -918,6 +949,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				388DC7A02B23CEAE00C6FB8C /* AddressConfirmationViewController.swift in Sources */,
 				389076712B14C75E00204768 /* SignInViewController.swift in Sources */,
 				38A49E052B16C35E0003709E /* DetailedProductCollectionViewCell.swift in Sources */,
 				3876E4DC2B1F6AB200E9A4D3 /* UserOrdersTableViewCell.swift in Sources */,

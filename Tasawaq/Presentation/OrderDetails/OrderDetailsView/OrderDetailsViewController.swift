@@ -31,8 +31,8 @@ class OrderDetailsViewController: UIViewController {
     
     address.dataSource = self
     address.delegate = self
-    let nib1 = UINib(nibName: "AddressTableViewCell", bundle: nil)
-    address.register(nib1, forCellReuseIdentifier: "addressCell")
+    let nib1 = UINib(nibName: "ShippingAddressTableViewCell", bundle: nil)
+    address.register(nib1, forCellReuseIdentifier: "shippingAddressCell")
   }
 }
 //MARK: -IBActions
@@ -71,7 +71,7 @@ extension OrderDetailsViewController: UITableViewDelegate, UITableViewDataSource
       cell.configureTableCell(image: UIImage(named: "adidas") ?? UIImage(), name: "ADIDAS | CLASSIC BACKPACK ", details: "Details: 2/White", quantity: "Quantity: 1", price: "USD 70.00")
       return cell
     case address:
-      let cell = tableView.dequeueReusableCell(withIdentifier: "addressCell", for: indexPath) as! AddressTableViewCell
+      let cell = tableView.dequeueReusableCell(withIdentifier: "shippingAddressCell", for: indexPath) as! ShippingAddressTableViewCell
       cell.configureCell(country: "Alexandria, Egypt", city: "Ebn Shoaba St", phone: "01098885040")
       return cell
     default:
@@ -86,6 +86,14 @@ extension OrderDetailsViewController: UITableViewDelegate, UITableViewDataSource
       return 80
     default:
       return 120
+    }
+  }
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    switch tableView{
+    case address:
+      self.navigationController?.pushViewController(AddressesViewController(), animated: true)
+    default:
+      break
     }
   }
   

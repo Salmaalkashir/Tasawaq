@@ -31,15 +31,11 @@ class CartViewController: UIViewController {
 //MARK: -IBActions
 private extension CartViewController{
   @IBAction func checkout(_ sender: UIButton){
-    
+    self.navigationController?.pushViewController(OrderDetailsViewController(), animated: true)
   }
 }
-//MARK: -UITableViewDelegate
-extension CartViewController: UITableViewDelegate{
-  
-}
-//MARK: -UITableViewDataSource
-extension CartViewController: UITableViewDataSource{
+//MARK: -UITableViewDataSource,UITableViewDelegate
+extension CartViewController: UITableViewDataSource,UITableViewDelegate{
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return 3
   }

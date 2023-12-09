@@ -22,8 +22,6 @@
 		388CCB3F2B212AC2001BDAE3 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388CCB3D2B212AC2001BDAE3 /* LocationViewController.swift */; };
 		388CCB402B212AC2001BDAE3 /* LocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 388CCB3E2B212AC2001BDAE3 /* LocationViewController.xib */; };
 		388DC7832B237E9600C6FB8C /* AddressesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388DC7812B237E9600C6FB8C /* AddressesViewController.swift */; };
-		388DC7842B237E9600C6FB8C /* AddressesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 388DC7822B237E9600C6FB8C /* AddressesViewController.xib */; };
-		388DC7882B2381AF00C6FB8C /* AddressesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388DC7862B2381AF00C6FB8C /* AddressesTableViewCell.swift */; };
 		388DC7892B2381AF00C6FB8C /* AddressesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 388DC7872B2381AF00C6FB8C /* AddressesTableViewCell.xib */; };
 		388DC7A02B23CEAE00C6FB8C /* AddressConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388DC79E2B23CEAE00C6FB8C /* AddressConfirmationViewController.swift */; };
 		388DC7A12B23CEAE00C6FB8C /* AddressConfirmationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 388DC79F2B23CEAE00C6FB8C /* AddressConfirmationViewController.xib */; };
@@ -46,7 +44,8 @@
 		38A49E052B16C35E0003709E /* DetailedProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A49E032B16C35E0003709E /* DetailedProductCollectionViewCell.swift */; };
 		38A49E062B16C35E0003709E /* DetailedProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A49E042B16C35E0003709E /* DetailedProductCollectionViewCell.xib */; };
 		38BC223A2B1F7B6B00461CA2 /* OrderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BC22382B1F7B6B00461CA2 /* OrderDetailsViewController.swift */; };
-		38BC223B2B1F7B6B00461CA2 /* OrderDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38BC22392B1F7B6B00461CA2 /* OrderDetailsViewController.xib */; };
+		38BC87602B252CD5004B07CD /* AddressesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388DC7862B2381AF00C6FB8C /* AddressesTableViewCell.swift */; };
+		38BC87612B252CE2004B07CD /* OrderDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38BC22392B1F7B6B00461CA2 /* OrderDetailsViewController.xib */; };
 		38C64BA82B1540B300873D8E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C64BA62B1540B300873D8E /* SignUpViewController.swift */; };
 		38C64BA92B1540B300873D8E /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38C64BA72B1540B300873D8E /* SignUpViewController.xib */; };
 		38C64BAC2B1543C400873D8E /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C64BAB2B1543C400873D8E /* UITextField.swift */; };
@@ -801,6 +800,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38BC87612B252CE2004B07CD /* OrderDetailsViewController.xib in Resources */,
 				388DC7892B2381AF00C6FB8C /* AddressesTableViewCell.xib in Resources */,
 				389076722B14C75E00204768 /* SignInViewController.xib in Resources */,
 				3876E4DD2B1F6AB200E9A4D3 /* UserOrdersTableViewCell.xib in Resources */,
@@ -947,6 +947,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38BC87602B252CD5004B07CD /* AddressesTableViewCell.swift in Sources */,
 				388DC7A02B23CEAE00C6FB8C /* AddressConfirmationViewController.swift in Sources */,
 				389076712B14C75E00204768 /* SignInViewController.swift in Sources */,
 				38A49E052B16C35E0003709E /* DetailedProductCollectionViewCell.swift in Sources */,

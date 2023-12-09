@@ -1,45 +1,36 @@
 //
-//  CategoriesViewController.swift
+//  WishListViewController.swift
 //  Tasawaq
 //
-//  Created by Salma on 28/11/2023.
+//  Created by Salma on 05/12/2023.
 //
 
 import UIKit
 
-class CategoriesViewController: UIViewController {
+class WishListViewController: UIViewController {
   //MARK: -IBOutlets
-  @IBOutlet weak var segment: UISegmentedControl!
-  @IBOutlet weak var subCategory: UISegmentedControl!
-  @IBOutlet weak var productsCollectionView: UICollectionView!
+  @IBOutlet weak var wishListCollectionView: UICollectionView!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     configureCollectionView()
-    configureSegmentControl()
+    
   }
   override func viewWillAppear(_ animated: Bool) {
     navigationController?.setNavigationBarHidden(true, animated: animated)
   }
   
   func configureCollectionView(){
-    productsCollectionView.dataSource = self
-    productsCollectionView.delegate = self
+    wishListCollectionView.dataSource = self
+    wishListCollectionView.delegate = self
     let nib1 = UINib(nibName: "DetailedProductCollectionViewCell", bundle: nil)
-    productsCollectionView.register(nib1, forCellWithReuseIdentifier: "detailedProductCell")
-    productsCollectionView.layer.masksToBounds = true
-    productsCollectionView.layer.cornerRadius = 20
-  }
-  
-  func configureSegmentControl(){
-    segment.setTitleTextAttributes([.foregroundColor: UIColor.black], for: .normal)
-    segment.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
-    
-    subCategory.setTitleTextAttributes([.foregroundColor: UIColor.black], for: .normal)
-    subCategory.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
+    wishListCollectionView.register(nib1, forCellWithReuseIdentifier: "detailedProductCell")
+    wishListCollectionView.layer.masksToBounds = true
+    wishListCollectionView.layer.cornerRadius = 20
   }
 }
-//MARK: -UICollectionViewDataSource,UICollectionViewDelegate
-extension CategoriesViewController: UICollectionViewDataSource,UICollectionViewDelegate{
+//MARK: -UICollectionViewDelegate,UICollectionViewDataSource
+extension WishListViewController: UICollectionViewDelegate,UICollectionViewDataSource{
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return 4
   }
@@ -51,7 +42,7 @@ extension CategoriesViewController: UICollectionViewDataSource,UICollectionViewD
   }
 }
 //MARK: -UICollectionViewDelegateFlowLayout
-extension CategoriesViewController : UICollectionViewDelegateFlowLayout{
+extension WishListViewController : UICollectionViewDelegateFlowLayout{
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
     let screenWidth = UIScreen.main.bounds.width
     let itemWidth = screenWidth / 2 - 20
@@ -60,4 +51,3 @@ extension CategoriesViewController : UICollectionViewDelegateFlowLayout{
     return CGSize(width:itemWidth , height: itemHeight)
   }
 }
-

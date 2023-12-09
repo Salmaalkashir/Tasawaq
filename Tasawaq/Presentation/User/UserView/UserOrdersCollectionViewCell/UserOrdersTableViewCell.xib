@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="userOrdersCell" rowHeight="80" id="KGk-i7-Jjw" customClass="UserOrdersTableViewCell" customModule="Tasawaq" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="340" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="340" height="80"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bwV-GB-jum">
+                        <rect key="frame" x="5" y="5" width="330" height="70"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aw1-LR-SOH">
+                                <rect key="frame" x="16" y="8" width="46" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created at:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="irr-ud-Wrf">
+                                <rect key="frame" x="16" y="46" width="89" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD 70.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGW-c0-tY4">
+                                <rect key="frame" x="94" y="8" width="82" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dec 5, 2023, 4:30 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Org-G2-uQd">
+                                <rect key="frame" x="137" y="45" width="167" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Org-G2-uQd" firstAttribute="leading" secondItem="irr-ud-Wrf" secondAttribute="trailing" constant="32" id="13k-fU-RNi"/>
+                            <constraint firstItem="irr-ud-Wrf" firstAttribute="leading" secondItem="bwV-GB-jum" secondAttribute="leading" constant="16" id="CZc-A0-w9A"/>
+                            <constraint firstItem="irr-ud-Wrf" firstAttribute="top" secondItem="aw1-LR-SOH" secondAttribute="bottom" constant="16" id="M1k-Y4-qqJ"/>
+                            <constraint firstItem="aw1-LR-SOH" firstAttribute="leading" secondItem="bwV-GB-jum" secondAttribute="leading" constant="16" id="fd3-0l-a1Y"/>
+                            <constraint firstItem="Org-G2-uQd" firstAttribute="top" secondItem="JGW-c0-tY4" secondAttribute="bottom" constant="16" id="sez-wL-aYf"/>
+                            <constraint firstItem="aw1-LR-SOH" firstAttribute="top" secondItem="bwV-GB-jum" secondAttribute="top" constant="8" id="vs6-79-n80"/>
+                            <constraint firstItem="JGW-c0-tY4" firstAttribute="top" secondItem="bwV-GB-jum" secondAttribute="top" constant="8" id="yxM-EC-HoJ"/>
+                            <constraint firstItem="JGW-c0-tY4" firstAttribute="leading" secondItem="aw1-LR-SOH" secondAttribute="trailing" constant="32" id="zoD-jE-v1s"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="bwV-GB-jum" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="QH2-Ge-reX"/>
+                    <constraint firstItem="bwV-GB-jum" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Qx5-2O-av6"/>
+                    <constraint firstAttribute="trailing" secondItem="bwV-GB-jum" secondAttribute="trailing" constant="5" id="nCa-zt-ZOc"/>
+                    <constraint firstAttribute="bottom" secondItem="bwV-GB-jum" secondAttribute="bottom" constant="5" id="rY4-gi-adV"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="cellView" destination="bwV-GB-jum" id="9t2-6c-4ky"/>
+                <outlet property="orderDetails" destination="Org-G2-uQd" id="Wge-20-aQ0"/>
+                <outlet property="orderPrice" destination="JGW-c0-tY4" id="ffF-km-bf2"/>
+            </connections>
+            <point key="canvasLocation" x="-58.015267175572518" y="-1.0563380281690142"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

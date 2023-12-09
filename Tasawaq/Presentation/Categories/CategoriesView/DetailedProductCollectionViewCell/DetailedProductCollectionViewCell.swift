@@ -7,13 +7,13 @@
 
 import UIKit
 
-class CategoriesCollectionViewCell: UICollectionViewCell {
+class DetailedProductCollectionViewCell: UICollectionViewCell {
   //MARK: -IBOutlets
   @IBOutlet weak var cellView: UIView!
   @IBOutlet weak var productImage: UIImageView!
   @IBOutlet weak var productName: UILabel!
   @IBOutlet weak var productPrice: UILabel!
-  @IBOutlet weak var isFavourite: UIButton!
+  
   override func awakeFromNib() {
     super.awakeFromNib()
     configureCellView()

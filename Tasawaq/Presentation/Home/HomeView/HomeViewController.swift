@@ -16,15 +16,17 @@ class HomeViewController: UIViewController {
         configureCollectionView(collectionView: offerCollectionView)
         configureCollectionView(collectionView: brandCollectionView)
     }
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
+    }
     
     func configureCollectionView(collectionView: UICollectionView){
         collectionView.delegate = self
         collectionView.dataSource = self
-        let nib = UINib(nibName: "HomeCell", bundle: nil)
+        let nib = UINib(nibName: "HomeCollectionViewCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "homeCell")
         collectionView.layer.masksToBounds = true
         collectionView.layer.cornerRadius = 20
-        
     }
 }
 //MARK: UICollectionViewDataSource,Delegate
@@ -43,7 +45,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeCell", for: indexPath) as! HomeCell
+      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeCell", for: indexPath) as! HomeCollectionViewCell
         switch collectionView{
         case offerCollectionView:
             cell.configureCell(img: UIImage(named: "adidas") ?? UIImage())
@@ -67,9 +69,8 @@ extension HomeViewController : UICollectionViewDelegateFlowLayout{
           let offerItemHeight = offerCollectionView.layer.frame.size.height - 20
           return CGSize(width: offerItemWidth, height: offerItemHeight)
       case brandCollectionView:
-          let brandItemWidth = brandCollectionView.layer.frame.size.width / 3 - 20
-          //let brandItemHeight = brandCollectionView.layer.frame.size.height - 20
-          let brandItemHeight = brandItemWidth * (1.5)
+          let brandItemWidth = brandCollectionView.layer.frame.size.width / 2 - 10
+          let brandItemHeight = brandItemWidth * (1)
           return CGSize(width: brandItemWidth, height: brandItemHeight)
       default:
           return CGSize(width: 0, height: 0)

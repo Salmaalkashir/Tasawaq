@@ -16,27 +16,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     guard let windowScene = (scene as? UIWindowScene) else { return }
     
     let window = UIWindow(windowScene: windowScene)
-    window.rootViewController = UINavigationController(rootViewController: CartViewController())
+    window.rootViewController = UINavigationController(rootViewController: HomeViewController())
     window.makeKeyAndVisible()
     
     self.window = window
   }
-  
-  func sceneDidDisconnect(_ scene: UIScene) {
-  }
-  
-  func sceneDidBecomeActive(_ scene: UIScene) {
-  }
-  
-  func sceneWillResignActive(_ scene: UIScene) {
-  }
-  
-  func sceneWillEnterForeground(_ scene: UIScene) {
-  }
-  
-  func sceneDidEnterBackground(_ scene: UIScene) {
-  }
-  
-  
 }
 

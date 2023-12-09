@@ -24,12 +24,12 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
     productPrice.text = price
     productImage.image = image
   }
+  
   func configureCellView(){
     cellView.layer.cornerRadius = 20
     cellView.backgroundColor = .white
     cellView.layer.shadowOffset = CGSize(width: 5, height: 5)
     cellView.layer.shadowRadius = 5
     cellView.layer.shadowOpacity = 0.5
-
   }
 }

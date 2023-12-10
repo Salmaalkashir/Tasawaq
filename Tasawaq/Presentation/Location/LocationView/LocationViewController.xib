@@ -12,9 +12,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LocationViewController" customModule="Tasawaq" customModuleProvider="target">
             <connections>
                 <outlet property="mapView" destination="8vj-nc-3j0" id="532-bg-lJ8"/>
-
-                <outlet property="pinLocationImage" destination="WB0-Tw-8RO" id="u7g-dA-RpI"/>
-
                 <outlet property="subView" destination="wgz-oA-I8t" id="qO2-LU-ohy"/>
                 <outlet property="userLocation" destination="OGu-xe-8A0" id="Fpz-5h-RoU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -80,20 +77,6 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pinLocation" translatesAutoresizingMaskIntoConstraints="NO" id="WB0-Tw-8RO">
                     <rect key="frame" x="178" y="281" width="37" height="50"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BnN-zM-hjH">
-                    <rect key="frame" x="319" y="566" width="50" height="50"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="ela-PU-ML1"/>
-                        <constraint firstAttribute="width" constant="50" id="k7h-o9-xGB"/>
-                    </constraints>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="gray" image="location" cornerStyle="capsule">
-                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </buttonConfiguration>
-                    <connections>
-                        <action selector="locateMe:" destination="-1" eventType="touchUpInside" id="ac4-Pt-hFe"/>
-
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tis-kE-kzR">
                     <rect key="frame" x="355" y="56" width="30" height="30"/>
                     <constraints>
@@ -119,17 +102,13 @@
                 <constraint firstItem="8vj-nc-3j0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Tyn-zq-eE0"/>
                 <constraint firstAttribute="bottom" secondItem="wgz-oA-I8t" secondAttribute="bottom" id="Uyl-Dg-clk"/>
                 <constraint firstItem="WB0-Tw-8RO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Vdy-22-gOR"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BnN-zM-hjH" secondAttribute="trailing" constant="24" id="YNX-bz-umP"/>
                 <constraint firstItem="8vj-nc-3j0" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ZNV-rL-sv1"/>
                 <constraint firstItem="WB0-Tw-8RO" firstAttribute="width" secondItem="8vj-nc-3j0" secondAttribute="width" multiplier="0.0941476" id="b95-r7-2uK"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wgz-oA-I8t" secondAttribute="trailing" id="cVM-ip-qGr"/>
                 <constraint firstItem="WB0-Tw-8RO" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-120" id="jab-ch-03J"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tis-kE-kzR" secondAttribute="trailing" constant="8" id="lBt-LC-Qa9"/>
                 <constraint firstItem="WB0-Tw-8RO" firstAttribute="height" secondItem="8vj-nc-3j0" secondAttribute="height" multiplier="0.0762195" id="mTT-9K-f4T"/>
-
-                <constraint firstItem="BnN-zM-hjH" firstAttribute="bottom" secondItem="8vj-nc-3j0" secondAttribute="bottom" constant="-40" id="qfA-LW-0Dr"/>
                 <constraint firstItem="tis-kE-kzR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="56" id="xcg-iP-b8N"/>
-
             </constraints>
             <point key="canvasLocation" x="-74.045801526717554" y="-11.267605633802818"/>
         </view>
@@ -139,7 +118,7 @@
         <image name="pinLocation" width="37" height="50"/>
         <image name="xmark.circle" catalog="system" width="128" height="123"/>
         <namedColor name="Custom Color">
-            <color red="0.20399999618530273" green="0.30199998617172241" blue="0.23100000619888306" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.13699999451637268" green="0.22699999809265137" blue="0.2199999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

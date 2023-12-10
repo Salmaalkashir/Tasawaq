@@ -14,6 +14,8 @@ class LocationViewController: UIViewController {
   @IBOutlet weak var mapView: MKMapView!
   @IBOutlet weak var subView: UIView!
   @IBOutlet weak var userLocation: UILabel!
+  @IBOutlet weak var pinLocationImage: UIImageView!
+  var userLLocation: CLLocation!
   
   var addressViewModel = LocationViewModel()
   override func viewDidLoad() {
@@ -65,10 +67,12 @@ class LocationViewController: UIViewController {
     switch addressViewModel.locationManager.authorizationStatus{
     case .authorizedWhenInUse:
       addressViewModel.locationManager.startUpdatingLocation()
+      mapView.showsUserLocation = true
     case .notDetermined:
       addressViewModel.locationManager.requestWhenInUseAuthorization()
     case .authorizedAlways:
       addressViewModel.locationManager.startUpdatingLocation()
+      mapView.showsUserLocation = true
     case .denied:
       showAlert(message: "Please allow access to location")
     case .restricted:
@@ -76,9 +80,13 @@ class LocationViewController: UIViewController {
     default:
       break
     }
-    
   }
   
+
+  func zoomToUserLocation(location: CLLocation){
+    let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
+    mapView.setRegion(region, animated: true)
+  }
   func showAlert(message: String){
     let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
     alert.addAction(UIAlertAction(title: "Cancel", style: .destructive))
@@ -98,13 +106,17 @@ private extension LocationViewController{
   @IBAction func closeMap(_ sender: UIButton){
     self.navigationController?.popViewController(animated: true)
   }
+  
+  @IBAction func locateMe(_ sender: UIButton){
+    zoomToUserLocation(location: userLLocation)
+    pinLocationImage.isHidden = true
+  }
 }
 //MARK: -CLLocationManagerDelegate
 extension LocationViewController: CLLocationManagerDelegate{
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    if let location = locations.last{
-      print("location: \(location.coordinate)")
-    }
+    guard let userlocation = locations.last else{return}
+    userLLocation = userlocation
   }
   
   func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {

@@ -31,7 +31,7 @@ class CartViewController: UIViewController {
 //MARK: -IBActions
 private extension CartViewController{
   @IBAction func checkout(_ sender: UIButton){
-    
+    self.navigationController?.pushViewController(OrderDetailsViewController(), animated: true)
   }
 }
 //MARK: -UITableViewDataSource,UITableViewDelegate

@@ -24,6 +24,7 @@ class DetailedProductCollectionViewCell: UICollectionViewCell {
     productPrice.text = price
     productImage.image = image
   }
+  
   func configureCellView(){
     cellView.layer.cornerRadius = 20
     cellView.backgroundColor = .white

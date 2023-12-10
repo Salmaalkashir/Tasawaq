@@ -6,6 +6,6 @@
 //
 
 import CoreLocation
-class AddressViewModel{
+class LocationViewModel{
     let locationManager = CLLocationManager()
 }

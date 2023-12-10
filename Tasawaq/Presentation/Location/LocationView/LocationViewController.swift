@@ -12,12 +12,12 @@ import CoreLocation
 class LocationViewController: UIViewController {
   //MARK: -IBoutlets
   @IBOutlet weak var mapView: MKMapView!
-  @IBOutlet weak var viewww: UIView!
+  @IBOutlet weak var subView: UIView!
   @IBOutlet weak var userLocation: UILabel!
   @IBOutlet weak var pinLocationImage: UIImageView!
   var userLLocation: CLLocation!
   
-  var addressViewModel = AddressViewModel()
+  var addressViewModel = LocationViewModel()
   override func viewDidLoad() {
     super.viewDidLoad()
     configureView()
@@ -25,16 +25,20 @@ class LocationViewController: UIViewController {
     setStartingLocation(location: initLocation, distance: 400000)
     configureMap()
     checkLocationService()
-    
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    navigationController?.isNavigationBarHidden = true
   }
   
   func configureView(){
-    viewww.layer.cornerRadius = 20
-    viewww.backgroundColor = .white
-    viewww.layer.shadowOffset = CGSize(width: 5, height: 5)
-    viewww.layer.shadowRadius = 5
-    viewww.layer.shadowOpacity = 0.5
+    subView.layer.cornerRadius = 20
+    subView.backgroundColor = .white
+    subView.layer.shadowOffset = CGSize(width: 5, height: 5)
+    subView.layer.shadowRadius = 5
+    subView.layer.shadowOpacity = 0.5
   }
+  
   func configureMap(){
     addressViewModel.locationManager.delegate = self
     addressViewModel.locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -58,6 +62,7 @@ class LocationViewController: UIViewController {
       }
     }
   }
+  
   func checkAuthorization(){
     switch addressViewModel.locationManager.authorizationStatus{
     case .authorizedWhenInUse:
@@ -77,11 +82,11 @@ class LocationViewController: UIViewController {
     }
   }
   
+
   func zoomToUserLocation(location: CLLocation){
     let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
     mapView.setRegion(region, animated: true)
   }
-  
   func showAlert(message: String){
     let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
     alert.addAction(UIAlertAction(title: "Cancel", style: .destructive))
@@ -95,6 +100,11 @@ class LocationViewController: UIViewController {
 //MARK: -IBActions
 private extension LocationViewController{
   @IBAction func confirmAddress(_ sender: UIButton){
+    self.navigationController?.pushViewController(AddressConfirmationViewController(), animated: true)
+  }
+  
+  @IBAction func closeMap(_ sender: UIButton){
+    self.navigationController?.popViewController(animated: true)
   }
   
   @IBAction func locateMe(_ sender: UIButton){

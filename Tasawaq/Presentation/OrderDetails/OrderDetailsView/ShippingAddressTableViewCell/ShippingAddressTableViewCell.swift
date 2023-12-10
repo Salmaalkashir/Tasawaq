@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddressTableViewCell: UITableViewCell {
+class ShippingAddressTableViewCell: UITableViewCell {
   //MARK: -IBOutlets
   @IBOutlet weak var cellView: UIView!
   @IBOutlet weak var counrtyLabel: UILabel!

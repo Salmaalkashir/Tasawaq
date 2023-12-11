@@ -6,6 +6,11 @@
 //
 
 import CoreLocation
+import MapKit
+
 class LocationViewModel{
     let locationManager = CLLocationManager()
+    var userLLocation: CLLocation?
+    var searchAnnotation: MKPointAnnotation?
+    var userAnnotation: MKPointAnnotation?
 }

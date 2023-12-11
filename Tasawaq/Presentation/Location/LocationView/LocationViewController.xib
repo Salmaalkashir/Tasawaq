@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -12,6 +13,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LocationViewController" customModule="Tasawaq" customModuleProvider="target">
             <connections>
                 <outlet property="mapView" destination="8vj-nc-3j0" id="532-bg-lJ8"/>
+                <outlet property="pinLocation" destination="WB0-Tw-8RO" id="lsi-ab-QNi"/>
+                <outlet property="searchTextField" destination="DqV-dB-OkN" id="RDW-VG-MzX"/>
                 <outlet property="subView" destination="wgz-oA-I8t" id="qO2-LU-ohy"/>
                 <outlet property="userLocation" destination="OGu-xe-8A0" id="Fpz-5h-RoU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -75,10 +78,10 @@
                     </constraints>
                 </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pinLocation" translatesAutoresizingMaskIntoConstraints="NO" id="WB0-Tw-8RO">
-                    <rect key="frame" x="178" y="281" width="37" height="50"/>
+                    <rect key="frame" x="178" y="284" width="37" height="50"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tis-kE-kzR">
-                    <rect key="frame" x="355" y="56" width="30" height="30"/>
+                    <rect key="frame" x="355" y="98" width="30" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="30" id="tOh-Sy-jZw"/>
                         <constraint firstAttribute="height" constant="30" id="xjk-iN-a0R"/>
@@ -88,37 +91,99 @@
                         <color key="baseForegroundColor" systemColor="systemRedColor"/>
                     </buttonConfiguration>
                     <connections>
-                        <action selector="closeMap:" destination="-1" eventType="touchUpInside" id="N8l-bz-N3b"/>
+                        <action selector="closeMap:" destination="-1" eventType="touchUpInside" id="1Fv-R8-MZj"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter your destination" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DqV-dB-OkN">
+                    <rect key="frame" x="8" y="64" width="330" height="35"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="330" id="XuS-qh-2LN"/>
+                        <constraint firstAttribute="height" constant="35" id="ws1-Zk-eZe"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voC-tH-ynG">
+                    <rect key="frame" x="348" y="64.333333333333329" width="35" height="34.333333333333329"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain">
+                        <imageReference key="image" image="magnifyingglass.circle.fill" catalog="system" symbolScale="large"/>
+                        <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" weight="medium"/>
+                        <color key="baseForegroundColor" name="Custom Color"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="searchLocation:" destination="-1" eventType="touchUpInside" id="IGq-xv-nAb"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vkf-VW-IRL">
+                    <rect key="frame" x="273" y="581" width="104" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="DfA-aa-oXt"/>
+                        <constraint firstAttribute="width" constant="104" id="kKV-Io-sF3"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="gray" title="Locate me" cornerStyle="capsule">
+                        <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="locateUser:" destination="-1" eventType="touchUpInside" id="4xC-nT-hmX"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c43-fD-hyF">
+                    <rect key="frame" x="16" y="581" width="82" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="axl-h9-lYP"/>
+                        <constraint firstAttribute="width" constant="82" id="wfE-87-xON"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="gray" title="Use pin" cornerStyle="capsule">
+                        <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="usePin:" destination="-1" eventType="touchUpInside" id="Qem-E3-sSG"/>
                     </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="tis-kE-kzR" firstAttribute="top" secondItem="8vj-nc-3j0" secondAttribute="top" constant="98" id="7JP-a5-2Fd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Vkf-VW-IRL" secondAttribute="trailing" constant="16" id="8cS-nC-qhi"/>
                 <constraint firstItem="wgz-oA-I8t" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.266432" id="ArK-nd-Dwx"/>
+                <constraint firstItem="voC-tH-ynG" firstAttribute="centerY" secondItem="DqV-dB-OkN" secondAttribute="centerY" id="DHd-sk-FCF"/>
                 <constraint firstItem="wgz-oA-I8t" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="F8E-fY-yy9"/>
-                <constraint firstItem="8vj-nc-3j0" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.769953" id="Hu2-Bb-v8B"/>
+                <constraint firstItem="8vj-nc-3j0" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.769953" constant="4.4000000002597517e-05" id="Hu2-Bb-v8B"/>
                 <constraint firstItem="8vj-nc-3j0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="OBD-H4-bnc"/>
                 <constraint firstItem="8vj-nc-3j0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Tyn-zq-eE0"/>
                 <constraint firstAttribute="bottom" secondItem="wgz-oA-I8t" secondAttribute="bottom" id="Uyl-Dg-clk"/>
-                <constraint firstItem="WB0-Tw-8RO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Vdy-22-gOR"/>
+                <constraint firstItem="WB0-Tw-8RO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Xl1-2L-uEe"/>
+                <constraint firstItem="DqV-dB-OkN" firstAttribute="leading" secondItem="8vj-nc-3j0" secondAttribute="leading" constant="8" id="Y6k-cy-wJr"/>
+                <constraint firstItem="Vkf-VW-IRL" firstAttribute="bottom" secondItem="8vj-nc-3j0" secondAttribute="bottom" constant="-40" id="YCB-nx-AcE"/>
                 <constraint firstItem="8vj-nc-3j0" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ZNV-rL-sv1"/>
                 <constraint firstItem="WB0-Tw-8RO" firstAttribute="width" secondItem="8vj-nc-3j0" secondAttribute="width" multiplier="0.0941476" id="b95-r7-2uK"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wgz-oA-I8t" secondAttribute="trailing" id="cVM-ip-qGr"/>
-                <constraint firstItem="WB0-Tw-8RO" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-120" id="jab-ch-03J"/>
+                <constraint firstItem="voC-tH-ynG" firstAttribute="leading" secondItem="DqV-dB-OkN" secondAttribute="trailing" constant="10" id="e3i-Tb-xxx"/>
+                <constraint firstItem="c43-fD-hyF" firstAttribute="bottom" secondItem="8vj-nc-3j0" secondAttribute="bottom" constant="-40" id="fcJ-ew-BZu"/>
+                <constraint firstItem="WB0-Tw-8RO" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-117" id="gZ6-jV-VUU"/>
+                <constraint firstItem="DqV-dB-OkN" firstAttribute="top" secondItem="8vj-nc-3j0" secondAttribute="top" constant="64" id="iwq-ob-htb"/>
+                <constraint firstItem="c43-fD-hyF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="jW5-3o-ese"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tis-kE-kzR" secondAttribute="trailing" constant="8" id="lBt-LC-Qa9"/>
-                <constraint firstItem="WB0-Tw-8RO" firstAttribute="height" secondItem="8vj-nc-3j0" secondAttribute="height" multiplier="0.0762195" id="mTT-9K-f4T"/>
-                <constraint firstItem="tis-kE-kzR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="56" id="xcg-iP-b8N"/>
+                <constraint firstItem="WB0-Tw-8RO" firstAttribute="height" secondItem="8vj-nc-3j0" secondAttribute="height" multiplier="0.0762195" constant="8.0000000011182237e-06" id="mTT-9K-f4T"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="voC-tH-ynG" secondAttribute="trailing" constant="10" id="nNe-6V-GGR"/>
             </constraints>
             <point key="canvasLocation" x="-74.045801526717554" y="-11.267605633802818"/>
         </view>
     </objects>
     <resources>
         <image name="location" width="40" height="40"/>
+        <image name="magnifyingglass.circle.fill" catalog="system" width="128" height="123"/>
         <image name="pinLocation" width="37" height="50"/>
-        <image name="xmark.circle" catalog="system" width="128" height="123"/>
+        <image name="xmark.circle" catalog="system" width="32" height="32"/>
         <namedColor name="Custom Color">
-            <color red="0.13699999451637268" green="0.22699999809265137" blue="0.2199999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156862745098" green="0.30196078431372547" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -17,10 +17,17 @@ class OrderDetailsViewController: UIViewController {
   @IBOutlet weak var discount: UILabel!
   @IBOutlet weak var totalCost: UILabel!
   
+  let backbutton = UIBarButtonItem()
   override func viewDidLoad() {
     super.viewDidLoad()
     configureTableView()
     promocode.stylingTextField()
+  }
+  override func viewWillAppear(_ animated: Bool) {
+    navigationController?.isNavigationBarHidden = false
+    backbutton.title = "Order Details"
+    navigationController?.navigationBar.tintColor = UIColor.black
+    navigationItem.backBarButtonItem = backbutton
   }
   
   func configureTableView(){

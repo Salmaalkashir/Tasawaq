@@ -11,7 +11,7 @@ class CartViewController: UIViewController {
   //MARK: -IBOutlets
   @IBOutlet weak var cartTableView: UITableView!
   @IBOutlet weak var totalPrice: UILabel!
-  
+  var backbutton = UIBarButtonItem()
   override func viewDidLoad() {
     super.viewDidLoad()
     configureTableView()
@@ -19,6 +19,8 @@ class CartViewController: UIViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     navigationController?.setNavigationBarHidden(true, animated: animated)
+    backbutton.title = "Cart"
+    navigationItem.backBarButtonItem = backbutton
   }
   
   func configureTableView(){

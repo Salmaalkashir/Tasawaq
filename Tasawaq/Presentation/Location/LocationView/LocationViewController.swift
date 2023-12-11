@@ -14,8 +14,12 @@ class LocationViewController: UIViewController {
   @IBOutlet weak var mapView: MKMapView!
   @IBOutlet weak var subView: UIView!
   @IBOutlet weak var userLocation: UILabel!
+  @IBOutlet weak var pinLocation: UIImageView!
+  @IBOutlet weak var searchTextField: UITextField!
+  var userLLocation: CLLocation?
+  var currentAnnotation: MKPointAnnotation?
   
-  var addressViewModel = LocationViewModel()
+  var locationViewModel = LocationViewModel()
   override func viewDidLoad() {
     super.viewDidLoad()
     configureView()
@@ -26,6 +30,7 @@ class LocationViewController: UIViewController {
   }
   
   override func viewWillAppear(_ animated: Bool) {
+    pinLocation.isHidden = true
     navigationController?.isNavigationBarHidden = true
   }
   
@@ -38,8 +43,8 @@ class LocationViewController: UIViewController {
   }
   
   func configureMap(){
-    addressViewModel.locationManager.delegate = self
-    addressViewModel.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    locationViewModel.locationManager.delegate = self
+    locationViewModel.locationManager.desiredAccuracy = kCLLocationAccuracyBest
     mapView.delegate = self
   }
   //MARK: -SettingUpMap
@@ -62,13 +67,13 @@ class LocationViewController: UIViewController {
   }
   
   func checkAuthorization(){
-    switch addressViewModel.locationManager.authorizationStatus{
+    switch locationViewModel.locationManager.authorizationStatus{
     case .authorizedWhenInUse:
-      addressViewModel.locationManager.startUpdatingLocation()
+      locationViewModel.locationManager.startUpdatingLocation()
     case .notDetermined:
-      addressViewModel.locationManager.requestWhenInUseAuthorization()
+      locationViewModel.locationManager.requestWhenInUseAuthorization()
     case .authorizedAlways:
-      addressViewModel.locationManager.startUpdatingLocation()
+      locationViewModel.locationManager.startUpdatingLocation()
     case .denied:
       showAlert(message: "Please allow access to location")
     case .restricted:
@@ -76,7 +81,42 @@ class LocationViewController: UIViewController {
     default:
       break
     }
-    
+  }
+  
+  func zoomToUserLocation(location: CLLocation){
+    let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
+    mapView.setRegion(region, animated: true)
+    let pin = MKPointAnnotation()
+    pin.coordinate = location.coordinate
+    self.mapView.addAnnotation(pin)
+  }
+  
+  func searchForDestination(destination: String){
+    let geoCoder = CLGeocoder()
+    geoCoder.geocodeAddressString(destination) { places, error in
+     guard let place = places?.first, error == nil else{
+       let alert = UIAlertController(title: "Alert", message: "Invalid Destination", preferredStyle: .alert)
+       alert.addAction(UIAlertAction(title: "Ok", style: .destructive))
+       self.present(alert, animated: true)
+       return
+     }
+      guard let location = place.location else {return}
+      
+      if let existingAnnotation = self.currentAnnotation{
+        self.mapView.removeAnnotation(existingAnnotation)
+      }
+      
+      let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
+      self.mapView.setRegion(region, animated: true)
+      self.searchTextField.text = " "
+      
+      let newAnnotation = MKPointAnnotation()
+      newAnnotation.coordinate = location.coordinate
+      newAnnotation.title = "\(place.name ?? "no name")"
+      newAnnotation.subtitle = "\(place.locality ?? "no loc")"
+      self.mapView.addAnnotation(newAnnotation)
+      self.currentAnnotation = newAnnotation
+    }
   }
   
   func showAlert(message: String){
@@ -98,21 +138,40 @@ private extension LocationViewController{
   @IBAction func closeMap(_ sender: UIButton){
     self.navigationController?.popViewController(animated: true)
   }
+  
+  @IBAction func locateUser(_ sender: UIButton){
+    pinLocation.isHidden = true
+    zoomToUserLocation(location: userLLocation ?? CLLocation())
+  }
+  
+  @IBAction func searchLocation(_ sender: UIButton){
+    pinLocation.isHidden = true
+    if searchTextField.text != "" {
+      searchForDestination(destination: searchTextField.text ?? "")
+    }else{
+      let alert = UIAlertController(title: "Alert", message: "Please Enter Your Destination", preferredStyle: .alert)
+      alert.addAction(UIAlertAction(title: "Ok", style: .destructive))
+      self.present(alert, animated: true)
+    }
+  }
+  
+  @IBAction func usePin(_ sender: UIButton){
+    pinLocation.isHidden = false
+  }
 }
 //MARK: -CLLocationManagerDelegate
 extension LocationViewController: CLLocationManagerDelegate{
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    if let location = locations.last{
-      print("location: \(location.coordinate)")
-    }
+    guard let location = locations.last else {return}
+    userLLocation = location
   }
   
   func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
     switch status{
     case .authorizedWhenInUse:
-      addressViewModel.locationManager.startUpdatingLocation()
+      locationViewModel.locationManager.startUpdatingLocation()
     case .authorizedAlways:
-      addressViewModel.locationManager.startUpdatingLocation()
+      locationViewModel.locationManager.startUpdatingLocation()
     case .denied:
       showAlert(message: "Please allow access to location")
     default:

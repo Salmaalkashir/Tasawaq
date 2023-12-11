@@ -94,7 +94,7 @@
                         <action selector="closeMap:" destination="-1" eventType="touchUpInside" id="1Fv-R8-MZj"/>
                     </connections>
                 </button>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter your destination" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DqV-dB-OkN">
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Where shall we drop your order?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DqV-dB-OkN">
                     <rect key="frame" x="8" y="64" width="330" height="35"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -181,7 +181,7 @@
         <image name="location" width="40" height="40"/>
         <image name="magnifyingglass.circle.fill" catalog="system" width="128" height="123"/>
         <image name="pinLocation" width="37" height="50"/>
-        <image name="xmark.circle" catalog="system" width="32" height="32"/>
+        <image name="xmark.circle" catalog="system" width="128" height="123"/>
         <namedColor name="Custom Color">
             <color red="0.20392156862745098" green="0.30196078431372547" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

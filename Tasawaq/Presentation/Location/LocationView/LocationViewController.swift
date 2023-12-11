@@ -17,7 +17,8 @@ class LocationViewController: UIViewController {
   @IBOutlet weak var pinLocation: UIImageView!
   @IBOutlet weak var searchTextField: UITextField!
   var userLLocation: CLLocation?
-  var currentAnnotation: MKPointAnnotation?
+  var searchAnnotation: MKPointAnnotation?
+  var userAnnotation: MKPointAnnotation?
   
   var locationViewModel = LocationViewModel()
   override func viewDidLoad() {
@@ -31,6 +32,7 @@ class LocationViewController: UIViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     pinLocation.isHidden = true
+    userLocation.isHidden = true
     navigationController?.isNavigationBarHidden = true
   }
   
@@ -45,7 +47,6 @@ class LocationViewController: UIViewController {
   func configureMap(){
     locationViewModel.locationManager.delegate = self
     locationViewModel.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-    mapView.delegate = self
   }
   //MARK: -SettingUpMap
   func setStartingLocation(location: CLLocation, distance: CLLocationDistance){
@@ -86,36 +87,61 @@ class LocationViewController: UIViewController {
   func zoomToUserLocation(location: CLLocation){
     let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
     mapView.setRegion(region, animated: true)
-    let pin = MKPointAnnotation()
-    pin.coordinate = location.coordinate
-    self.mapView.addAnnotation(pin)
+    
+    let geoCoder = CLGeocoder()
+    geoCoder.reverseGeocodeLocation(location) { places, error in
+      guard let place = places?.first , error == nil else{return}
+      self.userLocation.text = "\(place.name ?? "no name"),\(place.subLocality ?? "no subloc") ,\(place.administrativeArea ?? "no admin")"
+      
+      let pin = MKPointAnnotation()
+      pin.coordinate = location.coordinate
+      pin.title = "\(place.name ?? "")"
+      pin.subtitle = "\(place.subLocality ?? "")"
+      self.mapView.addAnnotation(pin)
+      self.userAnnotation = pin
+      self.mapView.removeAnnotation(self.searchAnnotation ?? MKPointAnnotation())
+    }
+    
   }
   
   func searchForDestination(destination: String){
     let geoCoder = CLGeocoder()
     geoCoder.geocodeAddressString(destination) { places, error in
-     guard let place = places?.first, error == nil else{
-       let alert = UIAlertController(title: "Alert", message: "Invalid Destination", preferredStyle: .alert)
-       alert.addAction(UIAlertAction(title: "Ok", style: .destructive))
-       self.present(alert, animated: true)
-       return
-     }
+      guard let place = places?.first, error == nil else{
+        let alert = UIAlertController(title: "Alert", message: "Invalid Destination", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .destructive))
+        self.present(alert, animated: true)
+        return
+      }
       guard let location = place.location else {return}
       
-      if let existingAnnotation = self.currentAnnotation{
+      if let existingAnnotation = self.searchAnnotation{
         self.mapView.removeAnnotation(existingAnnotation)
       }
       
       let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
       self.mapView.setRegion(region, animated: true)
       self.searchTextField.text = " "
-      
-      let newAnnotation = MKPointAnnotation()
-      newAnnotation.coordinate = location.coordinate
-      newAnnotation.title = "\(place.name ?? "no name")"
-      newAnnotation.subtitle = "\(place.locality ?? "no loc")"
-      self.mapView.addAnnotation(newAnnotation)
-      self.currentAnnotation = newAnnotation
+      geoCoder.reverseGeocodeLocation(location) { places, error in
+        guard let place = places?.first , error == nil else{return}
+        
+        let newAnnotation = MKPointAnnotation()
+        newAnnotation.coordinate = location.coordinate
+        newAnnotation.title = "\(place.name ?? "no name")"
+        newAnnotation.subtitle = "\(place.locality ?? "no loc")"
+        self.mapView.addAnnotation(newAnnotation)
+        self.mapView.removeAnnotation(self.userAnnotation ?? MKPointAnnotation())
+        self.searchAnnotation = newAnnotation
+        self.userLocation.text = "\(place.name ?? "no name"),\(place.subLocality ?? "no subloc") ,\(place.administrativeArea ?? "no admin")"
+      }
+    }
+  }
+  
+  func getLocationInfo(location: CLLocation){
+    let geoCoder = CLGeocoder()
+    geoCoder.reverseGeocodeLocation(location) { places, error in
+      guard let place = places?.first , error == nil else{return}
+      self.userLocation.text = "\(place.name ?? "no name"),\(place.subLocality ?? "no subloc") ,\(place.administrativeArea ?? "no admin")"
     }
   }
   
@@ -141,6 +167,8 @@ private extension LocationViewController{
   
   @IBAction func locateUser(_ sender: UIButton){
     pinLocation.isHidden = true
+    userLocation.isHidden = false
+    mapView.delegate = .none
     zoomToUserLocation(location: userLLocation ?? CLLocation())
   }
   
@@ -148,6 +176,8 @@ private extension LocationViewController{
     pinLocation.isHidden = true
     if searchTextField.text != "" {
       searchForDestination(destination: searchTextField.text ?? "")
+      userLocation.isHidden = false
+      mapView.delegate = .none
     }else{
       let alert = UIAlertController(title: "Alert", message: "Please Enter Your Destination", preferredStyle: .alert)
       alert.addAction(UIAlertAction(title: "Ok", style: .destructive))
@@ -156,7 +186,11 @@ private extension LocationViewController{
   }
   
   @IBAction func usePin(_ sender: UIButton){
+    userLocation.isHidden = false
     pinLocation.isHidden = false
+    mapView.delegate = self
+    mapView.removeAnnotation(searchAnnotation ?? MKPointAnnotation())
+    mapView.removeAnnotation(userAnnotation ?? MKPointAnnotation())
   }
 }
 //MARK: -CLLocationManagerDelegate
@@ -186,12 +220,5 @@ extension LocationViewController: CLLocationManagerDelegate{
 extension LocationViewController: MKMapViewDelegate{
   func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
     getLocationInfo(location: CLLocation(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude))
-  }
-  func getLocationInfo(location: CLLocation){
-    let geoCoder = CLGeocoder()
-    geoCoder.reverseGeocodeLocation(location) { places, error in
-      guard let place = places?.first , error == nil else{return}
-      self.userLocation.text = "\(place.name ?? "no name"),\(place.subLocality ?? "no subloc") ,\(place.administrativeArea ?? "no admin")"
-    }
   }
 }

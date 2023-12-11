@@ -16,11 +16,9 @@ class LocationViewController: UIViewController {
   @IBOutlet weak var userLocation: UILabel!
   @IBOutlet weak var pinLocation: UIImageView!
   @IBOutlet weak var searchTextField: UITextField!
-  var userLLocation: CLLocation?
-  var searchAnnotation: MKPointAnnotation?
-  var userAnnotation: MKPointAnnotation?
-  
+
   var locationViewModel = LocationViewModel()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     configureView()
@@ -98,8 +96,8 @@ class LocationViewController: UIViewController {
       pin.title = "\(place.name ?? "")"
       pin.subtitle = "\(place.subLocality ?? "")"
       self.mapView.addAnnotation(pin)
-      self.userAnnotation = pin
-      self.mapView.removeAnnotation(self.searchAnnotation ?? MKPointAnnotation())
+      self.locationViewModel.userAnnotation = pin
+      self.mapView.removeAnnotation(self.locationViewModel.searchAnnotation ?? MKPointAnnotation())
     }
     
   }
@@ -115,7 +113,7 @@ class LocationViewController: UIViewController {
       }
       guard let location = place.location else {return}
       
-      if let existingAnnotation = self.searchAnnotation{
+      if let existingAnnotation = self.locationViewModel.searchAnnotation{
         self.mapView.removeAnnotation(existingAnnotation)
       }
       
@@ -130,8 +128,8 @@ class LocationViewController: UIViewController {
         newAnnotation.title = "\(place.name ?? "no name")"
         newAnnotation.subtitle = "\(place.locality ?? "no loc")"
         self.mapView.addAnnotation(newAnnotation)
-        self.mapView.removeAnnotation(self.userAnnotation ?? MKPointAnnotation())
-        self.searchAnnotation = newAnnotation
+        self.mapView.removeAnnotation(self.locationViewModel.userAnnotation ?? MKPointAnnotation())
+        self.locationViewModel.searchAnnotation = newAnnotation
         self.userLocation.text = "\(place.name ?? "no name"),\(place.subLocality ?? "no subloc") ,\(place.administrativeArea ?? "no admin")"
       }
     }
@@ -169,7 +167,7 @@ private extension LocationViewController{
     pinLocation.isHidden = true
     userLocation.isHidden = false
     mapView.delegate = .none
-    zoomToUserLocation(location: userLLocation ?? CLLocation())
+    zoomToUserLocation(location: locationViewModel.userLLocation ?? CLLocation())
   }
   
   @IBAction func searchLocation(_ sender: UIButton){
@@ -189,15 +187,15 @@ private extension LocationViewController{
     userLocation.isHidden = false
     pinLocation.isHidden = false
     mapView.delegate = self
-    mapView.removeAnnotation(searchAnnotation ?? MKPointAnnotation())
-    mapView.removeAnnotation(userAnnotation ?? MKPointAnnotation())
+    mapView.removeAnnotation(locationViewModel.searchAnnotation ?? MKPointAnnotation())
+    mapView.removeAnnotation(locationViewModel.userAnnotation ?? MKPointAnnotation())
   }
 }
 //MARK: -CLLocationManagerDelegate
 extension LocationViewController: CLLocationManagerDelegate{
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     guard let location = locations.last else {return}
-    userLLocation = location
+    locationViewModel.userLLocation = location
   }
   
   func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {

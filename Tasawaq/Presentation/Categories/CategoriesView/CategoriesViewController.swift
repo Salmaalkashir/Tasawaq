@@ -55,7 +55,7 @@ extension CategoriesViewController : UICollectionViewDelegateFlowLayout{
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
     let screenWidth = UIScreen.main.bounds.width
     let itemWidth = screenWidth / 2 - 20
-    let itemHeight = itemWidth * (1.3)
+    let itemHeight = itemWidth * (1.2)
     
     return CGSize(width:itemWidth , height: itemHeight)
   }

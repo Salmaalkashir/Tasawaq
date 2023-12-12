@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BrandProductsViewController" customModule="Tasawaq" customModuleProvider="target">
+            <connections>
+                <outlet property="brandProductsCollectionView" destination="zld-QN-aVD" id="aXA-sd-tvX"/>
+                <outlet property="priceSegmentControl" destination="HtM-Nw-MoF" id="d8m-oa-P5q"/>
+                <outlet property="searchBrandProduct" destination="ENA-SJ-Bla" id="Yeg-oJ-slK"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ENA-SJ-Bla">
+                    <rect key="frame" x="0.0" y="59" width="393" height="56"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="tzT-Zw-ZJL"/>
+                    </connections>
+                </searchBar>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yJ-xS-y6o">
+                    <rect key="frame" x="16" y="131" width="48" height="23"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="zld-QN-aVD">
+                    <rect key="frame" x="8" y="166" width="377" height="644"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QGL-Vc-08S">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="HtM-Nw-MoF">
+                    <rect key="frame" x="104" y="127" width="185" height="32"/>
+                    <segments>
+                        <segment title="High to Low"/>
+                        <segment title="Low to High"/>
+                    </segments>
+                    <color key="selectedSegmentTintColor" name="Custom Color"/>
+                    <connections>
+                        <action selector="segmentControlReload:" destination="-1" eventType="valueChanged" id="ypu-BO-H3l"/>
+                    </connections>
+                </segmentedControl>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="ENA-SJ-Bla" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="04L-Yr-bfp"/>
+                <constraint firstItem="zld-QN-aVD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="2Pk-6b-hwP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zld-QN-aVD" secondAttribute="trailing" constant="8" id="Ghn-Ws-2jb"/>
+                <constraint firstItem="HtM-Nw-MoF" firstAttribute="leading" secondItem="0yJ-xS-y6o" secondAttribute="trailing" constant="40" id="I9Z-1l-xBY"/>
+                <constraint firstItem="ENA-SJ-Bla" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="RBP-au-4wd"/>
+                <constraint firstItem="0yJ-xS-y6o" firstAttribute="top" secondItem="ENA-SJ-Bla" secondAttribute="bottom" constant="16" id="eMg-fJ-qaw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="zld-QN-aVD" secondAttribute="bottom" constant="8" id="egH-Rh-XKI"/>
+                <constraint firstItem="ENA-SJ-Bla" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="q8W-3f-p1j"/>
+                <constraint firstItem="HtM-Nw-MoF" firstAttribute="centerY" secondItem="0yJ-xS-y6o" secondAttribute="centerY" id="qAN-rq-gVf"/>
+                <constraint firstItem="zld-QN-aVD" firstAttribute="top" secondItem="HtM-Nw-MoF" secondAttribute="bottom" constant="8" id="t6a-BN-ukw"/>
+                <constraint firstItem="0yJ-xS-y6o" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="zUl-80-dDa"/>
+            </constraints>
+            <point key="canvasLocation" x="55.725190839694655" y="-11.267605633802818"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="Custom Color">
+            <color red="0.20399999618530273" green="0.30199998617172241" blue="0.23100000619888306" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

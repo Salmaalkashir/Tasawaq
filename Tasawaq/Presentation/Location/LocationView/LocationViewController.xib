@@ -49,7 +49,7 @@
                             </constraints>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPS-m9-Cfl">
-                            <rect key="frame" x="89" y="88" width="215" height="40"/>
+                            <rect key="frame" x="89" y="80" width="215" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="215" id="DQI-ST-E3h"/>
                                 <constraint firstAttribute="height" constant="40" id="dFm-g3-dyS"/>
@@ -68,12 +68,11 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="OGu-xe-8A0" firstAttribute="leading" secondItem="Hfm-xU-8Ba" secondAttribute="trailing" constant="32" id="5io-Fv-Zhe"/>
-                        <constraint firstItem="nPS-m9-Cfl" firstAttribute="top" secondItem="OGu-xe-8A0" secondAttribute="bottom" constant="24" id="h33-P4-S1S"/>
+                        <constraint firstItem="nPS-m9-Cfl" firstAttribute="top" secondItem="OGu-xe-8A0" secondAttribute="bottom" constant="16" id="Vxo-OH-Tle"/>
                         <constraint firstItem="nPS-m9-Cfl" firstAttribute="leading" secondItem="wgz-oA-I8t" secondAttribute="leading" constant="89" id="jCn-ap-B2t"/>
                         <constraint firstItem="OGu-xe-8A0" firstAttribute="centerY" secondItem="Hfm-xU-8Ba" secondAttribute="centerY" id="m5b-F1-fp4"/>
                         <constraint firstAttribute="trailing" secondItem="OGu-xe-8A0" secondAttribute="trailing" constant="24" id="r3v-a4-5oj"/>
                         <constraint firstItem="Hfm-xU-8Ba" firstAttribute="top" secondItem="wgz-oA-I8t" secondAttribute="top" constant="24" id="sI1-Y0-EYT"/>
-                        <constraint firstAttribute="bottom" secondItem="nPS-m9-Cfl" secondAttribute="bottom" constant="96" id="yxN-LQ-FOD"/>
                         <constraint firstItem="Hfm-xU-8Ba" firstAttribute="leading" secondItem="wgz-oA-I8t" secondAttribute="leading" constant="16" id="zzj-OS-9pU"/>
                     </constraints>
                 </view>
@@ -105,7 +104,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voC-tH-ynG">
-                    <rect key="frame" x="348" y="64.333333333333329" width="35" height="34.333333333333329"/>
+                    <rect key="frame" x="348" y="64.666666666666671" width="35" height="34"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain">
                         <imageReference key="image" image="magnifyingglass.circle.fill" catalog="system" symbolScale="large"/>

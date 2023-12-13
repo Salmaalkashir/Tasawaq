@@ -9,8 +9,8 @@ import UIKit
 
 class CategoriesViewController: UIViewController {
   //MARK: -IBOutlets
-  @IBOutlet weak var segment: UISegmentedControl!
-  @IBOutlet weak var subCategory: UISegmentedControl!
+  @IBOutlet weak var categoriesSegmentControl: UISegmentedControl!
+  @IBOutlet weak var subCategoriesSegmentControl: UISegmentedControl!
   @IBOutlet weak var productsCollectionView: UICollectionView!
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -31,11 +31,11 @@ class CategoriesViewController: UIViewController {
   }
   
   func configureSegmentControl(){
-    segment.setTitleTextAttributes([.foregroundColor: UIColor.black], for: .normal)
-    segment.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
+    categoriesSegmentControl.setTitleTextAttributes([.foregroundColor: UIColor.black], for: .normal)
+    categoriesSegmentControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
     
-    subCategory.setTitleTextAttributes([.foregroundColor: UIColor.black], for: .normal)
-    subCategory.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
+    subCategoriesSegmentControl.setTitleTextAttributes([.foregroundColor: UIColor.black], for: .normal)
+    subCategoriesSegmentControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
   }
 }
 //MARK: -UICollectionViewDataSource,UICollectionViewDelegate

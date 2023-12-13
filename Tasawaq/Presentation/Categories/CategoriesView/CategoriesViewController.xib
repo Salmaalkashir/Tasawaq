@@ -11,9 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CategoriesViewController" customModule="Tasawaq" customModuleProvider="target">
             <connections>
+                <outlet property="categoriesSegmentControl" destination="81o-Vt-WLt" id="Ovp-IG-d4d"/>
                 <outlet property="productsCollectionView" destination="CoQ-Tm-4rd" id="JaK-JJ-gNh"/>
-                <outlet property="segment" destination="81o-Vt-WLt" id="Ovp-IG-d4d"/>
-                <outlet property="subCategory" destination="xSQ-jl-DH3" id="zz6-tv-htb"/>
+                <outlet property="subCategoriesSegmentControl" destination="xSQ-jl-DH3" id="zz6-tv-htb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

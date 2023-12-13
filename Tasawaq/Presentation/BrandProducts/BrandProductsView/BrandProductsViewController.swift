@@ -57,7 +57,7 @@ class BrandProductsViewController: UIViewController {
 
 //MARK: -IBActions
 private extension BrandProductsViewController{
-  @IBAction func segmentControlReload(_ sender: Any){
+  @IBAction func segmentControlReload(_ sender: UISegmentedControl){
     brandProductsCollectionView.reloadData()
   }
 }

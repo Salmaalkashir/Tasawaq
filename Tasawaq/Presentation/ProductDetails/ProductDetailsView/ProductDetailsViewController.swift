@@ -19,6 +19,8 @@ class ProductDetailsViewController: UIViewController {
   @IBOutlet weak var productDescription: UILabel!
   @IBOutlet weak var reviewsTableView: UITableView!
   
+  let imageNames = ["adidas", "paypal", "cash", "checked"]
+  var currentImageIndex = 0
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -27,6 +29,7 @@ class ProductDetailsViewController: UIViewController {
     setupSwipeGestureRecognizers()
     containerView.addSubview(reviewsTableView)
     reviewsTableView.isHidden = true
+    updateImageView()
   }
   
   func configureTableView(){
@@ -42,21 +45,28 @@ class ProductDetailsViewController: UIViewController {
   }
   
   func setupSwipeGestureRecognizers() {
-      let swipeRightGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeRight))
-      swipeRightGesture.direction = .right
-      productImages.addGestureRecognizer(swipeRightGesture)
-
-      let swipeLeftGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeLeft))
-      swipeLeftGesture.direction = .left
-      productImages.addGestureRecognizer(swipeLeftGesture)
+    let swipeRightGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeRight))
+    swipeRightGesture.direction = .right
+    productImages.addGestureRecognizer(swipeRightGesture)
+    
+    let swipeLeftGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeLeft))
+    swipeLeftGesture.direction = .left
+    productImages.addGestureRecognizer(swipeLeftGesture)
   }
   @objc func handleSwipeRight() {
-        print("Swipe to the right detected")
-    }
-
-    @objc func handleSwipeLeft() {
-        print("Swipe to the left detected")
-    }
+    currentImageIndex = max(0, currentImageIndex - 1)
+    updateImageView()
+  }
+  
+  @objc func handleSwipeLeft() {
+    currentImageIndex = min(imageNames.count - 1, currentImageIndex + 1)
+    updateImageView()
+  }
+  
+  func updateImageView(){
+    let images = imageNames[currentImageIndex]
+    productImages.image = UIImage(named: images)
+  }
 }
 //MARK: -IBAction
 private extension ProductDetailsViewController{
@@ -90,6 +100,6 @@ extension ProductDetailsViewController: UITableViewDelegate,UITableViewDataSourc
     return cell
   }
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-      return 100
+    return 100
   }
 }

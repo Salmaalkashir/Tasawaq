@@ -46,6 +46,8 @@
 		389EB8C22B1D16040044450B /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389EB8C02B1D16040044450B /* CartTableViewCell.swift */; };
 		389EB8C32B1D16040044450B /* CartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 389EB8C12B1D16040044450B /* CartTableViewCell.xib */; };
 		389EB8CC2B1D54DE0044450B /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389EB8CB2B1D54DE0044450B /* CustomTabBarViewController.swift */; };
+		389F03AE2B29E9E2005EFFB9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389F03AC2B29E9E2005EFFB9 /* SettingsViewController.swift */; };
+		389F03AF2B29E9E2005EFFB9 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 389F03AD2B29E9E2005EFFB9 /* SettingsViewController.xib */; };
 		38A49E052B16C35E0003709E /* DetailedProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A49E032B16C35E0003709E /* DetailedProductCollectionViewCell.swift */; };
 		38A49E062B16C35E0003709E /* DetailedProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A49E042B16C35E0003709E /* DetailedProductCollectionViewCell.xib */; };
 		38BC223A2B1F7B6B00461CA2 /* OrderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BC22382B1F7B6B00461CA2 /* OrderDetailsViewController.swift */; };
@@ -131,6 +133,8 @@
 		389EB8C02B1D16040044450B /* CartTableViewCell.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; tabWidth = 2; };
 		389EB8C12B1D16040044450B /* CartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartTableViewCell.xib; sourceTree = "<group>"; };
 		389EB8CB2B1D54DE0044450B /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
+		389F03AC2B29E9E2005EFFB9 /* SettingsViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
+		389F03AD2B29E9E2005EFFB9 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		38A49E032B16C35E0003709E /* DetailedProductCollectionViewCell.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = DetailedProductCollectionViewCell.swift; sourceTree = "<group>"; tabWidth = 2; };
 		38A49E042B16C35E0003709E /* DetailedProductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailedProductCollectionViewCell.xib; sourceTree = "<group>"; };
 		38BC22382B1F7B6B00461CA2 /* OrderDetailsViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -507,6 +511,7 @@
 		3890766D2B14C5F800204768 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				389F03A92B29E9B5005EFFB9 /* Settings */,
 				38D06D922B28A72C00786C8D /* ProductDetails */,
 				389D21962B2772CD0024ED28 /* BrandProducts */,
 				388DC7922B23B1B600C6FB8C /* AddressConfirmation */,
@@ -627,6 +632,31 @@
 				389EB8CB2B1D54DE0044450B /* CustomTabBarViewController.swift */,
 			);
 			path = CustomTabBar;
+			sourceTree = "<group>";
+		};
+		389F03A92B29E9B5005EFFB9 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				389F03AB2B29E9C5005EFFB9 /* SettingsViewModel */,
+				389F03AA2B29E9BC005EFFB9 /* SettingsView */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		389F03AA2B29E9BC005EFFB9 /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				389F03AC2B29E9E2005EFFB9 /* SettingsViewController.swift */,
+				389F03AD2B29E9E2005EFFB9 /* SettingsViewController.xib */,
+			);
+			path = SettingsView;
+			sourceTree = "<group>";
+		};
+		389F03AB2B29E9C5005EFFB9 /* SettingsViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SettingsViewModel;
 			sourceTree = "<group>";
 		};
 		38A49E022B16C30D0003709E /* DetailedProductCollectionViewCell */ = {
@@ -884,6 +914,7 @@
 				3876E4DD2B1F6AB200E9A4D3 /* UserOrdersTableViewCell.xib in Resources */,
 				3889CD892B1FCCD20018CC48 /* ShippingAddressTableViewCell.xib in Resources */,
 				3876E4D32B1F581900E9A4D3 /* UserViewController.xib in Resources */,
+				389F03AF2B29E9E2005EFFB9 /* SettingsViewController.xib in Resources */,
 				3882E5FD2B20B5CC0065DFF7 /* PaymentMethodsViewController.xib in Resources */,
 				3872C0932B2926FB009DFB74 /* ProductDetailsViewController.xib in Resources */,
 				389076462B14C56A00204768 /* LaunchScreen.storyboard in Resources */,
@@ -1049,6 +1080,7 @@
 				38EC006D2B22672F0076B730 /* LocationViewModel.swift in Sources */,
 				389EB8CC2B1D54DE0044450B /* CustomTabBarViewController.swift in Sources */,
 				3882E5FC2B20B5CC0065DFF7 /* PaymentMethodsViewController.swift in Sources */,
+				389F03AE2B29E9E2005EFFB9 /* SettingsViewController.swift in Sources */,
 				3890763A2B14C55A00204768 /* AppDelegate.swift in Sources */,
 				38C64BA82B1540B300873D8E /* SignUpViewController.swift in Sources */,
 				3876E4CB2B1F53FD00E9A4D3 /* WishListViewController.swift in Sources */,

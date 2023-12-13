@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeCollectionViewCell: UICollectionViewCell {
+class BrandsCollectionViewCell: UICollectionViewCell {
     //MARK: -IBOutlets
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var cellView: UIView!

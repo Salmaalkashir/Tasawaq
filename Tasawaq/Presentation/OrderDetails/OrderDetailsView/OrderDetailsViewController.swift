@@ -54,7 +54,6 @@ private extension OrderDetailsViewController{
       sheet.preferredCornerRadius = 25
       sheet.prefersScrollingExpandsWhenScrolledToEdge = false
     }
-   // paymentobj.modalPresentationStyle = .pageSheet
     self.present(paymentobj, animated: true)
   }
 }

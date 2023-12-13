@@ -49,6 +49,9 @@ extension CategoriesViewController: UICollectionViewDataSource,UICollectionViewD
     cell.configureCell(image: UIImage(named: "adidas") ?? UIImage(), name: "ADIDAS | CLASSIC BACKPACK ", price: "USD 70.00")
     return cell
   }
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    self.navigationController?.pushViewController(ProductDetailsViewController(), animated: true)
+  }
 }
 //MARK: -UICollectionViewDelegateFlowLayout
 extension CategoriesViewController : UICollectionViewDelegateFlowLayout{

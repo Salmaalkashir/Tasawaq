@@ -18,6 +18,7 @@ class BrandProductsViewController: UIViewController {
   var pricesDouble: [Double]?
   var highSort:[Double]?
   var lowSort: [Double]?
+  var backbutton = UIBarButtonItem()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -27,7 +28,12 @@ class BrandProductsViewController: UIViewController {
     filterNames = names
     searchBrandProduct.delegate = self
   }
-  
+  override func viewWillAppear(_ animated: Bool) {
+    navigationController?.isNavigationBarHidden = false
+    backbutton.title = "Brand"
+    navigationController?.navigationBar.tintColor = UIColor.black
+    navigationItem.backBarButtonItem = backbutton
+  }
   func configureCollectionView(){
     brandProductsCollectionView.dataSource = self
     brandProductsCollectionView.delegate = self
@@ -44,13 +50,11 @@ class BrandProductsViewController: UIViewController {
   
   func sortAscendingly(){
     pricesDouble?.sort(by: <)
-    print("low\(pricesDouble ?? [])")
     highSort = pricesDouble
   }
   
   func sortDescendingly(){
     pricesDouble?.sort(by: >)
-    print("high\(pricesDouble ?? [])")
     lowSort = pricesDouble
   }
 }
@@ -81,6 +85,9 @@ extension BrandProductsViewController: UICollectionViewDelegate, UICollectionVie
       break
     }
     return cell
+  }
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    self.navigationController?.pushViewController(ProductDetailsViewController(), animated: true)
   }
 }
 

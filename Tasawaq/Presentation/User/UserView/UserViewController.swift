@@ -11,7 +11,7 @@ class UserViewController: UIViewController {
   //MARK: -IBOutlets
   @IBOutlet weak var userOrdersTableView: UITableView!
   @IBOutlet weak var userWishListCollectionView: UICollectionView!
-  
+  let backbutton = UIBarButtonItem()
   override func viewDidLoad() {
     super.viewDidLoad()
     configureCollectionView()
@@ -20,6 +20,9 @@ class UserViewController: UIViewController {
   }
   override func viewWillAppear(_ animated: Bool) {
     navigationController?.setNavigationBarHidden(true, animated: animated)
+    backbutton.title = "Profile"
+    navigationController?.navigationBar.tintColor = UIColor.black
+    navigationItem.backBarButtonItem = backbutton
   }
   
   func configureTableView(){
@@ -42,12 +45,14 @@ class UserViewController: UIViewController {
 //MARK: -IBActions
 private extension UserViewController{
   @IBAction func goToSettings(_ sender: UIButton){
+    self.navigationController?.pushViewController(SettingsViewController(), animated: true)
   }
   
   @IBAction func seeMoreOrders(_ sender:UIButton){
   }
   
   @IBAction func seeMoreWishList(_ sender: UIButton){
+    self.navigationController?.pushViewController(WishListViewController(), animated: true)
   }
 }
 //MARK: -UITableViewDelegate,UITableViewDataSource

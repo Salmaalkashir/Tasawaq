@@ -7,7 +7,7 @@
 
 import Foundation
 struct CustomerAddress: Codable{
-    var id: Int?
-    var address1, address2, city: String?
-    var `default`: Bool?
+  var id: Int?
+  var address1, address2, city: String?
+  var `default`: Bool?
 }

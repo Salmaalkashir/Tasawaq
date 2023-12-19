@@ -8,22 +8,20 @@
 import Foundation
 
 struct DraftOrders: Codable{
-    var draft_orders: [DraftOrder]
-}
-struct DraftOrder: Codable{
-    var id: Int?
-    var currency, total_price, subtotal_price, total_tax: String?
-    var line_items: [LineItem]?
-   // var applied_discount:
-    var customer: [Customer]?
-    var default_address: CustomerAddress?
-}
-struct LineItem: Codable{
-    var id, quantity: Int?
-    var price: String?
+  var draft_orders: [DraftOrder]
 }
 
-struct Customer: Codable{
-    var id, orders_count, last_order_id: Int?
-    var email, first_name, last_name, phone: String?
+struct DraftOrder: Codable{
+  var id: Int?
+  var currency, subtotal_price, email, note: String?
+  var line_items: [LineItem]?
+  var customer: [Customer]?
+  var default_address: CustomerAddress?
 }
+
+struct LineItem: Codable{
+  var id, product_id, quantity: Int?
+  var price, title, vendor: String?
+}
+
+

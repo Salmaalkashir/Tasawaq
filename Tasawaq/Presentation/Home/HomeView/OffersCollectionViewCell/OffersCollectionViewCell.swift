@@ -12,10 +12,11 @@ class OffersCollectionViewCell: UICollectionViewCell {
   @IBOutlet weak var offerImage: UIImageView!
   override func awakeFromNib() {
     super.awakeFromNib()
-    configureCell()
+    
   }
-  func configureCell(){
-    offerImage.layer.cornerRadius = 20
+  func configureCell(image: UIImage){
+    offerImage.image = image
+
   }
   
 }

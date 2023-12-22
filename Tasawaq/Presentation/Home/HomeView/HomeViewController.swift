@@ -8,26 +8,39 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-  //MARK: -IBOutlets
+  // MARK: - IBOutlets
   @IBOutlet weak var offerCollectionView: UICollectionView!
   @IBOutlet weak var brandCollectionView: UICollectionView!
   @IBOutlet weak var offerPageControl: UIPageControl!
   
-  let backbutton = UIBarButtonItem()
-  let imageNames = [UIImage(named: "pink"),UIImage(named: "yellow"), UIImage(named: "teal")]
-  var timer: Timer?
-  var currentImageIndex = 0
+  let homeViewModel = HomeViewModel()
+
   override func viewDidLoad() {
     super.viewDidLoad()
     configureCollectionView()
     startTimer()
-    offerPageControl.numberOfPages = imageNames.count
+    offerPageControl.numberOfPages = homeViewModel.imageNames.count
+    homeViewModel.retrieveOffers()
+    homeViewModel.bindOffersToHomeController = {
+      DispatchQueue.main.async {
+        self.homeViewModel.offersArray = self.homeViewModel.retrievedOffers
+        self.offerCollectionView.reloadData()
+      }
+    }
+    
+    homeViewModel.retrieveBrands()
+    homeViewModel.bindBrandsToHomeController = {
+      DispatchQueue.main.async {
+        self.homeViewModel.brandsArray = self.homeViewModel.retrievedBrands
+        self.brandCollectionView.reloadData()
+      }
+    }
   }
   override func viewWillAppear(_ animated: Bool) {
     navigationController?.setNavigationBarHidden(true, animated: animated)
-    backbutton.title = "Home"
-    backbutton.tintColor = .black
-    navigationItem.backBarButtonItem = backbutton
+    homeViewModel.backbutton.title = "Home"
+    homeViewModel.backbutton.tintColor = .black
+    navigationItem.backBarButtonItem = homeViewModel.backbutton
   }
   
   func configureCollectionView(){
@@ -47,12 +60,12 @@ class HomeViewController: UIViewController {
   }
   
   func startTimer(){
-    timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(moveToNextImage), userInfo: nil, repeats: true)
+    homeViewModel.timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(moveToNextImage), userInfo: nil, repeats: true)
   }
   @objc func moveToNextImage(){
-    currentImageIndex = (currentImageIndex + 1) % imageNames.count
-    offerCollectionView.scrollToItem(at: IndexPath(item: currentImageIndex, section: 0), at: .centeredHorizontally, animated: true)
-    offerPageControl.currentPage = currentImageIndex
+    homeViewModel.currentImageIndex = (homeViewModel.currentImageIndex + 1) % homeViewModel.imageNames.count
+    offerCollectionView.scrollToItem(at: IndexPath(item: homeViewModel.currentImageIndex, section: 0), at: .centeredHorizontally, animated: true)
+    offerPageControl.currentPage = homeViewModel.currentImageIndex
   }
   
   func showToastMessagee(message: String, color: UIColor){
@@ -74,7 +87,7 @@ class HomeViewController: UIViewController {
     }
   }
 }
-//MARK: -UICollectionViewDataSource,Delegate
+// MARK: - UICollectionViewDataSource,Delegate
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -82,7 +95,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     case offerCollectionView:
       return 3
     case brandCollectionView:
-      return 10
+      return homeViewModel.brandsArray?.smart_collections.count ?? 0
     default:
       return 0
     }
@@ -92,11 +105,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     switch collectionView{
     case offerCollectionView:
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "offersCell", for: indexPath) as! OffersCollectionViewCell
-      cell.offerImage.image = imageNames[indexPath.row]
+      cell.configureCell(image: homeViewModel.imageNames[indexPath.row] ?? UIImage())
       return cell
     case brandCollectionView:
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "brandsCell", for: indexPath) as! BrandsCollectionViewCell
-      cell.configureCell(img: UIImage(named: "adidas") ?? UIImage())
+      cell.configureCell(img: homeViewModel.brandsArray?.smart_collections[indexPath.row].image.src ?? "")
       return cell
     default:
       return UICollectionViewCell()
@@ -107,7 +120,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     switch collectionView{
     case offerCollectionView:
       let pasteboard = UIPasteboard.general
-      pasteboard.string = "SALE 10"
+      pasteboard.string = homeViewModel.offersArray?.discount_codes[indexPath.row].code
       showToastMessagee(message: "Code Copied", color: .black)
     case brandCollectionView:
       self.navigationController?.pushViewController(BrandProductsViewController(), animated: true)
@@ -117,7 +130,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
   }
 }
 
-//MARK: -UICollectionViewDelegateFlowLayout
+// MARK: - UICollectionViewDelegateFlowLayout
 extension HomeViewController : UICollectionViewDelegateFlowLayout{
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
     

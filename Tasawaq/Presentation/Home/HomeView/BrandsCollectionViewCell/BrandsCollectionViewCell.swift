@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 class BrandsCollectionViewCell: UICollectionViewCell {
     //MARK: -IBOutlets
     @IBOutlet weak var image: UIImageView!
@@ -17,8 +17,8 @@ class BrandsCollectionViewCell: UICollectionViewCell {
         configureCellView()
     }
     //MARK: -Configurations
-    func configureCell(img: UIImage){
-      image.image = img
+    func configureCell(img: String){
+        image.kf.setImage(with: URL(string: img))
     }
 
     func configureCellView(){

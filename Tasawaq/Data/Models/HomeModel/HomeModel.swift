@@ -6,7 +6,7 @@
 //
 
 import Foundation
-//MARK: -Offers
+// MARK: - Offers
 struct Coupon: Codable{
   var discount_codes: [Discounts]
 }
@@ -16,7 +16,7 @@ struct Discounts: Codable{
   var code: String?
 }
 
-//MARK: -Brands
+// MARK: - Brands
 struct SmartCollection: Codable{
   var smart_collections: [Brands]
 }

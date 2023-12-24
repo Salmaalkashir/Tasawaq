@@ -13,6 +13,7 @@ class BrandProductsViewController: UIViewController {
   @IBOutlet weak var brandProductsCollectionView: UICollectionView!
   @IBOutlet weak var priceSegmentControl: UISegmentedControl!
   var brandID: String?
+  var brandName: String?
   var brandProductsViewModel = BrandProductsViewModel()
 
   override func viewDidLoad() {
@@ -35,7 +36,7 @@ class BrandProductsViewController: UIViewController {
   }
   override func viewWillAppear(_ animated: Bool) {
     navigationController?.isNavigationBarHidden = false
-    brandProductsViewModel.backbutton.title = " "
+    brandProductsViewModel.backbutton.title = brandName
     navigationController?.navigationBar.tintColor = UIColor.black
     navigationItem.backBarButtonItem =  brandProductsViewModel.backbutton
   }

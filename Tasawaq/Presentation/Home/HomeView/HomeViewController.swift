@@ -124,6 +124,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     case brandCollectionView:
       let brandProductObj = BrandProductsViewController()
       brandProductObj.brandID = String(homeViewModel.brandsArray?.smart_collections[indexPath.row].id ?? 0)
+      brandProductObj.brandName = homeViewModel.brandsArray?.smart_collections[indexPath.row].title ?? ""
       self.navigationController?.pushViewController(brandProductObj, animated: true)
     default:
       break

@@ -43,8 +43,8 @@
             </constraints>
             <size key="customSize" width="138" height="132"/>
             <connections>
+                <outlet property="brandImage" destination="SdA-qp-Al8" id="9Ix-vT-FiQ"/>
                 <outlet property="cellView" destination="acB-em-3qN" id="La2-MH-tWH"/>
-                <outlet property="image" destination="SdA-qp-Al8" id="9Ix-vT-FiQ"/>
             </connections>
             <point key="canvasLocation" x="196.94656488549617" y="17.605633802816904"/>
         </collectionViewCell>

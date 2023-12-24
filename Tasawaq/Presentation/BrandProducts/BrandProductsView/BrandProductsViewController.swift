@@ -12,29 +12,34 @@ class BrandProductsViewController: UIViewController {
   @IBOutlet weak var searchBrandProduct: UISearchBar!
   @IBOutlet weak var brandProductsCollectionView: UICollectionView!
   @IBOutlet weak var priceSegmentControl: UISegmentedControl!
-  var prices = ["70.00", "150.00", "100.00", "50.00"]
-  var names = ["adidas", "nike", "pull&bear", "sketchers"]
-  var filterNames: [String]?
-  var pricesDouble: [Double]?
-  var highSort:[Double]?
-  var lowSort: [Double]?
-  var backbutton = UIBarButtonItem()
+  var brandID: String?
+  var brandProductsViewModel = BrandProductsViewModel()
 
   override func viewDidLoad() {
     super.viewDidLoad()
     configureCollectionView()
     configureSegmentControl()
-    pricesDouble = prices.map{Double($0) ?? 0}
-    filterNames = names
+    
     searchBrandProduct.delegate = self
+    brandProductsViewModel.brandId = brandID
+    brandProductsViewModel.retrieveBrandProduct()
+    brandProductsViewModel.bindBrandProductsToController = {
+      DispatchQueue.main.async {
+        self.brandProductsViewModel.brandProductsArray = self.brandProductsViewModel.retrievedBrandProducts
+        self.brandProductsViewModel.searchArray = self.brandProductsViewModel.brandProductsArray?.products
+        self.brandProductsViewModel.sortedProducts = self.brandProductsViewModel.brandProductsArray?.products
+        self.brandProductsCollectionView.reloadData()
+      }
+    }
+   
   }
   override func viewWillAppear(_ animated: Bool) {
     navigationController?.isNavigationBarHidden = false
-    backbutton.title = "Brand"
+    brandProductsViewModel.backbutton.title = " "
     navigationController?.navigationBar.tintColor = UIColor.black
-    navigationItem.backBarButtonItem = backbutton
+    navigationItem.backBarButtonItem =  brandProductsViewModel.backbutton
   }
-  func configureCollectionView(){
+  func configureCollectionView() {
     brandProductsCollectionView.dataSource = self
     brandProductsCollectionView.delegate = self
     let nib1 = UINib(nibName: "DetailedProductCollectionViewCell", bundle: nil)
@@ -43,44 +48,57 @@ class BrandProductsViewController: UIViewController {
     brandProductsCollectionView.layer.cornerRadius = 20
   }
   
-  func configureSegmentControl(){
+  
+  func configureSegmentControl() {
     priceSegmentControl.setTitleTextAttributes([.foregroundColor: UIColor.black], for: .normal)
     priceSegmentControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
   }
   
-  func sortAscendingly(){
-    pricesDouble?.sort(by: <)
-    highSort = pricesDouble
+  func sortLowToHigh() {
+    brandProductsViewModel.searchArray?.sort{
+      guard let firstProduct = Double($0.variants[0].price ?? ""),
+            let secondProduct = Double($1.variants[0].price ?? "")else{
+        return false
+      }
+      return firstProduct < secondProduct
+    }
+    
   }
   
-  func sortDescendingly(){
-    pricesDouble?.sort(by: >)
-    lowSort = pricesDouble
+  func sortHighToLow() {
+    brandProductsViewModel.searchArray?.sort{
+      guard let firstProduct = Double($0.variants[0].price ?? ""),
+            let secondProduct = Double($1.variants[0].price ?? "")else{
+        return false
+      }
+      return firstProduct > secondProduct
+    }
   }
 }
 
-//MARK: -IBActions
-private extension BrandProductsViewController{
+// MARK: - IBActions
+private extension BrandProductsViewController {
   @IBAction func segmentControlReload(_ sender: UISegmentedControl){
     brandProductsCollectionView.reloadData()
   }
 }
 
-//MARK: -UICollectionViewDelegate, UICollectionViewDataSource
-extension BrandProductsViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource
+extension BrandProductsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return filterNames?.count ?? 0
+    return  brandProductsViewModel.searchArray?.count ?? 0
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "detailedProductCell", for: indexPath) as! DetailedProductCollectionViewCell
+   
     switch priceSegmentControl.selectedSegmentIndex{
     case 0:
-      sortDescendingly()
-      cell.configureCell(image: UIImage(named: "adidas") ?? UIImage(), name: filterNames?[indexPath.row] ?? "", price: "\(lowSort?[indexPath.row] ?? 0.0)")
+      sortHighToLow()
+      cell.configureCell(image: brandProductsViewModel.searchArray?[indexPath.row].image.src ?? "" , name:  brandProductsViewModel.searchArray?[indexPath.row].title  ?? "" , price:  brandProductsViewModel.searchArray?[indexPath.row].variants[0].price ?? "")
     case 1:
-      sortAscendingly()
-      cell.configureCell(image: UIImage(named: "adidas") ?? UIImage(), name: filterNames?[indexPath.row] ?? "", price: "\(highSort?[indexPath.row] ?? 0.0)")
+      sortLowToHigh()
+      cell.configureCell(image: brandProductsViewModel.searchArray?[indexPath.row].image.src ?? "" , name: brandProductsViewModel.searchArray?[indexPath.row].title  ?? "" , price: brandProductsViewModel.searchArray?[indexPath.row].variants[0].price ?? "")
     default:
       break
     }
@@ -91,8 +109,8 @@ extension BrandProductsViewController: UICollectionViewDelegate, UICollectionVie
   }
 }
 
-//MARK: -UICollectionViewDelegateFlowLayout
-extension BrandProductsViewController : UICollectionViewDelegateFlowLayout{
+// MARK: - UICollectionViewDelegateFlowLayout
+extension BrandProductsViewController : UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
     let screenWidth = UIScreen.main.bounds.width
     let itemWidth = screenWidth / 2 - 20
@@ -102,14 +120,20 @@ extension BrandProductsViewController : UICollectionViewDelegateFlowLayout{
   }
 }
 
-//MARK: -UISearchBarDelegate
+// MARK: - UISearchBarDelegate
 extension BrandProductsViewController: UISearchBarDelegate{
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-      if searchText.isEmpty {
-          filterNames = names
-      } else {
-          filterNames = names.filter { $0.uppercased().contains(searchText.uppercased()) }
+    brandProductsViewModel.searchArray = []
+    
+    if searchText.isEmpty {
+      brandProductsViewModel.searchArray = brandProductsViewModel.brandProductsArray?.products
+    }
+    for productName in brandProductsViewModel.brandProductsArray?.products ?? [] {
+      let name = productName.title ?? ""
+      if (name.uppercased().contains(searchText.uppercased())){
+        brandProductsViewModel.searchArray?.append(productName)
       }
-      brandProductsCollectionView.reloadData()
+    }
+    brandProductsCollectionView.reloadData()
   }
 }

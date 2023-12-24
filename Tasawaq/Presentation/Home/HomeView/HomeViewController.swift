@@ -19,20 +19,19 @@ class HomeViewController: UIViewController {
     super.viewDidLoad()
     configureCollectionView()
     startTimer()
-    offerPageControl.numberOfPages = homeViewModel.imageNames.count
+    offerPageControl.numberOfPages = homeViewModel.saleImages.count
     homeViewModel.retrieveOffers()
-    homeViewModel.bindOffersToHomeController = {
-      DispatchQueue.main.async {
-        self.homeViewModel.offersArray = self.homeViewModel.retrievedOffers
-        self.offerCollectionView.reloadData()
-      }
-    }
     
     homeViewModel.retrieveBrands()
     homeViewModel.bindBrandsToHomeController = {
       DispatchQueue.main.async {
         self.homeViewModel.brandsArray = self.homeViewModel.retrievedBrands
+        self.homeViewModel.images = self.homeViewModel.saleImages
+        self.homeViewModel.offersArray = self.homeViewModel.retrievedOffers
+        self.offerCollectionView.reloadData()
         self.brandCollectionView.reloadData()
+        if !self.homeViewModel.saleImages.isEmpty {
+          self.offerCollectionView.scrollToItem(at: IndexPath(item: self.homeViewModel.currentImageIndex, section: 0), at: .centeredHorizontally, animated: true)}
       }
     }
   }
@@ -63,7 +62,7 @@ class HomeViewController: UIViewController {
     homeViewModel.timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(moveToNextImage), userInfo: nil, repeats: true)
   }
   @objc func moveToNextImage(){
-    homeViewModel.currentImageIndex = (homeViewModel.currentImageIndex + 1) % homeViewModel.imageNames.count
+    homeViewModel.currentImageIndex = (homeViewModel.currentImageIndex + 1) % homeViewModel.saleImages.count
     offerCollectionView.scrollToItem(at: IndexPath(item: homeViewModel.currentImageIndex, section: 0), at: .centeredHorizontally, animated: true)
     offerPageControl.currentPage = homeViewModel.currentImageIndex
   }
@@ -93,7 +92,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     switch collectionView{
     case offerCollectionView:
-      return 3
+      return homeViewModel.images?.count ?? 0
     case brandCollectionView:
       return homeViewModel.brandsArray?.smart_collections.count ?? 0
     default:
@@ -105,7 +104,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     switch collectionView{
     case offerCollectionView:
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "offersCell", for: indexPath) as! OffersCollectionViewCell
-      cell.configureCell(image: homeViewModel.imageNames[indexPath.row] ?? UIImage())
+      cell.configureCell(image: homeViewModel.saleImages[indexPath.row] ?? UIImage())
       return cell
     case brandCollectionView:
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "brandsCell", for: indexPath) as! BrandsCollectionViewCell
@@ -123,7 +122,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
       pasteboard.string = homeViewModel.offersArray?.discount_codes[indexPath.row].code
       showToastMessagee(message: "Code Copied", color: .black)
     case brandCollectionView:
-      self.navigationController?.pushViewController(BrandProductsViewController(), animated: true)
+      let brandProductObj = BrandProductsViewController()
+      brandProductObj.brandID = String(homeViewModel.brandsArray?.smart_collections[indexPath.row].id ?? 0)
+      self.navigationController?.pushViewController(brandProductObj, animated: true)
     default:
       break
     }

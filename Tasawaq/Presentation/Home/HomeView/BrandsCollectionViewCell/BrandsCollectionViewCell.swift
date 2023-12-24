@@ -9,7 +9,7 @@ import UIKit
 import Kingfisher
 class BrandsCollectionViewCell: UICollectionViewCell {
     //MARK: -IBOutlets
-    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var brandImage: UIImageView!
     @IBOutlet weak var cellView: UIView!
     
     override func awakeFromNib() {
@@ -18,7 +18,7 @@ class BrandsCollectionViewCell: UICollectionViewCell {
     }
     //MARK: -Configurations
     func configureCell(img: String){
-        image.kf.setImage(with: URL(string: img))
+        brandImage.kf.setImage(with: URL(string: img))
     }
 
     func configureCellView(){

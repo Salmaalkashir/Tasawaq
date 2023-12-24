@@ -9,7 +9,8 @@ import Foundation
 import UIKit
 class HomeViewModel{
   let backbutton = UIBarButtonItem()
-  let imageNames = [UIImage(named: "sale"),UIImage(named: "sale1"), UIImage(named: "sale2")]
+  let saleImages = [UIImage(named: "sale"),UIImage(named: "sale1"), UIImage(named: "sale2")]
+  var images: [UIImage?]?
   var timer: Timer?
   var currentImageIndex = 0
   var offersArray: Coupon?
@@ -31,7 +32,6 @@ class HomeViewModel{
       switch result {
       case .success(let coupon):
         self.retrievedOffers = coupon
-        print("Products: \(coupon)")
       case .failure(let error):
         print("Error: \(error)")
       }

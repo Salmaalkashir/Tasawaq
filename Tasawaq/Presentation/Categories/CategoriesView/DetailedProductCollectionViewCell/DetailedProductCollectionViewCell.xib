@@ -22,7 +22,7 @@
                         <rect key="frame" x="5" y="5" width="210" height="220"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Moa-qM-0BZ">
-                                <rect key="frame" x="16" y="8" width="130" height="115"/>
+                                <rect key="frame" x="16" y="8" width="153" height="115"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="115" id="B5L-Xl-Zik"/>
                                 </constraints>
@@ -58,7 +58,7 @@
                         <constraints>
                             <constraint firstItem="zN4-h9-0YP" firstAttribute="top" secondItem="Moa-qM-0BZ" secondAttribute="bottom" constant="8" id="1i4-qp-CQu"/>
                             <constraint firstItem="Hv0-p6-ZyT" firstAttribute="top" secondItem="neE-ef-WWs" secondAttribute="top" constant="16" id="8ee-ah-9Gq"/>
-                            <constraint firstAttribute="trailing" secondItem="Moa-qM-0BZ" secondAttribute="trailing" constant="64" id="VNY-e2-wMt"/>
+                            <constraint firstAttribute="trailing" secondItem="Moa-qM-0BZ" secondAttribute="trailing" constant="41" id="VNY-e2-wMt"/>
                             <constraint firstItem="zN4-h9-0YP" firstAttribute="leading" secondItem="neE-ef-WWs" secondAttribute="leading" constant="8" id="XAR-vj-RIo"/>
                             <constraint firstAttribute="trailing" secondItem="Hv0-p6-ZyT" secondAttribute="trailing" constant="8" id="XPg-7z-oyC"/>
                             <constraint firstItem="Moa-qM-0BZ" firstAttribute="top" secondItem="neE-ef-WWs" secondAttribute="top" constant="8" id="gWT-OL-u97"/>

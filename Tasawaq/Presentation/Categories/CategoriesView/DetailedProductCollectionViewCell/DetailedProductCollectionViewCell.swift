@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class DetailedProductCollectionViewCell: UICollectionViewCell {
   //MARK: -IBOutlets
@@ -19,10 +20,10 @@ class DetailedProductCollectionViewCell: UICollectionViewCell {
     configureCellView()
   }
   //MARK: -Configurations
-  func configureCell(image: UIImage, name: String, price: String){
+  func configureCell(image: String, name: String, price: String){
     productName.text = name
     productPrice.text = price
-    productImage.image = image
+    productImage.kf.setImage(with: URL(string: image))
   }
   
   func configureCellView(){

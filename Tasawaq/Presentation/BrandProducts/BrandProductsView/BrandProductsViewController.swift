@@ -96,10 +96,18 @@ extension BrandProductsViewController: UICollectionViewDelegate, UICollectionVie
     switch priceSegmentControl.selectedSegmentIndex{
     case 0:
       sortHighToLow()
-      cell.configureCell(image: brandProductsViewModel.searchArray?[indexPath.row].image.src ?? "" , name:  brandProductsViewModel.searchArray?[indexPath.row].title  ?? "" , price:  brandProductsViewModel.searchArray?[indexPath.row].variants[0].price ?? "")
+      cell.configureCell(image: brandProductsViewModel.searchArray?[indexPath.row].image?.src ?? "" , name:  brandProductsViewModel.searchArray?[indexPath.row].title  ?? "" , price:  brandProductsViewModel.searchArray?[indexPath.row].variants[0].price ?? "")
+      cell.isFavourite = { [weak cell] in
+        cell?.favourite.isSelected = !(cell?.favourite.isSelected ?? false)
+        if cell?.favourite.isSelected ?? false{
+          cell?.favourite.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        }else{
+          cell?.favourite.setImage(UIImage(systemName: "heart"), for: .normal)
+        }
+      }
     case 1:
       sortLowToHigh()
-      cell.configureCell(image: brandProductsViewModel.searchArray?[indexPath.row].image.src ?? "" , name: brandProductsViewModel.searchArray?[indexPath.row].title  ?? "" , price: brandProductsViewModel.searchArray?[indexPath.row].variants[0].price ?? "")
+      cell.configureCell(image: brandProductsViewModel.searchArray?[indexPath.row].image?.src ?? "" , name: brandProductsViewModel.searchArray?[indexPath.row].title  ?? "" , price: brandProductsViewModel.searchArray?[indexPath.row].variants[0].price ?? "")
     default:
       break
     }

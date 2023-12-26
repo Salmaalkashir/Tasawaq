@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 class HomeViewModel{
-  let backbutton = UIBarButtonItem()
+  let backButton = UIBarButtonItem()
   let saleImages = [UIImage(named: "sale"),UIImage(named: "sale1"), UIImage(named: "sale2")]
   var images: [UIImage?]?
   var timer: Timer?

@@ -37,9 +37,9 @@ class HomeViewController: UIViewController {
   }
   override func viewWillAppear(_ animated: Bool) {
     navigationController?.setNavigationBarHidden(true, animated: animated)
-    homeViewModel.backbutton.title = "Home"
-    homeViewModel.backbutton.tintColor = .black
-    navigationItem.backBarButtonItem = homeViewModel.backbutton
+    homeViewModel.backButton.title = "Home"
+    homeViewModel.backButton.tintColor = .black
+    navigationItem.backBarButtonItem = homeViewModel.backButton
   }
   
   func configureCollectionView(){

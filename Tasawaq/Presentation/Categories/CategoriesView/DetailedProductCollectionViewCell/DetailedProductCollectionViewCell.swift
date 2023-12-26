@@ -10,14 +10,22 @@ import Kingfisher
 
 class DetailedProductCollectionViewCell: UICollectionViewCell {
   //MARK: -IBOutlets
-  @IBOutlet weak var cellView: UIView!
-  @IBOutlet weak var productImage: UIImageView!
-  @IBOutlet weak var productName: UILabel!
-  @IBOutlet weak var productPrice: UILabel!
+  @IBOutlet private weak var cellView: UIView!
+  @IBOutlet private weak var productImage: UIImageView!
+  @IBOutlet private weak var productName: UILabel!
+  @IBOutlet private weak var productPrice: UILabel!
+  @IBOutlet weak var favourite: UIButton!
+  
+  var isFavourite: (()-> ())?
   
   override func awakeFromNib() {
     super.awakeFromNib()
     configureCellView()
+  }
+  
+  // MARK: - IBAction
+  @IBAction func addToWishListButtonTapped(_ sender: UIButton){
+    isFavourite?()
   }
   //MARK: -Configurations
   func configureCell(image: String, name: String, price: String){

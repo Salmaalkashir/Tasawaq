@@ -24,6 +24,8 @@
 		3882E5FD2B20B5CC0065DFF7 /* PaymentMethodsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3882E5FB2B20B5CC0065DFF7 /* PaymentMethodsViewController.xib */; };
 		38850DB42B347490001E1D6E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38850DB32B347490001E1D6E /* Constants.swift */; };
 		38850DB62B34A2F3001E1D6E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38850DB52B34A2F3001E1D6E /* HomeViewModel.swift */; };
+		388860992B38C9900037B637 /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388860982B38C9900037B637 /* CategoriesViewModel.swift */; };
+		3888609B2B38C9AA0037B637 /* CategoriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3888609A2B38C9AA0037B637 /* CategoriesRepository.swift */; };
 		388870882B33A0AE00F352F9 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388870872B33A0AE00F352F9 /* NetworkService.swift */; };
 		3889CD842B1FCCB60018CC48 /* OrderListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3889CD822B1FCCB60018CC48 /* OrderListTableViewCell.swift */; };
 		3889CD852B1FCCB60018CC48 /* OrderListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3889CD832B1FCCB60018CC48 /* OrderListTableViewCell.xib */; };
@@ -119,6 +121,8 @@
 		3882E5FB2B20B5CC0065DFF7 /* PaymentMethodsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentMethodsViewController.xib; sourceTree = "<group>"; };
 		38850DB32B347490001E1D6E /* Constants.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; tabWidth = 2; };
 		38850DB52B34A2F3001E1D6E /* HomeViewModel.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; name = HomeViewModel.swift; path = Tasawaq/Domain/NetworkService/HomeViewModel.swift; sourceTree = SOURCE_ROOT; tabWidth = 2; };
+		388860982B38C9900037B637 /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
+		3888609A2B38C9AA0037B637 /* CategoriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesRepository.swift; sourceTree = "<group>"; };
 		388870872B33A0AE00F352F9 /* NetworkService.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; tabWidth = 2; };
 		3889CD822B1FCCB60018CC48 /* OrderListTableViewCell.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = OrderListTableViewCell.swift; sourceTree = "<group>"; tabWidth = 2; };
 		3889CD832B1FCCB60018CC48 /* OrderListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderListTableViewCell.xib; sourceTree = "<group>"; };
@@ -505,6 +509,7 @@
 		388FBA062B167FD900247DCB /* CategoriesViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				388860982B38C9900037B637 /* CategoriesViewModel.swift */,
 			);
 			path = CategoriesViewModel;
 			sourceTree = "<group>";
@@ -584,6 +589,7 @@
 			children = (
 				38B1841B2B3502FD000158DD /* HomeRepository.swift */,
 				388C0C1D2B35FE2000DF38D9 /* BrandProductRepository.swift */,
+				3888609A2B38C9AA0037B637 /* CategoriesRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -1197,6 +1203,7 @@
 				388DC7832B237E9600C6FB8C /* AddressesViewController.swift in Sources */,
 				3D66D9A32B1E5CEA00F84AC5 /* HomeViewController.swift in Sources */,
 				388C0C1E2B35FE2000DF38D9 /* BrandProductRepository.swift in Sources */,
+				3888609B2B38C9AA0037B637 /* CategoriesRepository.swift in Sources */,
 				38BC223A2B1F7B6B00461CA2 /* OrderDetailsViewController.swift in Sources */,
 				388870882B33A0AE00F352F9 /* NetworkService.swift in Sources */,
 				3889CD842B1FCCB60018CC48 /* OrderListTableViewCell.swift in Sources */,
@@ -1206,6 +1213,7 @@
 				389D219B2B2773080024ED28 /* BrandProductsViewController.swift in Sources */,
 				38EC006D2B22672F0076B730 /* LocationViewModel.swift in Sources */,
 				389EB8CC2B1D54DE0044450B /* CustomTabBarViewController.swift in Sources */,
+				388860992B38C9900037B637 /* CategoriesViewModel.swift in Sources */,
 				3882E5FC2B20B5CC0065DFF7 /* PaymentMethodsViewController.swift in Sources */,
 				389F03AE2B29E9E2005EFFB9 /* SettingsViewController.swift in Sources */,
 				3890763A2B14C55A00204768 /* AppDelegate.swift in Sources */,

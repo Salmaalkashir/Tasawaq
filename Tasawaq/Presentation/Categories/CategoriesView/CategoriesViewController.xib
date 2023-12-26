@@ -38,6 +38,9 @@
                         <segment title="Sale"/>
                     </segments>
                     <color key="selectedSegmentTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <action selector="segmentControlReload:" destination="-1" eventType="valueChanged" id="BbD-OI-ZKG"/>
+                    </connections>
                 </segmentedControl>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="CoQ-Tm-4rd">
                     <rect key="frame" x="8" y="175" width="377" height="635"/>
@@ -55,11 +58,15 @@
                         <constraint firstAttribute="width" constant="200" id="pDe-F4-vau"/>
                     </constraints>
                     <segments>
+                        <segment title="" image="slash.circle" catalog="system"/>
                         <segment title="" image="tshirt" catalog="system"/>
                         <segment title="" image="shoeprints.fill" catalog="system"/>
-                        <segment title="" image="bag" catalog="system"/>
+                        <segment title="" image="handbag" catalog="system"/>
                     </segments>
                     <color key="selectedSegmentTintColor" name="Custom Color"/>
+                    <connections>
+                        <action selector="subsegmentControlReload:" destination="-1" eventType="valueChanged" id="w1K-iP-F33"/>
+                    </connections>
                 </segmentedControl>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -80,11 +87,12 @@
         </view>
     </objects>
     <resources>
-        <image name="bag" catalog="system" width="128" height="128"/>
+        <image name="handbag" catalog="system" width="128" height="116"/>
         <image name="shoeprints.fill" catalog="system" width="116" height="128"/>
+        <image name="slash.circle" catalog="system" width="128" height="123"/>
         <image name="tshirt" catalog="system" width="128" height="98"/>
         <namedColor name="Custom Color">
-            <color red="0.37599998712539673" green="0.28600001335144043" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20399999618530273" green="0.30199998617172241" blue="0.23100000619888306" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

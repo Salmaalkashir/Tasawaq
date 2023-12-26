@@ -32,6 +32,10 @@ class ProductDetailsViewController: UIViewController {
     updateImageView()
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    navigationController?.isNavigationBarHidden = false
+  }
+  
   func configureTableView(){
     reviewsTableView.dataSource = self
     reviewsTableView.delegate = self

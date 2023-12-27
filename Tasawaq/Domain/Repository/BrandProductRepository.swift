@@ -8,13 +8,13 @@
 import Foundation
 // MARK: - BrandProductsRepositoryProtocol
 protocol BrandProductRepositotyProtocol {
-  func getBrandProducts(id: String, completion: @escaping (Result<Products, NetworkError>)-> Void)
+  func getBrandProducts(id: Int, completion: @escaping (Result<Products, NetworkError>)-> Void)
 }
 // MARK: - BrandProductsRepository
 class BrandProductRepository: BrandProductRepositotyProtocol{
   let networkService: NetworkServiceProtocol = NetworkService()
   
-  func getBrandProducts(id: String , completion: @escaping (Result<Products, NetworkError>)-> Void) {
+  func getBrandProducts(id: Int , completion: @escaping (Result<Products, NetworkError>)-> Void) {
     networkService.request(path: .brandProducts(id:id), method: .GET, parameters: nil, completion: completion)
   }
 }

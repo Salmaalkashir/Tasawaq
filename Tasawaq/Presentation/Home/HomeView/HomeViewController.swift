@@ -123,7 +123,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
       showToastMessagee(message: "Code Copied", color: .black)
     case brandCollectionView:
       let brandProductObj = BrandProductsViewController()
-      brandProductObj.brandID = String(homeViewModel.brandsArray?.smart_collections[indexPath.row].id ?? 0)
+      brandProductObj.brandID = homeViewModel.brandsArray?.smart_collections[indexPath.row].id ?? 0
       brandProductObj.brandName = homeViewModel.brandsArray?.smart_collections[indexPath.row].title ?? ""
       self.navigationController?.pushViewController(brandProductObj, animated: true)
     default:

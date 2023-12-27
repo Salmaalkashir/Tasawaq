@@ -12,7 +12,7 @@ class BrandProductsViewController: UIViewController {
   @IBOutlet weak var searchBrandProduct: UISearchBar!
   @IBOutlet weak var brandProductsCollectionView: UICollectionView!
   @IBOutlet weak var priceSegmentControl: UISegmentedControl!
-  var brandID: String?
+  var brandID: Int?
   var brandName: String?
   var brandProductsViewModel = BrandProductsViewModel()
 
@@ -20,7 +20,7 @@ class BrandProductsViewController: UIViewController {
     super.viewDidLoad()
     configureCollectionView()
     configureSegmentControl()
-    
+    print("ID: \(brandID ?? 0)")
     searchBrandProduct.delegate = self
     brandProductsViewModel.brandId = brandID
     brandProductsViewModel.retrieveBrandProduct()
@@ -114,7 +114,9 @@ extension BrandProductsViewController: UICollectionViewDelegate, UICollectionVie
     return cell
   }
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    self.navigationController?.pushViewController(ProductDetailsViewController(), animated: true)
+    let brandProductObj = ProductDetailsViewController()
+    brandProductObj.product = brandProductsViewModel.searchArray?[indexPath.row]
+    self.navigationController?.pushViewController(brandProductObj, animated: true)
   }
 }
 
@@ -123,7 +125,7 @@ extension BrandProductsViewController : UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
     let screenWidth = UIScreen.main.bounds.width
     let itemWidth = screenWidth / 2 - 20
-    let itemHeight = itemWidth * (1.2)
+    let itemHeight = itemWidth * (1.3)
     
     return CGSize(width:itemWidth , height: itemHeight)
   }

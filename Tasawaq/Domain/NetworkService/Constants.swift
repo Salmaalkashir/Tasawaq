@@ -27,7 +27,7 @@ enum Path {
   case shoesCategory(id: String)
   case accessoriesCategory(id: String)
   case tshirtsCategory(id: String)
-  case brandProducts(id: String)
+  case brandProducts(id: Int)
   case allCustomers
   case searchCustomerByID(id: String)
   case searchCustomerByEmail(email: String)

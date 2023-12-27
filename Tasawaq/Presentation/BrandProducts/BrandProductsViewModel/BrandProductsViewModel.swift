@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 class BrandProductsViewModel{
     var backbutton = UIBarButtonItem()
-    var brandId: String?
+    var brandId: Int?
     var brandProductsArray: Products?
     var sortedProducts: [Product]?
     var searchArray: [Product]?
@@ -24,7 +24,7 @@ class BrandProductsViewModel{
     }
     
     func retrieveBrandProduct(){
-        brandProductsRepository.getBrandProducts(id: brandId ?? "") { (result: Result<Products, NetworkError>) in
+        brandProductsRepository.getBrandProducts(id: brandId ?? 0) { (result: Result<Products, NetworkError>) in
             switch result{
             case .success(let brandProducts):
                 self.retrievedBrandProducts = brandProducts

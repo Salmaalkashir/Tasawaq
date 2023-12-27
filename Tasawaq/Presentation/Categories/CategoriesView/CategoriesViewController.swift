@@ -18,23 +18,6 @@ class CategoriesViewController: UIViewController {
     configureCollectionView()
     configureSegmentControl()
     categoryFilter(path: .allProducts)
-    /*    categoriesViewModel.retrieveMenProducts(id: Category.men.rawValue)
-   
-   categoriesViewModel.retrieveCategoryProducts(id: Category.kids.rawValue)
-   categoriesViewModel.retrieveCategoryProducts(id: Category.sale.rawValue)
-    categoriesViewModel.bindingMenProductsToCategoriesController = {
-      DispatchQueue.main.async{
-        self.categoriesViewModel.menProductArray = self.categoriesViewModel.retrievedMenProducts
-        self.productsCollectionView.reloadData()
-      }
-    }
-    categoriesViewModel.retrieveWomenProducts(id: Category.women.rawValue)
-    categoriesViewModel.bindingWomenProductsToCategoriesController = {
-      DispatchQueue.main.async {
-        self.categoriesViewModel.womenProductArray = self.categoriesViewModel.retrievedWomenProducts
-        self.productsCollectionView.reloadData()
-      }
-    }*/
   }
   override func viewWillAppear(_ animated: Bool) {
     navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -61,7 +44,7 @@ class CategoriesViewController: UIViewController {
   }
   func categoryFilter(path: Path){
     self.categoriesViewModel.retrieveProducts(path: path)
-    self.categoriesViewModel.bindingProductsToCategoriesController = { () in
+    self.categoriesViewModel.bindingProductsToCategoriesController = {
       DispatchQueue.main.async{
         self.categoriesViewModel.productsArray = self.categoriesViewModel.retrievedProducts
         self.productsCollectionView.reloadData()
@@ -101,6 +84,9 @@ private extension CategoriesViewController{
         categoryFilter(path: .categoriesProducts(id: Category.women.rawValue))
       }
       if categoriesSegmentControl.selectedSegmentIndex == 3{
+        categoryFilter(path: .categoriesProducts(id: Category.kids.rawValue))
+      }
+      if categoriesSegmentControl.selectedSegmentIndex == 4{
         categoryFilter(path: .categoriesProducts(id: Category.sale.rawValue))
       }
       
@@ -179,7 +165,9 @@ extension CategoriesViewController: UICollectionViewDataSource,UICollectionViewD
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    self.navigationController?.pushViewController(ProductDetailsViewController(), animated: true)
+    let productObj = ProductDetailsViewController()
+    productObj.product = categoriesViewModel.productsArray?.products?[indexPath.row]
+    self.navigationController?.pushViewController(productObj, animated: true)
   }
 }
 // MARK: - UICollectionViewDelegateFlowLayout
@@ -187,7 +175,7 @@ extension CategoriesViewController : UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
     let screenWidth = UIScreen.main.bounds.width
     let itemWidth = screenWidth / 2 - 20
-    let itemHeight = itemWidth * (1.2)
+    let itemHeight = itemWidth * (1.3)
     
     return CGSize(width:itemWidth , height: itemHeight)
   }

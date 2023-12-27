@@ -6,44 +6,62 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ProductDetailsViewController: UIViewController {
-  //MARK: -IBOutlets
+  // MARK: - IBOutlets
   @IBOutlet weak var productName: UILabel!
   @IBOutlet weak var productPrice: UILabel!
   @IBOutlet weak var productImages: UIImageView!
-  //@IBOutlet weak var colorStackView: UIStackView!
-  //@IBOutlet weak var sizeStackView: UIStackView!
+  @IBOutlet weak var colorCollectionView: UICollectionView!
+  @IBOutlet weak var sizeCollectionView: UICollectionView!
   @IBOutlet weak var productSegmentControl: UISegmentedControl!
   @IBOutlet weak var containerView: UIView!
   @IBOutlet weak var productDescription: UILabel!
   @IBOutlet weak var reviewsTableView: UITableView!
   
-  let imageNames = ["adidas", "paypal", "cash", "checked"]
+  var product: Product?
   var currentImageIndex = 0
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    configureCollectionView()
     configureTableView()
     configureSegmentControl()
     setupSwipeGestureRecognizers()
     containerView.addSubview(reviewsTableView)
     reviewsTableView.isHidden = true
     updateImageView()
+    productName.text = product?.title
+    productPrice.text = product?.variants[0].price
+    if let imageUrlString = product?.image?.src, let imageUrl = URL(string: imageUrlString) {
+      productImages.kf.setImage(with: imageUrl)
+    }
+    productDescription.text = product?.body_html
   }
   
   override func viewWillAppear(_ animated: Bool) {
     navigationController?.isNavigationBarHidden = false
   }
   
-  func configureTableView(){
+  func configureTableView() {
     reviewsTableView.dataSource = self
     reviewsTableView.delegate = self
     let nib = UINib(nibName: "ReviewsTableViewCell", bundle: nil)
     reviewsTableView.register(nib, forCellReuseIdentifier: "reviewsCell")
   }
   
-  func configureSegmentControl(){
+  func configureCollectionView() {
+    sizeCollectionView.dataSource = self
+    sizeCollectionView.delegate = self
+    colorCollectionView.dataSource = self
+    colorCollectionView.delegate = self
+    let nib = UINib(nibName: "ColorSizeCollectionViewCell", bundle: nil)
+    sizeCollectionView.register(nib, forCellWithReuseIdentifier: "sizeColorCell")
+    colorCollectionView.register(nib, forCellWithReuseIdentifier: "sizeColorCell")
+  }
+  
+  func configureSegmentControl() {
     productSegmentControl.setTitleTextAttributes([.foregroundColor: UIColor.black], for: .normal)
     productSegmentControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
   }
@@ -63,26 +81,33 @@ class ProductDetailsViewController: UIViewController {
   }
   
   @objc func handleSwipeLeft() {
-    currentImageIndex = min(imageNames.count - 1, currentImageIndex + 1)
+    currentImageIndex = min((product?.images.count ?? 0) - 1, currentImageIndex + 1)
     updateImageView()
   }
   
-  func updateImageView(){
-    let images = imageNames[currentImageIndex]
-    productImages.image = UIImage(named: images)
+  func updateImageView() {
+    if let imageUrlString = product?.images[currentImageIndex], let imageUrl = URL(string: imageUrlString.src ?? ""){
+      productImages.kf.setImage(with: imageUrl)
+    }
   }
 }
-//MARK: -IBAction
+// MARK: - IBAction
 private extension ProductDetailsViewController{
-  @IBAction func addToFavourite(_ sender: UIButton){
+  @IBAction func addToFavourite(_ sender: UIButton) {
+    sender.isSelected = !sender.isSelected
+    if sender.isSelected {
+      sender.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+    }else{
+      sender.setImage(UIImage(systemName: "heart"), for: .normal)
+    }
     
   }
   
-  @IBAction func addToCart(_ sender: UIButton){
-    
+  @IBAction func addToCart(_ sender: UIButton) {
+    self.navigationController?.pushViewController(CartViewController(), animated: true)
   }
   
-  @IBAction func segmentControlValueChanged(_ sender: UISegmentedControl){
+  @IBAction func segmentControlValueChanged(_ sender: UISegmentedControl) {
     switch productSegmentControl.selectedSegmentIndex {
     case 0:
       reviewsTableView.isHidden = true
@@ -93,14 +118,55 @@ private extension ProductDetailsViewController{
     }
   }
 }
-//MARK: -UITableViewDelegate,UITableViewDataSource
-extension ProductDetailsViewController: UITableViewDelegate,UITableViewDataSource{
+
+// MARK: - UICollectionViewDelegate,UICollectionViewDataSource
+extension ProductDetailsViewController: UICollectionViewDelegate,UICollectionViewDataSource {
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    switch collectionView{
+    case colorCollectionView:
+      return product?.options[1].values?.count ?? 0
+    case sizeCollectionView:
+      return product?.options[0].values?.count ?? 0
+    default:
+      return 0
+    }
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "sizeColorCell", for: indexPath) as! ColorSizeCollectionViewCell
+    switch collectionView{
+    case colorCollectionView:
+      cell.sizeColorLabel.text = product?.options[1].values?[indexPath.row]
+    case sizeCollectionView:
+      cell.sizeColorLabel.text = product?.options[0].values?[indexPath.row]
+    default:
+      return UICollectionViewCell()
+    }
+    return cell
+  }
+}
+// MARK: - UICollectionViewDelegateFlowLayout
+extension ProductDetailsViewController : UICollectionViewDelegateFlowLayout {
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
+    let screenWidth = UIScreen.main.bounds.width
+    let itemWidth = 50
+    let itemHeight = 50
+    
+    return CGSize(width:itemWidth , height: itemHeight)
+  }
+}
+// MARK: - UITableViewDelegate,UITableViewDataSource
+extension ProductDetailsViewController: UITableViewDelegate,UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 5
+    let clientName = ["Salma", "Fatma", "Ahmad", "Youssef", "Evelyn", "Yehya"]
+    return clientName.count 
   }
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "reviewsCell", for: indexPath) as! ReviewsTableViewCell
-    cell.configureCell(name: "Salma", review: "This product is so good and highly recommended", rate: "3⭐️")
+    let clientName = ["Salma", "Fatma", "Ahmad", "Youssef", "Evelyn", "Yehya"]
+    let review = ["This product is so good and highly recommended", "I didn't like it", "Not Bad", "High Quality as expected", "", ""]
+    let rate = ["5⭐️", "2⭐️", "3⭐️", "4⭐️", "5⭐️", "3⭐️"]
+    cell.configureCell(name: clientName[indexPath.row], review: review[indexPath.row], rate: rate[indexPath.row])
     return cell
   }
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

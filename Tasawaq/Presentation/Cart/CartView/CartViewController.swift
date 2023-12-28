@@ -12,6 +12,11 @@ class CartViewController: UIViewController {
   @IBOutlet weak var cartTableView: UITableView!
   @IBOutlet weak var totalPrice: UILabel!
   var backbutton = UIBarButtonItem()
+  var imageproduct: String?
+  var productname: String?
+  var productPrice: String?
+  var productdetails: String?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     configureTableView()
@@ -44,19 +49,19 @@ extension CartViewController: UITableViewDataSource,UITableViewDelegate{
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "cartCell", for: indexPath) as! CartTableViewCell
-    cell.configureTableCell(image: UIImage(named: "adidas") ?? UIImage(), name: "ADIDAS | CLASSIC BACKPACK ", quantity: "1", price: "USD 70.00")
+    cell.configureTableCell(image: imageproduct ?? "" , name: productname ?? "", quantity: "1", price: productPrice ?? "", details: "Details: \(productdetails ?? "")")
     cell.increaseQuantity = { [weak cell] in
       cell?.quantityLabel.text = "2"
     }
     cell.decreaseQuantity = { [weak cell] in
       cell?.quantityLabel.text = "0"
     }
-    let price = cell.totalPrice.text?.components(separatedBy: " ")
-    totalPrice.text = price?[1]
+    /*let price = cell.totalPrice.text?.components(separatedBy: " ")
+    totalPrice.text = price?[1]*/
   
     return cell
   }
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-      return 120
+      return 130
   }
 }

@@ -22,6 +22,8 @@ class ProductDetailsViewController: UIViewController {
   
   var product: Product?
   var currentImageIndex = 0
+  var selectedSize: String = ""
+  var selectedColor: String = ""
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -104,7 +106,12 @@ private extension ProductDetailsViewController{
   }
   
   @IBAction func addToCart(_ sender: UIButton) {
-    self.navigationController?.pushViewController(CartViewController(), animated: true)
+    let productObj = CartViewController()
+    productObj.imageproduct = product?.image?.src
+    productObj.productPrice = product?.variants[0].price
+    productObj.productname = product?.title
+    productObj.productdetails = selectedSize + " / " + selectedColor
+    self.navigationController?.pushViewController(productObj, animated: true)
   }
   
   @IBAction func segmentControlValueChanged(_ sender: UISegmentedControl) {
@@ -144,15 +151,25 @@ extension ProductDetailsViewController: UICollectionViewDelegate,UICollectionVie
     }
     return cell
   }
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let cell = collectionView.cellForItem(at: indexPath) as? ColorSizeCollectionViewCell
+    cell?.Selectedd.toggle()
+    switch collectionView{
+    case colorCollectionView:
+      selectedColor = cell?.selectedSize ?? ""
+      print("CC:\(selectedColor)")
+    case sizeCollectionView:
+      selectedSize = cell?.selectedSize ?? ""
+      print("SSSS:\(selectedSize)")
+    default:
+      break
+    }
+  }
 }
 // MARK: - UICollectionViewDelegateFlowLayout
 extension ProductDetailsViewController : UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
-    let screenWidth = UIScreen.main.bounds.width
-    let itemWidth = 50
-    let itemHeight = 50
-    
-    return CGSize(width:itemWidth , height: itemHeight)
+    return CGSize(width: 50 , height: 50)
   }
 }
 // MARK: - UITableViewDelegate,UITableViewDataSource

@@ -62,6 +62,11 @@ class HomeViewController: UIViewController {
     homeViewModel.timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(moveToNextImage), userInfo: nil, repeats: true)
   }
   @objc func moveToNextImage(){
+    guard !homeViewModel.saleImages.isEmpty else{
+      print("no images")
+      return
+    }
+    
     homeViewModel.currentImageIndex = (homeViewModel.currentImageIndex + 1) % homeViewModel.saleImages.count
     offerCollectionView.scrollToItem(at: IndexPath(item: homeViewModel.currentImageIndex, section: 0), at: .centeredHorizontally, animated: true)
     offerPageControl.currentPage = homeViewModel.currentImageIndex

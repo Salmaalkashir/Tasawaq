@@ -19,20 +19,38 @@ class ProductDetailsViewController: UIViewController {
   @IBOutlet weak var containerView: UIView!
   @IBOutlet weak var productDescription: UILabel!
   @IBOutlet weak var reviewsTableView: UITableView!
+  @IBOutlet weak var quantityView: UIView!
+  @IBOutlet weak var quantityButtons: UIButton!
+  @IBOutlet weak var quantity1: UIButton!
+  @IBOutlet weak var quantity2: UIButton!
+  @IBOutlet weak var quantity3: UIButton!
+  @IBOutlet weak var quantity4: UIButton!
+  @IBOutlet weak var finalQuantityLabel: UILabel!
+  @IBOutlet weak var quantityLabel: UILabel!
+  @IBOutlet weak var quantityInStock: UILabel!
   
   var product: Product?
   var currentImageIndex = 0
   var selectedSize: String = ""
   var selectedColor: String = ""
+  var parameters: [String:Any]?
+ 
+  var lastClick: UIButton?
+  var isVisible = false
   
+  var cartViewModel = CartViewModel()
   override func viewDidLoad() {
     super.viewDidLoad()
     configureCollectionView()
     configureTableView()
     configureSegmentControl()
+    configureQuantityView()
+    configureButtons()
     setupSwipeGestureRecognizers()
+    quantityInStock.text = String(product?.variants[0].inventory_quantity ?? 0) + " " + "in Stock"
     containerView.addSubview(reviewsTableView)
     reviewsTableView.isHidden = true
+    quantityView.isHidden = true
     updateImageView()
     productName.text = product?.title
     productPrice.text = product?.variants[0].price
@@ -40,12 +58,14 @@ class ProductDetailsViewController: UIViewController {
       productImages.kf.setImage(with: imageUrl)
     }
     productDescription.text = product?.body_html
+    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(labelTapped))
+         quantityLabel.addGestureRecognizer(tapGesture)
   }
   
   override func viewWillAppear(_ animated: Bool) {
     navigationController?.isNavigationBarHidden = false
   }
-  
+ 
   func configureTableView() {
     reviewsTableView.dataSource = self
     reviewsTableView.delegate = self
@@ -92,6 +112,21 @@ class ProductDetailsViewController: UIViewController {
       productImages.kf.setImage(with: imageUrl)
     }
   }
+  @objc func labelTapped(){
+    quantityView.isHidden = !isVisible
+    isVisible = !isVisible
+  }
+  func configureQuantityView(){
+    quantityView.layer.cornerRadius = 15
+    quantityView.layer.borderWidth = 0.2
+    quantityView.layer.borderColor = UIColor(named: "Custom Color")?.cgColor
+  }
+  func configureButtons(){
+    quantity1.stylingButton()
+    quantity2.stylingButton()
+    quantity3.stylingButton()
+    quantity4.stylingButton()
+  }
 }
 // MARK: - IBAction
 private extension ProductDetailsViewController{
@@ -102,15 +137,20 @@ private extension ProductDetailsViewController{
     }else{
       sender.setImage(UIImage(systemName: "heart"), for: .normal)
     }
-    
   }
   
   @IBAction func addToCart(_ sender: UIButton) {
     let productObj = CartViewController()
-    productObj.imageproduct = product?.image?.src
-    productObj.productPrice = product?.variants[0].price
-    productObj.productname = product?.title
-    productObj.productdetails = selectedSize + " / " + selectedColor
+    let lineItem: [String: Any] =  [
+        "variant_id": product?.variants[0].id ?? 0,
+        "product_id": product?.id ?? 0,
+        "title": product?.title ?? "",
+        "variant_title":" \(selectedSize) / \(selectedColor)",
+        "vendor": product?.vendor ?? "",
+        "quantity": Int(finalQuantityLabel.text ?? "") ?? 0,
+        "price": product?.variants[0].price ?? 0.0
+    ]
+    cartViewModel.postCart(productName: product?.title ?? "", email: "yyyyy@ymail.com", currency: "USD", lineItems: lineItem)
     self.navigationController?.pushViewController(productObj, animated: true)
   }
   
@@ -120,6 +160,36 @@ private extension ProductDetailsViewController{
       reviewsTableView.isHidden = true
     case 1:
       reviewsTableView.isHidden = false
+    default:
+      break
+    }
+  }
+  @IBAction func quantityButtonTapped(_ sender: UIButton){
+    lastClick?.backgroundColor = UIColor.white
+    lastClick?.layer.borderColor = UIColor(named: "Custom Color")?.cgColor
+    lastClick?.layer.borderWidth = 0.8
+    lastClick?.configuration?.baseForegroundColor = UIColor(named: "Custom Color")
+    
+    sender.backgroundColor = UIColor(named: "Custom Color")
+    sender.layer.borderWidth = 0.8
+    sender.configuration?.baseForegroundColor = .white
+    sender.layer.borderColor = UIColor.white.cgColor
+    
+    lastClick = sender
+    
+    switch sender{
+    case quantity1:
+      quantityView.isHidden = true
+      finalQuantityLabel.text = sender.titleLabel?.text ?? ""
+    case quantity2:
+      quantityView.isHidden = true
+      finalQuantityLabel.text = sender.titleLabel?.text ?? ""
+    case quantity3:
+      quantityView.isHidden = true
+      finalQuantityLabel.text = sender.titleLabel?.text ?? ""
+    case quantity4:
+      quantityView.isHidden = true
+      finalQuantityLabel.text = sender.titleLabel?.text ?? ""
     default:
       break
     }
@@ -157,10 +227,8 @@ extension ProductDetailsViewController: UICollectionViewDelegate,UICollectionVie
     switch collectionView{
     case colorCollectionView:
       selectedColor = cell?.selectedSize ?? ""
-      print("CC:\(selectedColor)")
     case sizeCollectionView:
       selectedSize = cell?.selectedSize ?? ""
-      print("SSSS:\(selectedSize)")
     default:
       break
     }

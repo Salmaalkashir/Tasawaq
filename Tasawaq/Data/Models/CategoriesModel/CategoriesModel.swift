@@ -25,7 +25,7 @@ struct Product: Codable{
 }
 
 struct Variants: Codable{
-  var inventory_quantity: Int?
+  var inventory_quantity, id: Int?
   var title, price: String?
 }
 

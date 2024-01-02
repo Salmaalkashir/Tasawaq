@@ -16,6 +16,7 @@ class CartViewController: UIViewController {
   var productname: String?
   var productPrice: String?
   var productdetails: String?
+  var productQuantit: String?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -49,7 +50,7 @@ extension CartViewController: UITableViewDataSource,UITableViewDelegate{
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "cartCell", for: indexPath) as! CartTableViewCell
-    cell.configureTableCell(image: imageproduct ?? "" , name: productname ?? "", quantity: "1", price: productPrice ?? "", details: "Details: \(productdetails ?? "")")
+    cell.configureTableCell(image: imageproduct ?? "" , name: productname ?? "", quantity: productQuantit ?? "", price: productPrice ?? "", details: "Details: \(productdetails ?? "")")
     cell.increaseQuantity = { [weak cell] in
       cell?.quantityLabel.text = "2"
     }

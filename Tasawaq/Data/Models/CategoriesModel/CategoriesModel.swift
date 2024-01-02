@@ -21,11 +21,11 @@ struct Product: Codable{
   var variants: [Variants]
   var options: [Options]
   var images: [ProductImages]
-  var image: ProductImage
+  var image: ProductImage?
 }
 
 struct Variants: Codable{
-  var inventory_quantity: Int?
+  var inventory_quantity, id: Int?
   var title, price: String?
 }
 

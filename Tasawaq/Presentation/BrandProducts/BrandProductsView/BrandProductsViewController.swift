@@ -12,14 +12,15 @@ class BrandProductsViewController: UIViewController {
   @IBOutlet weak var searchBrandProduct: UISearchBar!
   @IBOutlet weak var brandProductsCollectionView: UICollectionView!
   @IBOutlet weak var priceSegmentControl: UISegmentedControl!
-  var brandID: String?
+  var brandID: Int?
+  var brandName: String?
   var brandProductsViewModel = BrandProductsViewModel()
 
   override func viewDidLoad() {
     super.viewDidLoad()
     configureCollectionView()
     configureSegmentControl()
-    
+    print("ID: \(brandID ?? 0)")
     searchBrandProduct.delegate = self
     brandProductsViewModel.brandId = brandID
     brandProductsViewModel.retrieveBrandProduct()
@@ -35,7 +36,7 @@ class BrandProductsViewController: UIViewController {
   }
   override func viewWillAppear(_ animated: Bool) {
     navigationController?.isNavigationBarHidden = false
-    brandProductsViewModel.backbutton.title = " "
+    brandProductsViewModel.backbutton.title = brandName
     navigationController?.navigationBar.tintColor = UIColor.black
     navigationItem.backBarButtonItem =  brandProductsViewModel.backbutton
   }
@@ -95,17 +96,27 @@ extension BrandProductsViewController: UICollectionViewDelegate, UICollectionVie
     switch priceSegmentControl.selectedSegmentIndex{
     case 0:
       sortHighToLow()
-      cell.configureCell(image: brandProductsViewModel.searchArray?[indexPath.row].image.src ?? "" , name:  brandProductsViewModel.searchArray?[indexPath.row].title  ?? "" , price:  brandProductsViewModel.searchArray?[indexPath.row].variants[0].price ?? "")
+      cell.configureCell(image: brandProductsViewModel.searchArray?[indexPath.row].image?.src ?? "" , name:  brandProductsViewModel.searchArray?[indexPath.row].title  ?? "" , price:  brandProductsViewModel.searchArray?[indexPath.row].variants[0].price ?? "")
+      cell.isFavourite = { [weak cell] in
+        cell?.favourite.isSelected = !(cell?.favourite.isSelected ?? false)
+        if cell?.favourite.isSelected ?? false{
+          cell?.favourite.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        }else{
+          cell?.favourite.setImage(UIImage(systemName: "heart"), for: .normal)
+        }
+      }
     case 1:
       sortLowToHigh()
-      cell.configureCell(image: brandProductsViewModel.searchArray?[indexPath.row].image.src ?? "" , name: brandProductsViewModel.searchArray?[indexPath.row].title  ?? "" , price: brandProductsViewModel.searchArray?[indexPath.row].variants[0].price ?? "")
+      cell.configureCell(image: brandProductsViewModel.searchArray?[indexPath.row].image?.src ?? "" , name: brandProductsViewModel.searchArray?[indexPath.row].title  ?? "" , price: brandProductsViewModel.searchArray?[indexPath.row].variants[0].price ?? "")
     default:
       break
     }
     return cell
   }
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    self.navigationController?.pushViewController(ProductDetailsViewController(), animated: true)
+    let brandProductObj = ProductDetailsViewController()
+    brandProductObj.product = brandProductsViewModel.searchArray?[indexPath.row]
+    self.navigationController?.pushViewController(brandProductObj, animated: true)
   }
 }
 
@@ -114,7 +125,7 @@ extension BrandProductsViewController : UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
     let screenWidth = UIScreen.main.bounds.width
     let itemWidth = screenWidth / 2 - 20
-    let itemHeight = itemWidth * (1.2)
+    let itemHeight = itemWidth * (1.3)
     
     return CGSize(width:itemWidth , height: itemHeight)
   }

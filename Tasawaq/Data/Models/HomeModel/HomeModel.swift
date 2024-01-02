@@ -23,6 +23,7 @@ struct SmartCollection: Codable{
 
 struct Brands: Codable{
   var id: Int?
+  var title: String?
   var image: BrandImage
 }
 

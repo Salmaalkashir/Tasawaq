@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 class CartTableViewCell: UITableViewCell {
   //MARK: -IBOutlets
   @IBOutlet weak var cellView: UIView!
@@ -14,6 +14,7 @@ class CartTableViewCell: UITableViewCell {
   @IBOutlet weak var productName: UILabel!
   @IBOutlet weak var quantityLabel: UILabel!
   @IBOutlet weak var totalPrice: UILabel!
+  @IBOutlet weak var productDetails: UILabel!
   
   public var increaseQuantity: (()->())?
   public var decreaseQuantity: (()->())?
@@ -35,11 +36,12 @@ class CartTableViewCell: UITableViewCell {
   }
   
   //MARK: -Configurations
-  func configureTableCell(image: UIImage, name: String, quantity: String, price: String){
-    productImage.image = image
+  func configureTableCell(image: String, name: String, quantity: String, price: String, details: String){
+    productImage.kf.setImage(with: URL(string: image))
     productName.text = name
     quantityLabel.text = quantity
     totalPrice.text = price
+    productDetails.text = details
   }
   func configureCellView(){
     cellView.layer.cornerRadius = 20

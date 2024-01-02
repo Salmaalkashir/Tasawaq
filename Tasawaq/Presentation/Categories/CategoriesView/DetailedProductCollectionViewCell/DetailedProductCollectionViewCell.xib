@@ -12,14 +12,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="detailedProductCell" id="gTV-IL-0wX" customClass="DetailedProductCollectionViewCell" customModule="Tasawaq" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="220" height="230"/>
+            <rect key="frame" x="0.0" y="0.0" width="220" height="240"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="220" height="230"/>
+                <rect key="frame" x="0.0" y="0.0" width="220" height="240"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="neE-ef-WWs">
-                        <rect key="frame" x="5" y="5" width="210" height="220"/>
+                        <rect key="frame" x="5" y="5" width="210" height="230"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Moa-qM-0BZ">
                                 <rect key="frame" x="16" y="8" width="153" height="115"/>
@@ -28,15 +28,15 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD 70.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oyk-me-cjA">
-                                <rect key="frame" x="8" y="169" width="75.333333333333329" height="43"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <rect key="frame" x="8" y="179" width="76.666666666666671" height="43"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <color key="textColor" name="Custom Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADIDAS |" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="zN4-h9-0YP">
-                                <rect key="frame" x="8" y="131" width="194" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADIDAS |" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="zN4-h9-0YP">
+                                <rect key="frame" x="8" y="131" width="194" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="omq-kM-apZ"/>
+                                    <constraint firstAttribute="height" constant="40" id="omq-kM-apZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
@@ -48,10 +48,14 @@
                                     <constraint firstAttribute="width" constant="25" id="13f-8r-D3j"/>
                                     <constraint firstAttribute="height" constant="25" id="qxC-he-BEz"/>
                                 </constraints>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system" cornerStyle="capsule">
                                     <color key="baseForegroundColor" systemColor="systemRedColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="addToWishListButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="BfP-7r-K93"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -81,6 +85,7 @@
             <size key="customSize" width="219" height="201"/>
             <connections>
                 <outlet property="cellView" destination="neE-ef-WWs" id="ElN-Aw-J33"/>
+                <outlet property="favourite" destination="Hv0-p6-ZyT" id="2P0-Ho-SmO"/>
                 <outlet property="productImage" destination="Moa-qM-0BZ" id="XN7-N5-8dc"/>
                 <outlet property="productName" destination="zN4-h9-0YP" id="wB5-q7-1eS"/>
                 <outlet property="productPrice" destination="Oyk-me-cjA" id="Qwh-da-DTn"/>

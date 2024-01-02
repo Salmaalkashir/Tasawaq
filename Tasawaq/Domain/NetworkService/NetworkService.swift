@@ -8,18 +8,18 @@
 import Foundation
 
 protocol NetworkServiceProtocol{
-    func request<T: Decodable>(path: Path, method: HTTPMethod, parameters: [String: Any]?, completion: @escaping (Result<T,NetworkError>)-> Void)
+  func request<Data: Decodable>(path: Path, method: HTTPMethod, parameters: [String: Any]?, completion: @escaping (Result<Data,NetworkError>)-> Void)
 }
 class NetworkService: NetworkServiceProtocol{
   
-   func createURL(path: Path)-> URL?{
+  func createURL(path: Path)-> URL?{
     let baseUrl =
-     "https://29f36923749f191f42aa83c96e5786c5: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@ios-q2-new-capital-admin-2022-2023.myshopify.com/admin/api/2023-01"
+    "https://29f36923749f191f42aa83c96e5786c5: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@ios-q2-new-capital-admin-2022-2023.myshopify.com/admin/api/2023-01"
     let urlString = baseUrl + path.stringValue
     return URL(string: urlString)
   }
   
-   func request<T>(path: Path, method: HTTPMethod, parameters: [String : Any]?, completion: @escaping (Result<T,NetworkError>) -> Void) where T : Decodable {
+  func request<Data>(path: Path, method: HTTPMethod, parameters: [String : Any]?, completion: @escaping (Result<Data, NetworkError>) -> Void) where Data : Decodable {
     guard let url = createURL(path: path) else{
       completion(.failure(.invalidURL))
       return
@@ -56,8 +56,8 @@ class NetworkService: NetworkServiceProtocol{
       }
       
       do{
-        let decodedObject = try JSONDecoder().decode(T.self, from: data)
-        print("T Type:\(T.self)")
+        let decodedObject = try JSONDecoder().decode(Data.self, from: data)
+        print("T Type:\(Data.self)")
         completion(.success(decodedObject))
       }catch{
         completion(.failure(.decodingFailed(error)))
